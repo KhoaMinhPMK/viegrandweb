@@ -12,16 +12,16 @@ const languages = {
         
         // Hero Section
         heroTitle: "VIEGRAND",
-        heroSubtitle: "CHĂM SÓC CHA MẸ THEO CÁCH HIỆN ĐẠI",
-        heroDescription: "Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br> Nơi công nghệ kết hợp cùng y học để mang đến sự an tâm cho bạn.",
+        heroSubtitle: "CHĂM SÓC NGƯỜI THÂN THEO CÁCH HIỆN ĐẠI",
+        heroDescription: "Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br> Nơi công nghệ kết hợp cùng y học, mang đến sự an tâm cho bạn.",
         exploreBtnText: "Khám phá ngay",
         demoBtnText: "Xem Demo",
         scrollText: "Cuộn xuống để khám phá",
         
         // Hero Section
         heroTitle: "VIEGRAND",
-        heroSubtitle: "CHĂM SÓC CHA MẸ THEO CÁC HIỆN ĐẠI",
-        heroDescription: "Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br> Nơi công nghệ kết hợp cùng y học để mang đến sự an tâm cho bạn.",
+        heroSubtitle: "CHĂM SÓC NGƯỜI THÂN THEO CÁCH HIỆN ĐẠI",
+        heroDescription: "Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br> Nơi công nghệ kết hợp cùng y học, mang đến sự an tâm cho bạn.",
         exploreBtnText: "Khám phá ngay",
         demoBtnText: "Xem Demo",
         scrollText: "Cuộn xuống để khám phá",
@@ -32,8 +32,8 @@ const languages = {
         welcomeDescription: "Đây là trang chủ của website - bạn có thể thêm nội dung chính tại đây.",
         
         // About Us Section
-        aboutTitle: "VỀ VIEGRAND",
-        aboutSubtitle: "Giải pháp công nghệ y tế được phát triển bởi nhóm học sinh trường THPT Nguyễn Hữu Huân",
+        aboutTitle: "VIEGRAND",
+        aboutSubtitle: "Câu chuyện về những học sinh trẻ với ước mơ tạo nên sự khác biệt",
         aboutIntro: "VieGrand là một giải pháp công nghệ y tế được phát triển bởi nhóm học sinh trường THPT Nguyễn Hữu Huân, với mong muốn góp phần xây dựng một xã hội nhân văn và bền vững, nơi người cao tuổi được chăm sóc toàn diện cả về thể chất lẫn tinh thần.",
         
         // About Us Features
@@ -44,7 +44,7 @@ const languages = {
         aboutFeature3Title: "Theo dõi sức khỏe thông minh",
         aboutFeature3Desc: "Không chỉ là ứng dụng theo dõi sức khỏe, VieGrand còn là cầu nối giữa các thế hệ trong gia đình.",
         aboutFeature4Title: "Kết nối gia đình",
-        aboutFeature4Desc: "Giúp con cháu chủ động chăm sóc cha mẹ, ông bà từ xa, dù không thể ở bên, tiếp nối sự hiếu thảo truyền thống.",
+        aboutFeature4Desc: "Giúp con cháu chủ động chăm sóc người thân, ông bà từ xa, dù không thể ở bên, tiếp nối sự hiếu thảo truyền thống.",
         aboutFeature5Title: "Phân tích dữ liệu chuyên sâu",
         aboutFeature5Desc: "Sử dụng công nghệ phân tích dữ liệu và theo dõi, giúp người dùng phát hiện những nguy cơ sức khỏe tiềm ẩn.",
         aboutFeature6Title: "Tầm nhìn & sứ mệnh",
@@ -52,7 +52,7 @@ const languages = {
         
         // Quote and Tagline
         aboutQuote: "Chúng tôi tin rằng: công nghệ không chỉ là công cụ, mà còn có thể trở thành người bạn đồng hành thầm lặng, tiếp nối sự hiếu thảo và lan tỏa yêu thương trong mỗi gia đình Việt.",
-        aboutTagline: "VieGrand – Chăm sóc cha mẹ theo cách hiện đại",
+        aboutTagline: "VieGrand – CHĂM SÓC NGƯỜI THÂN THEO CÁCH HIỆN ĐẠI",
         
         // Features Section
         featuresTitle: "Tính Năng Nổi Bật",
@@ -223,8 +223,8 @@ const languages = {
         welcomeDescription: "This is the homepage of our website - you can add main content here.",
         
         // About Us Section
-        aboutTitle: "ABOUT VIEGRAND",
-        aboutSubtitle: "Healthcare technology solution developed by students from Nguyen Huu Huan High School",
+        aboutTitle: "VIEGRAND",
+        aboutSubtitle: "The story of young students with dreams to make a difference",
         aboutIntro: "VieGrand is a healthcare technology solution developed by students from Nguyen Huu Huan High School, aiming to contribute to building a humane and sustainable society where the elderly are comprehensively cared for both physically and mentally.",
         
         // About Us Features
