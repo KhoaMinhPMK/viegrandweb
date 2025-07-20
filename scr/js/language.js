@@ -32,7 +32,7 @@ const languages = {
         welcomeDescription: "Đây là trang chủ của website - bạn có thể thêm nội dung chính tại đây.",
         
         // About Us Section
-        aboutTitle: "Về VieGrand",
+        aboutTitle: "VỀ VIEGRAND",
         aboutSubtitle: "Giải pháp công nghệ y tế được phát triển bởi nhóm học sinh trường THPT Nguyễn Hữu Huân",
         aboutIntro: "VieGrand là một giải pháp công nghệ y tế được phát triển bởi nhóm học sinh trường THPT Nguyễn Hữu Huân, với mong muốn góp phần xây dựng một xã hội nhân văn và bền vững, nơi người cao tuổi được chăm sóc toàn diện cả về thể chất lẫn tinh thần.",
         
@@ -223,7 +223,7 @@ const languages = {
         welcomeDescription: "This is the homepage of our website - you can add main content here.",
         
         // About Us Section
-        aboutTitle: "About VieGrand",
+        aboutTitle: "ABOUT VIEGRAND",
         aboutSubtitle: "Healthcare technology solution developed by students from Nguyen Huu Huan High School",
         aboutIntro: "VieGrand is a healthcare technology solution developed by students from Nguyen Huu Huan High School, aiming to contribute to building a humane and sustainable society where the elderly are comprehensively cared for both physically and mentally.",
         
