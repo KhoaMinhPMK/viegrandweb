@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký - VieGrand</title>
+    <title data-lang="signupPageTitle">Đăng ký - VieGrand</title>
     <link rel="icon" type="image/png" href="../../../assets/favicon.png">
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -176,9 +176,9 @@
         .submit-btn {
             width: 100%;
             padding: 18px;
-            background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
-            color: white;
-            border: none;
+            background: rgba(255, 255, 255, 0.95);
+            color: #004aad;
+            border: 2px solid #004aad;
             border-radius: 12px;
             font-size: 1.1rem;
             font-weight: 600;
@@ -205,9 +205,10 @@
         }
         
         .submit-btn:hover {
-            background: linear-gradient(135deg, #003380 0%, #004aad 100%);
+            background: rgba(255, 255, 255, 1);
+            border-color: #0066ff;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 74, 173, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 74, 173, 0.2);
         }
         
         .submit-btn:active {
@@ -539,7 +540,7 @@
             
             <div class="form-group">
                 <label for="address" data-lang="addressLabel">Địa chỉ</label>
-                <input type="text" id="address" name="address" placeholder="Ví dụ: 123 Đường ABC, Quận 1, TP.HCM" required>
+                <input type="text" id="address" name="address" placeholder="Ví dụ: Số 11, đường Đoàn kết, Bình Thọ, TP.HCM" required>
             </div>
             
             <div class="form-group">
@@ -576,9 +577,9 @@
         <div class="success-content">
             <div class="success-icon">✓</div>
             <h2 data-lang="successTitle">Đăng ký thành công!</h2>
-            <p data-lang="successMessage">
-                Cảm ơn bạn đã để lại thông tin với VieGrand. <strong>Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ tới</strong> để tư vấn chi tiết về dịch vụ chăm sóc sức khỏe người cao tuổi.
-            </p>
+                            <p data-lang="successMessageText">
+                    Cảm ơn bạn đã để lại thông tin với VieGrand. <strong>Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ tới</strong> để tư vấn chi tiết về dịch vụ chăm sóc sức khỏe người cao tuổi.
+                </p>
             <div class="success-actions">
                 <a href="../home/index.html" class="success-btn primary" data-lang="backToHome">Về trang chủ</a>
                 <button onclick="closeSuccessModal()" class="success-btn secondary" data-lang="continueSignup">Đăng ký thêm</button>
@@ -599,7 +600,7 @@
             
             // Show loading state
             submitBtn.classList.add('loading');
-            submitBtn.innerHTML = '<span>Đang xử lý...</span>';
+            submitBtn.innerHTML = '<span data-lang="processingText">Đang xử lý...</span>';
             
             // Simulate API call
             setTimeout(() => {

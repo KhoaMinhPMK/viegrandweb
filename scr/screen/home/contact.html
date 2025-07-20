@@ -211,9 +211,9 @@
     .submit-btn {
         width: 100%;
         padding: 18px 30px;
-        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
-        color: white;
-        border: none;
+        background: rgba(255, 255, 255, 0.95);
+        color: #004aad;
+        border: 2px solid #004aad;
         border-radius: 12px;
         font-size: 1.1rem;
         font-weight: 600;
@@ -241,7 +241,9 @@
 
     .submit-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(0, 74, 173, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 74, 173, 0.2);
+        background: rgba(255, 255, 255, 1);
+        border-color: #0066ff;
     }
 
     /* Map Section */
@@ -394,7 +396,7 @@
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <div class="contact-details">
-                        <h4>Email</h4>
+                        <h4 data-lang="emailLabel">Email</h4>
                         <p>viegrand.contact@gmail.com</p>
                     </div>
                 </div>
@@ -427,7 +429,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email *</label>
+                        <label for="email" data-lang="emailLabel">Email *</label>
                         <input type="email" id="email" name="email" required>
                     </div>
 

@@ -132,7 +132,7 @@
     .feature-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, rgba(0, 74, 173, 0.1) 0%, rgba(0, 102, 255, 0.05) 100%);
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
         border-radius: 20px;
         display: flex;
         align-items: center;
@@ -150,7 +150,7 @@
         left: 50%;
         width: 0;
         height: 0;
-        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
         border-radius: 50%;
         transition: all 0.4s ease;
         transform: translate(-50%, -50%);
@@ -158,7 +158,7 @@
 
     .feature-card:hover .feature-icon {
         transform: scale(1.1) rotate(5deg);
-        box-shadow: 0 15px 40px rgba(0, 74, 173, 0.3);
+        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
     }
 
     .feature-card:hover .feature-icon::before {
@@ -527,7 +527,7 @@
             <!-- AI Detection Feature -->
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-robot"></i>
+                    
                 </div>
                 <h3 class="feature-title" data-lang="feature1Title">Phát Hiện AI Thông Minh</h3>
                 <p class="feature-description" data-lang="feature1Desc">
@@ -543,7 +543,7 @@
             <!-- Emergency Alert Feature -->
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-bell"></i>
+                    
                 </div>
                 <h3 class="feature-title" data-lang="feature2Title">Cảnh Báo Khẩn Cấp</h3>
                 <p class="feature-description" data-lang="feature2Desc">
@@ -559,7 +559,7 @@
             <!-- Health Monitoring Feature -->
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-heart-pulse"></i>
+                    
                 </div>
                 <h3 class="feature-title" data-lang="feature3Title">Theo Dõi Sức Khỏe Không Tiếp Xúc</h3>
                 <p class="feature-description" data-lang="feature3Desc">
@@ -575,7 +575,7 @@
             <!-- Family Connection Feature -->
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-users"></i>
+                    
                 </div>
                 <h3 class="feature-title" data-lang="feature4Title">Kết Nối Gia Đình Thông Minh</h3>
                 <p class="feature-description" data-lang="feature4Desc">
@@ -588,10 +588,10 @@
                 </div>
             </div>
 
-            <!-- Stroke Detection Feature -->
+                        <!-- Stroke Detection Feature -->
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-exclamation-triangle"></i>
+                    
                 </div>
                 <h3 class="feature-title" data-lang="feature5Title">Phát Hiện Sớm Đột Quỵ</h3>
                 <p class="feature-description" data-lang="feature5Desc">
@@ -607,7 +607,7 @@
             <!-- Voice Control Feature -->
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-microphone"></i>
+                    
                 </div>
                 <h3 class="feature-title" data-lang="feature6Title">Điều Khiển Giọng Nói Tiếng Việt</h3>
                 <p class="feature-description" data-lang="feature6Desc">
@@ -624,8 +624,8 @@
         <!-- Technology Stack -->
         <div class="technology-section">
             <div class="tech-header">
-                <h3 class="tech-title">Công Nghệ Tiên Tiến</h3>
-                <p class="tech-subtitle">Được xây dựng trên nền tảng công nghệ hàng đầu thế giới</p>
+                <h3 class="tech-title" data-lang="techTitle">Công Nghệ Tiên Tiến</h3>
+                <p class="tech-subtitle" data-lang="techSubtitle">Được xây dựng trên nền tảng công nghệ hàng đầu thế giới</p>
             </div>
             
             <div class="tech-grid">
@@ -633,28 +633,28 @@
                     <div class="tech-icon">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <div class="tech-name">Deep Learning</div>
+                    <div class="tech-name" data-lang="deepLearning">Deep Learning</div>
                 </div>
                 
                 <div class="tech-card">
                     <div class="tech-icon">
                         <i class="fas fa-video"></i>
                     </div>
-                    <div class="tech-name">Computer Vision</div>
+                    <div class="tech-name" data-lang="computerVision">Computer Vision</div>
                 </div>
                 
                 <div class="tech-card">
                     <div class="tech-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
-                    <div class="tech-name">Cloud Computing</div>
+                    <div class="tech-name" data-lang="cloudComputing">Cloud Computing</div>
                 </div>
                 
                 <div class="tech-card">
                     <div class="tech-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <div class="tech-name">Edge Security</div>
+                    <div class="tech-name" data-lang="edgeSecurity">Edge Security</div>
                 </div>
             </div>
         </div>
@@ -664,22 +664,22 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-number">99.5%</span>
-                    <div class="stat-label">Độ Chính Xác AI</div>
+                    <div class="stat-label" data-lang="aiAccuracy">Độ Chính Xác AI</div>
                 </div>
                 
                 <div class="stat-card">
                     <span class="stat-number">15s</span>
-                    <div class="stat-label">Thời Gian Phản Ứng</div>
+                    <div class="stat-label" data-lang="responseTime">Thời Gian Phản Ứng</div>
                 </div>
                 
                 <div class="stat-card">
                     <span class="stat-number">24/7</span>
-                    <div class="stat-label">Giám Sát Liên Tục</div>
+                    <div class="stat-label" data-lang="continuousMonitoring">Giám Sát Liên Tục</div>
                 </div>
                 
                 <div class="stat-card">
                     <span class="stat-number">256bit</span>
-                    <div class="stat-label">Mã Hóa Bảo Mật</div>
+                    <div class="stat-label" data-lang="encryptionSecurity">Mã Hóa Bảo Mật</div>
                 </div>
             </div>
         </div>

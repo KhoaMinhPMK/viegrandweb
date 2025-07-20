@@ -289,7 +289,7 @@
     }
 
     .pricing-card:hover {
-        transform: translateY(-15px) rotateX(3deg);
+        transform: translateY(-15px) scale(1.02);
         border-color: rgba(59, 130, 246, 0.2);
         box-shadow: 
             0 30px 80px rgba(15, 23, 42, 0.12),
@@ -392,9 +392,9 @@
         width: 0;
         height: 0;
         background: linear-gradient(135deg, 
-            #475569 0%, 
-            #334155 50%, 
-            #1e293b 100%);
+            #3b82f6 0%, 
+            #1d4ed8 50%, 
+            #1e40af 100%);
         border-radius: 50%;
         transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         transform: translate(-50%, -50%);
@@ -407,12 +407,12 @@
     }
 
     .pricing-card:hover .plan-icon {
-        border-color: rgba(71, 85, 105, 0.4);
-        transform: scale(1.12) rotateY(12deg);
+        border-color: rgba(59, 130, 246, 0.4);
+        transform: scale(1.12);
         color: white;
         box-shadow: 
-            0 15px 50px rgba(15, 23, 42, 0.2),
-            0 8px 25px rgba(51, 65, 85, 0.1);
+            0 15px 50px rgba(59, 130, 246, 0.2),
+            0 8px 25px rgba(29, 78, 216, 0.1);
     }
 
     .pricing-card.popular .plan-icon {
@@ -670,11 +670,8 @@
         align-items: center;
         justify-content: center;
         padding: 16px 40px;
-        background: linear-gradient(135deg, 
-            rgba(30, 41, 59, 0.95) 0%, 
-            rgba(51, 65, 85, 0.9) 50%,
-            rgba(15, 23, 42, 0.95) 100%);
-        color: white;
+        background: rgba(255, 255, 255, 0.95);
+        color: #004aad;
         text-decoration: none;
         border-radius: 50px;
         font-weight: 800;
@@ -683,13 +680,13 @@
         transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         position: relative;
         overflow: hidden;
-        border: 2px solid transparent;
+        border: 2px solid #004aad;
         cursor: pointer;
         text-transform: uppercase;
         box-shadow: 
-            0 8px 30px rgba(15, 23, 42, 0.2),
-            0 4px 15px rgba(30, 41, 59, 0.12),
-            0 2px 8px rgba(51, 65, 85, 0.08);
+            0 8px 30px rgba(0, 74, 173, 0.15),
+            0 4px 15px rgba(0, 102, 255, 0.1),
+            0 2px 8px rgba(0, 74, 173, 0.08);
         backdrop-filter: blur(10px);
     }
 
@@ -738,35 +735,30 @@
     .cta-button:hover {
         transform: translateY(-3px) scale(1.02);
         box-shadow: 
-            0 15px 45px rgba(15, 23, 42, 0.3),
-            0 8px 20px rgba(30, 41, 59, 0.2),
-            0 3px 10px rgba(51, 65, 85, 0.12);
-        background: linear-gradient(135deg, 
-            #1e293b 0%, 
-            #334155 50%, 
-            #475569 100%);
+            0 15px 45px rgba(0, 74, 173, 0.25),
+            0 8px 20px rgba(0, 102, 255, 0.15),
+            0 3px 10px rgba(0, 74, 173, 0.1);
+        background: rgba(255, 255, 255, 1);
+        border-color: #0066ff;
     }
 
     .pricing-card.popular .cta-button {
-        background: linear-gradient(135deg, 
-            #10b981 0%, 
-            #059669 50%, 
-            #047857 100%);
+        background: rgba(255, 255, 255, 0.95);
+        color: #004aad;
+        border-color: #004aad;
         box-shadow: 
-            0 8px 30px rgba(16, 185, 129, 0.2),
-            0 4px 15px rgba(5, 150, 105, 0.12),
-            0 2px 8px rgba(4, 120, 87, 0.08);
+            0 8px 30px rgba(0, 74, 173, 0.15),
+            0 4px 15px rgba(0, 102, 255, 0.1),
+            0 2px 8px rgba(0, 74, 173, 0.08);
     }
 
     .pricing-card.popular .cta-button:hover {
-        background: linear-gradient(135deg, 
-            #059669 0%, 
-            #047857 50%, 
-            #065f46 100%);
+        background: rgba(255, 255, 255, 1);
+        border-color: #0066ff;
         box-shadow: 
-            0 15px 45px rgba(16, 185, 129, 0.3),
-            0 8px 20px rgba(5, 150, 105, 0.2),
-            0 3px 10px rgba(4, 120, 87, 0.12);
+            0 15px 45px rgba(0, 74, 173, 0.25),
+            0 8px 20px rgba(0, 102, 255, 0.15),
+            0 3px 10px rgba(0, 74, 173, 0.1);
     }
 
     /* Luxury Free Trial Badge */
@@ -1090,6 +1082,230 @@
             font-size: 0.95rem;
         }
     }
+
+    /* Pricing Modal Styles */
+    .pricing-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .pricing-modal.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal-content {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+        padding: 50px 40px;
+        max-width: 600px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        transform: scale(0.8) translateY(30px);
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: 
+            0 30px 100px rgba(0, 74, 173, 0.3),
+            0 15px 50px rgba(15, 23, 42, 0.2);
+        border: 1px solid rgba(226, 232, 240, 0.6);
+    }
+
+    .pricing-modal.show .modal-content {
+        transform: scale(1) translateY(0);
+    }
+
+    .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        width: 40px;
+        height: 40px;
+        background: rgba(248, 250, 252, 0.9);
+        border: 1px solid rgba(226, 232, 240, 0.6);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #64748b;
+        font-size: 1.2rem;
+    }
+
+    .modal-close:hover {
+        background: rgba(239, 68, 68, 0.1);
+        border-color: rgba(239, 68, 68, 0.3);
+        color: #dc2626;
+        transform: scale(1.1);
+    }
+
+    .modal-header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    }
+
+    .modal-title {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: #0f172a;
+        margin-bottom: 15px;
+        background: linear-gradient(135deg, 
+            #0f172a 0%, 
+            #1e293b 50%, 
+            #334155 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .modal-subtitle {
+        color: #64748b;
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 1.6;
+    }
+
+    .modal-price {
+        text-align: center;
+        margin: 25px 0;
+        padding: 20px;
+        background: linear-gradient(135deg, 
+            rgba(248, 250, 252, 0.5) 0%, 
+            rgba(255, 255, 255, 0.3) 100%);
+        border-radius: 16px;
+        border: 1px solid rgba(226, 232, 240, 0.4);
+    }
+
+    .modal-price-amount {
+        font-size: 2.8rem;
+        font-weight: 900;
+        color: #1e293b;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 6px;
+        margin-bottom: 8px;
+    }
+
+    .modal-features {
+        list-style: none;
+        padding: 0;
+        margin: 25px 0;
+    }
+
+    .modal-features li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 12px 0;
+        font-size: 1rem;
+        color: #334155;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.3);
+    }
+
+    .modal-features li:last-child {
+        border-bottom: none;
+    }
+
+    .modal-feature-icon {
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(135deg, 
+            #10b981 0%, 
+            #059669 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.7rem;
+        flex-shrink: 0;
+    }
+
+    .modal-actions {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(226, 232, 240, 0.6);
+    }
+
+    .modal-btn {
+        padding: 14px 30px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .modal-btn.primary {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        color: white;
+        border: none;
+    }
+
+    .modal-btn.primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+    }
+
+    .modal-btn.secondary {
+        background: rgba(255, 255, 255, 0.9);
+        color: #64748b;
+        border: 2px solid rgba(226, 232, 240, 0.6);
+    }
+
+    .modal-btn.secondary:hover {
+        background: rgba(248, 250, 252, 0.9);
+        border-color: rgba(148, 163, 184, 0.4);
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .modal-content {
+            padding: 40px 25px;
+            margin: 20px;
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+        }
+        
+        .modal-price-amount {
+            font-size: 2.2rem;
+        }
+        
+        .modal-actions {
+            flex-direction: column;
+        }
+        
+        .modal-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
 </style>
 
 <!-- Pricing Section -->
@@ -1143,7 +1359,7 @@
                 </ul>
                 
                 <div class="plan-cta">
-                    <a href="#contact" class="cta-button" data-lang="choosePlan">Chọn Gói</a>
+                    <a href="#" class="cta-button" onclick="openModal('basicModal'); return false;" data-lang="choosePlan">Chọn Gói</a>
                 </div>
                 
                 <div class="free-trial">
@@ -1203,7 +1419,7 @@
                 </ul>
                 
                 <div class="plan-cta">
-                    <a href="#contact" class="cta-button" data-lang="choosePlan">Chọn Gói</a>
+                    <a href="#" class="cta-button" onclick="openModal('premiumModal'); return false;" data-lang="choosePlan">Chọn Gói</a>
                 </div>
                 
                 <div class="free-trial">
@@ -1258,7 +1474,7 @@
                 </ul>
                 
                 <div class="plan-cta">
-                    <a href="#contact" class="cta-button" data-lang="contactUs">Liên Hệ</a>
+                    <a href="#" class="cta-button" onclick="openModal('enterpriseModal'); return false;" data-lang="contactUs">Liên Hệ</a>
                 </div>
                 
                 <div class="free-trial">
@@ -1278,4 +1494,275 @@
             </a>
         </div>
     </div>
+
+    <!-- Pricing Modals -->
+    <!-- Basic Plan Modal -->
+    <div id="basicModal" class="pricing-modal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeModal('basicModal')">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-header">
+                        <h3 class="modal-title" data-lang="modalBasicTitle">Gói Cơ Bản</h3>
+        <p class="modal-subtitle" data-lang="modalBasicSubtitle">Phù hợp cho gia đình nhỏ với nhu cầu giám sát cơ bản</p>
+            </div>
+            <div class="modal-price">
+                <div class="modal-price-amount">
+                    <span class="currency">₫</span>
+                    <span>299,000</span>
+                </div>
+                <div class="period">/tháng</div>
+            </div>
+            <ul class="modal-features">
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalBasicFeature1">Phát hiện té ngã cơ bản</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalBasicFeature2">Cảnh báo qua SMS</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalBasicFeature3">Hỗ trợ email 24/7</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalBasicFeature4">Báo cáo hàng tuần</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalBasicFeature5">Camera HD 1080p</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalBasicFeature6">Lưu trữ 7 ngày</span>
+                </li>
+            </ul>
+            <div class="modal-actions">
+                <a href="#contact" class="modal-btn primary">
+                    <i class="fas fa-phone"></i>
+                    <span data-lang="modalRegisterBtn">Đăng Ký Ngay</span>
+                </a>
+                <button class="modal-btn secondary" onclick="closeModal('basicModal')">
+                    <i class="fas fa-times"></i>
+                    <span data-lang="modalCloseBtn">Đóng</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Plan Modal -->
+    <div id="premiumModal" class="pricing-modal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeModal('premiumModal')">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-header">
+                <h3 class="modal-title" data-lang="modalPremiumTitle">Gói Cao Cấp</h3>
+                <p class="modal-subtitle" data-lang="modalPremiumSubtitle">Giải pháp toàn diện với AI tiên tiến và tính năng thông minh</p>
+            </div>
+            <div class="modal-price">
+                <div class="modal-price-amount">
+                    <span class="currency">₫</span>
+                    <span>599,000</span>
+                </div>
+                <div class="period">/tháng</div>
+            </div>
+            <ul class="modal-features">
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalPremiumFeature1">AI phát hiện đột quỵ tiên tiến</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalPremiumFeature2">Cảnh báo đa kênh (SMS, Call, Email)</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalPremiumFeature3">Giám sát sức khỏe qua camera</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalPremiumFeature4">Điều khiển bằng giọng nói</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalPremiumFeature5">Ứng dụng mobile cho gia đình</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalPremiumFeature6">Báo cáo chi tiết hàng ngày</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalPremiumFeature7">Hỗ trợ hotline ưu tiên</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalPremiumFeature8">Camera 4K Ultra HD</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalPremiumFeature9">Lưu trữ 30 ngày</span>
+                </li>
+            </ul>
+            <div class="modal-actions">
+                <a href="#contact" class="modal-btn primary">
+                    <i class="fas fa-phone"></i>
+                    <span data-lang="modalRegisterBtn">Đăng Ký Ngay</span>
+                </a>
+                <button class="modal-btn secondary" onclick="closeModal('premiumModal')">
+                    <i class="fas fa-times"></i>
+                    <span data-lang="modalCloseBtn">Đóng</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enterprise Plan Modal -->
+    <div id="enterpriseModal" class="pricing-modal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeModal('enterpriseModal')">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-header">
+                <h3 class="modal-title" data-lang="modalEnterpriseTitle">Gói Doanh Nghiệp</h3>
+                <p class="modal-subtitle" data-lang="modalEnterpriseSubtitle">Dành cho viện dưỡng lão và cơ sở chăm sóc chuyên nghiệp</p>
+            </div>
+            <div class="modal-price">
+                <div class="modal-price-amount">
+                    <span>Liên hệ</span>
+                </div>
+                <div class="period">Giá tùy chỉnh</div>
+            </div>
+            <ul class="modal-features">
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalEnterpriseFeature1">Tích hợp hệ thống y tế</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalEnterpriseFeature2">Dashboard quản lý tập trung</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalEnterpriseFeature3">API và tích hợp tùy chỉnh</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalEnterpriseFeature4">Đào tạo nhân viên chuyên sâu</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalEnterpriseFeature5">Hỗ trợ kỹ thuật 24/7</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalEnterpriseFeature6">Báo cáo và phân tích nâng cao</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalEnterpriseFeature7">Camera không giới hạn</span>
+                </li>
+                <li>
+                    <div class="modal-feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-lang="modalEnterpriseFeature8">Lưu trữ vĩnh viễn</span>
+                </li>
+            </ul>
+            <div class="modal-actions">
+                <a href="#contact" class="modal-btn primary">
+                    <i class="fas fa-phone"></i>
+                    <span data-lang="modalContactBtn">Liên Hệ Tư Vấn</span>
+                </a>
+                <button class="modal-btn secondary" onclick="closeModal('enterpriseModal')">
+                    <i class="fas fa-times"></i>
+                    <span data-lang="modalCloseBtn">Đóng</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </section>
+
+<script>
+    // Modal functions
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    document.addEventListener('DOMContentLoaded', function() {
+        const modals = document.querySelectorAll('.pricing-modal');
+        modals.forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const openModal = document.querySelector('.pricing-modal.show');
+                if (openModal) {
+                    closeModal(openModal.id);
+                }
+            }
+        });
+    });
+</script>

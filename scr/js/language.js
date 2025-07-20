@@ -1,6 +1,10 @@
 // Language Configuration
 const languages = {
     vi: {
+        // Page Titles
+        pageTitle: "Trang chủ",
+        signupPageTitle: "Đăng ký - VieGrand",
+        
         // Header
         home: "Trang Chủ",
         about: "Về chúng tôi", 
@@ -9,14 +13,6 @@ const languages = {
         contact: "Liên hệ",
         login: "Đăng nhập",
         signup: "Đăng ký",
-        
-        // Hero Section
-        heroTitle: "VIEGRAND",
-        heroSubtitle: "CHĂM SÓC NGƯỜI THÂN THEO CÁCH HIỆN ĐẠI",
-        heroDescription: "Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br> Nơi công nghệ kết hợp cùng y học, mang đến sự an tâm cho bạn.",
-        exploreBtnText: "Khám phá ngay",
-        demoBtnText: "Xem Demo",
-        scrollText: "Cuộn xuống để khám phá",
         
         // Hero Section
         heroTitle: "VIEGRAND",
@@ -35,6 +31,39 @@ const languages = {
         aboutTitle: "VIEGRAND",
         aboutSubtitle: "Câu chuyện về những học sinh trẻ với ước mơ tạo nên sự khác biệt",
         aboutIntro: "VieGrand là một giải pháp công nghệ y tế được phát triển bởi nhóm học sinh trường THPT Nguyễn Hữu Huân, với mong muốn góp phần xây dựng một xã hội nhân văn và bền vững, nơi người cao tuổi được chăm sóc toàn diện cả về thể chất lẫn tinh thần.",
+        
+        // About Us Story Section
+        aboutStoryTitle: "Khởi Đầu Từ Trái Tim",
+        aboutStoryText1: "VieGrand ra đời từ những trải nghiệm thực tế của chúng tôi - một nhóm học sinh THPT Nguyễn Hữu Huân. Xuất phát từ sự thấu hiểu những khó khăn mà ông bà, cha mẹ gặp phải trong quá trình chăm sóc sức khỏe, tập thể nhóm đã nhận thấy tiềm năng của công nghệ như một cầu nối hiệu quả nhằm hỗ trợ và cải thiện chất lượng cuộc sống cho người thân yêu.",
+        aboutStoryText2: "Chúng tôi không chỉ muốn tạo ra một sản phẩm công nghệ, mà mong muốn xây dựng một giải pháp mang tính nhân văn, giúp các gia đình Việt Nam duy trì và phát huy truyền thống hiếu thảo trong thời đại số.",
+        aboutStoryQuote: "Từ những đêm thức trắng nghiên cứu công nghệ AI, đến những lần thử nghiệm không thành công, chúng tôi luôn được thúc đẩy bởi một niềm tin: công nghệ phải phục vụ tình người.",
+        
+        // Mission & Vision
+        aboutMissionTitle: "Sứ Mệnh",
+        aboutMissionText: "Ứng dụng công nghệ AI và IoT để tạo ra giải pháp chăm sóc sức khỏe toàn diện, giúp người cao tuổi sống khỏe mạnh, hạnh phúc và giúp các gia đình Việt duy trì truyền thống hiếu thảo trong thời đại số.",
+        aboutVisionTitle: "Tầm Nhìn",
+        aboutVisionText: "Trở thành nền tảng chăm sóc người cao tuổi thông minh, nhân ái và đáng tin cậy hàng đầu tại Việt Nam, góp phần xây dựng một xã hội có trái tim, nơi mỗi gia đình đều được hỗ trợ trong việc chăm sóc những người thân yêu.",
+        
+        // Values Section
+        valuesTitle: "Giá Trị Cốt Lõi",
+        valuesSubtitle: "Những nguyên tắc định hướng mọi hoạt động của chúng tôi",
+        value1Title: "Yêu Thương & Quan Tâm",
+        value1Desc: "Yêu thương và quan tâm chính là nền tảng vững chắc tạo nên mọi sản phẩm chăm sóc sức khỏe chất lượng",
+        value2Title: "Đổi Mới Sáng Tạo",
+        value2Desc: "Áp dụng công nghệ tiên tiến nhất để giải quyết vấn đề thực tế trong chăm sóc người cao tuổi.",
+        value3Title: "An Toàn & Tin Cậy",
+        value3Desc: "Đảm bảo độ tin cậy và bảo mật cao nhất trong mọi tính năng và dữ liệu người dùng.",
+        value4Title: "Hỗ Trợ Gia Đình",
+        value4Desc: "Không chỉ chăm sóc người cao tuổi mà còn hỗ trợ con cháu thực hiện trách nhiệm hiếu thảo.",
+        value5Title: "Dễ Sử Dụng",
+        value5Desc: "Thiết kế giao diện đơn giản, phù hợp với người cao tuổi và dễ dàng cho cả gia đình.",
+        value6Title: "Phù Hợp Văn Hóa Việt",
+        value6Desc: "Thiết kế dành riêng cho gia đình Việt, tôn trọng và phát huy giá trị truyền thống hiếu thảo.",
+        
+        // Team Section
+        teamTitle: "Đội Ngũ VieGrand",
+        teamDescription: "Chúng tôi là những học sinh trẻ đầy nhiệt huyết từ trường THPT Nguyễn Hữu Huân, với ước mơ ứng dụng công nghệ để tạo nên những giá trị tích cực cho xã hội.",
+        teamTagline: "VieGrand – CHĂM SÓC NGƯỜI THÂN THEO CÁCH HIỆN ĐẠI",
         
         // About Us Features
         aboutFeature1Title: "Trí tuệ nhân tạo tiên tiến",
@@ -69,13 +98,29 @@ const languages = {
         feature4Desc: "Ứng dụng di động cho con cháu theo dõi tình hình sức khỏe cha mẹ từ xa. Video call, nhắn tin, chia sẻ khoảnh khắc hàng ngày.",
         feature5Title: "Phát Hiện Sớm Và Cảnh Báo Đột Quỵ",
         feature5Desc: "Sử dụng công nghệ AI tiên tiến để phát hiện các dấu hiệu bất thường, cảnh báo sớm nguy cơ đột quỵ và các tình huống khẩn cấp với độ chính xác cao.",
-        feature6Title: "Hỗ Trợ Điều Khiển Bằng Giọng Nói",
+        feature6Title: "Điều Khiển Giọng Nói Tiếng Việt",
         feature6Desc: "Công nghệ nhận diện giọng nói tiếng Việt giúp người cao tuổi dễ dàng điều khiển toàn bộ ứng dụng mà không cần thao tác phức tạp trên màn hình.",
         
         // CTA Section
         ctaTitle: "Sẵn Sàng Trải Nghiệm?",
         ctaDesc: "Tham gia cùng hàng nghìn gia đình Việt đã tin tưởng VieGrand để chăm sóc người thân yêu",
         ctaButton: "Đăng Ký Ngay",
+        ctaButtonPrimary: "Đăng Ký Ngay",
+        ctaButtonSecondary: "Xem Bảng Giá",
+        
+        // Technology Section
+        techTitle: "Công Nghệ Tiên Tiến",
+        techSubtitle: "Được xây dựng trên nền tảng công nghệ hàng đầu thế giới",
+        deepLearning: "Deep Learning",
+        computerVision: "Computer Vision", 
+        cloudComputing: "Cloud Computing",
+        edgeSecurity: "Edge Security",
+        
+        // Statistics Section
+        aiAccuracy: "Độ Chính Xác AI",
+        responseTime: "Thời Gian Phản Ứng",
+        continuousMonitoring: "Giám Sát Liên Tục",
+        encryptionSecurity: "Mã Hóa Bảo Mật",
         
         // Pricing Section
         pricingTitle: "Bảng Giá Dịch Vụ",
@@ -86,7 +131,7 @@ const languages = {
         basicPlanDesc: "Phù hợp cho gia đình nhỏ với nhu cầu giám sát cơ bản",
         basicPrice: "299,000",
         perMonth: "/tháng",
-        // basicFeature1: "Giám sát 1 người cao tuổi",
+        basicFeature1: "Giám sát 1 người cao tuổi",
         basicFeature2: "Phát hiện té ngã cơ bản", 
         basicFeature3: "Cảnh báo qua SMS",
         basicFeature4: "Hỗ trợ email 24/7",
@@ -96,7 +141,7 @@ const languages = {
         premiumPlanName: "Gói Cao Cấp",
         premiumPlanDesc: "Giải pháp toàn diện với AI tiên tiến và tính năng thông minh",
         premiumPrice: "599,000",
-        // premiumFeature1: "Giám sát đến 3 người cao tuổi",
+        premiumFeature1: "Giám sát đến 3 người cao tuổi",
         premiumFeature2: "AI phát hiện đột quỵ tiên tiến",
         premiumFeature3: "Cảnh báo đa kênh (SMS, Call, Email)",
         premiumFeature4: "Giám sát sức khỏe qua camera",
@@ -110,13 +155,51 @@ const languages = {
         enterprisePlanDesc: "Dành cho viện dưỡng lão và cơ sở chăm sóc chuyên nghiệp",
         contactPrice: "Liên hệ",
         customPrice: "Giá tùy chỉnh",
-        // enterpriseFeature1: "Giám sát không giới hạn",
+        enterpriseFeature1: "Giám sát không giới hạn",
         enterpriseFeature2: "Tích hợp hệ thống y tế",
         enterpriseFeature3: "Dashboard quản lý tập trung",
         enterpriseFeature4: "API và tích hợp tùy chỉnh",
         enterpriseFeature5: "Đào tạo nhân viên chuyên sâu",
         enterpriseFeature6: "Hỗ trợ kỹ thuật 24/7",
         enterpriseFeature7: "Báo cáo và phân tích nâng cao",
+        
+        // Modal Content
+        modalBasicTitle: "Gói Cơ Bản",
+        modalBasicSubtitle: "Phù hợp cho gia đình nhỏ với nhu cầu giám sát cơ bản",
+        modalPremiumTitle: "Gói Cao Cấp",
+        modalPremiumSubtitle: "Giải pháp toàn diện với AI tiên tiến và tính năng thông minh",
+        modalEnterpriseTitle: "Gói Doanh Nghiệp",
+        modalEnterpriseSubtitle: "Dành cho viện dưỡng lão và cơ sở chăm sóc chuyên nghiệp",
+        modalRegisterBtn: "Đăng Ký Ngay",
+        modalContactBtn: "Liên Hệ Tư Vấn",
+        modalCloseBtn: "Đóng",
+        
+        // Modal Features
+        modalBasicFeature1: "Phát hiện té ngã cơ bản",
+        modalBasicFeature2: "Cảnh báo qua SMS",
+        modalBasicFeature3: "Hỗ trợ email 24/7",
+        modalBasicFeature4: "Báo cáo hàng tuần",
+        modalBasicFeature5: "Camera HD 1080p",
+        modalBasicFeature6: "Lưu trữ 7 ngày",
+        
+        modalPremiumFeature1: "AI phát hiện đột quỵ tiên tiến",
+        modalPremiumFeature2: "Cảnh báo đa kênh (SMS, Call, Email)",
+        modalPremiumFeature3: "Giám sát sức khỏe qua camera",
+        modalPremiumFeature4: "Điều khiển bằng giọng nói",
+        modalPremiumFeature5: "Ứng dụng mobile cho gia đình",
+        modalPremiumFeature6: "Báo cáo chi tiết hàng ngày",
+        modalPremiumFeature7: "Hỗ trợ hotline ưu tiên",
+        modalPremiumFeature8: "Camera 4K Ultra HD",
+        modalPremiumFeature9: "Lưu trữ 30 ngày",
+        
+        modalEnterpriseFeature1: "Tích hợp hệ thống y tế",
+        modalEnterpriseFeature2: "Dashboard quản lý tập trung",
+        modalEnterpriseFeature3: "API và tích hợp tùy chỉnh",
+        modalEnterpriseFeature4: "Đào tạo nhân viên chuyên sâu",
+        modalEnterpriseFeature5: "Hỗ trợ kỹ thuật 24/7",
+        modalEnterpriseFeature6: "Báo cáo và phân tích nâng cao",
+        modalEnterpriseFeature7: "Camera không giới hạn",
+        modalEnterpriseFeature8: "Lưu trữ vĩnh viễn",
         
         // Common
         choosePlan: "Chọn Gói",
@@ -137,6 +220,7 @@ const languages = {
         addressLabel: "Địa chỉ",
         schoolAddress: "THPT Nguyễn Hữu Huân, 11 Đoàn Kết, Bình Thọ, Thủ Đức, TP.HCM",
         phoneLabel: "Điện thoại",
+        emailLabel: "Email",
         workingHoursLabel: "Giờ làm việc",
         workingHours: "Thứ 2 - Thứ 6: 8:00 - 17:00",
         contactFormTitle: "Gửi tin nhắn cho chúng tôi",
@@ -188,12 +272,20 @@ const languages = {
         backToHome: "Về trang chủ",
         continueSignup: "Đăng ký thêm",
         
+        // Processing and Status Messages
+        processingText: "Đang xử lý...",
+        successMessageText: "Cảm ơn bạn đã để lại thông tin với VieGrand. Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ tới để tư vấn chi tiết về dịch vụ chăm sóc sức khỏe người cao tuổi.",
+        
         // Language
         languageCode: "VI",
         languageDisplay: "VI"
     },
     
     en: {
+        // Page Titles
+        pageTitle: "Home",
+        signupPageTitle: "Sign Up - VieGrand",
+        
         // Header
         home: "Home",
         about: "About Us",
@@ -209,12 +301,6 @@ const languages = {
         heroDescription: "Early stroke detection app designed for the elderly <br> Where technology combines with medicine to bring you peace of mind.",
         exploreBtnText: "Explore Now",
         demoBtnText: "Watch Demo",
-        scrollText: "Scroll down to explore",        // Hero Section
-        heroTitle: "VIEGRAND",
-        heroSubtitle: "MODERN ELDERLY CARE SYSTEM",
-        heroDescription: "Early stroke detection application designed for elderly people <br> Where technology meets medicine to bring you peace of mind.",
-        exploreBtnText: "Explore Now",
-        demoBtnText: "View Demo",
         scrollText: "Scroll down to explore",
         
         // Main Content
@@ -226,6 +312,39 @@ const languages = {
         aboutTitle: "VIEGRAND",
         aboutSubtitle: "The story of young students with dreams to make a difference",
         aboutIntro: "VieGrand is a healthcare technology solution developed by students from Nguyen Huu Huan High School, aiming to contribute to building a humane and sustainable society where the elderly are comprehensively cared for both physically and mentally.",
+        
+        // About Us Story Section
+        aboutStoryTitle: "Starting from the Heart",
+        aboutStoryText1: "VieGrand was born from our real experiences - a group of students from Nguyen Huu Huan High School. Stemming from understanding the difficulties that grandparents and parents face in healthcare, our team recognized the potential of technology as an effective bridge to support and improve the quality of life for loved ones.",
+        aboutStoryText2: "We don't just want to create a technology product, but aspire to build a humane solution, helping Vietnamese families maintain and promote traditional filial piety in the digital age.",
+        aboutStoryQuote: "From sleepless nights researching AI technology, to unsuccessful trials, we are always driven by one belief: technology must serve human compassion.",
+        
+        // Mission & Vision
+        aboutMissionTitle: "Our Mission",
+        aboutMissionText: "Apply AI and IoT technology to create comprehensive healthcare solutions, helping the elderly live healthy and happy lives, and helping Vietnamese families maintain traditional filial piety in the digital age.",
+        aboutVisionTitle: "Our Vision",
+        aboutVisionText: "To become the leading smart, compassionate and reliable elderly care platform in Vietnam, contributing to building a society with heart, where every family is supported in caring for their loved ones.",
+        
+        // Values Section
+        valuesTitle: "Core Values",
+        valuesSubtitle: "The principles that guide all our activities",
+        value1Title: "Love & Care",
+        value1Desc: "Love and care are the solid foundation that creates every quality healthcare product",
+        value2Title: "Innovation & Creativity",
+        value2Desc: "Apply the most advanced technology to solve real problems in elderly care.",
+        value3Title: "Safety & Reliability",
+        value3Desc: "Ensure the highest reliability and security in all features and user data.",
+        value4Title: "Family Support",
+        value4Desc: "Not only caring for the elderly but also supporting children and grandchildren in fulfilling their filial responsibilities.",
+        value5Title: "Easy to Use",
+        value5Desc: "Simple interface design, suitable for the elderly and easy for the whole family.",
+        value6Title: "Vietnamese Culture Fit",
+        value6Desc: "Design specifically for Vietnamese families, respecting and promoting traditional filial piety values.",
+        
+        // Team Section
+        teamTitle: "VieGrand Team",
+        teamDescription: "We are young, enthusiastic students from Nguyen Huu Huan High School, with dreams of applying technology to create positive values for society.",
+        teamTagline: "VieGrand – CARING FOR LOVED ONES THE MODERN WAY",
         
         // About Us Features
         aboutFeature1Title: "Advanced Artificial Intelligence",
@@ -260,7 +379,7 @@ const languages = {
         feature4Desc: "Mobile app for children to monitor parents' health remotely. Video calls, messaging, sharing daily moments.",
         feature5Title: "Early Detection And Stroke Warning",
         feature5Desc: "Uses advanced AI technology to detect abnormal signs, early warning of stroke risk and emergency situations with high accuracy.",
-        feature6Title: "Voice Control Support",
+        feature6Title: "Vietnamese Voice Control",
         feature6Desc: "Vietnamese voice recognition technology helps elderly people easily control the entire application without complex screen operations.",
         
         // CTA Section
@@ -269,6 +388,20 @@ const languages = {
         ctaButton: "Sign Up Now",
         ctaButtonPrimary: "Sign Up Now", 
         ctaButtonSecondary: "View Pricing",
+        
+        // Technology Section
+        techTitle: "Advanced Technology",
+        techSubtitle: "Built on world-leading technology platforms",
+        deepLearning: "Deep Learning",
+        computerVision: "Computer Vision", 
+        cloudComputing: "Cloud Computing",
+        edgeSecurity: "Edge Security",
+        
+        // Statistics Section
+        aiAccuracy: "AI Accuracy",
+        responseTime: "Response Time",
+        continuousMonitoring: "Continuous Monitoring",
+        encryptionSecurity: "Encryption Security",
         
         // Pricing Section
         pricingTitle: "Service Pricing",
@@ -311,7 +444,45 @@ const languages = {
         enterpriseFeature6: "24/7 technical support",
         enterpriseFeature7: "Advanced reporting and analytics",
         
-        // Common
+        // Modal Content
+        modalBasicTitle: "Basic Plan",
+        modalBasicSubtitle: "Suitable for small families with basic monitoring needs",
+        modalPremiumTitle: "Premium Plan",
+        modalPremiumSubtitle: "Comprehensive solution with advanced AI and smart features",
+        modalEnterpriseTitle: "Enterprise Plan",
+        modalEnterpriseSubtitle: "For nursing homes and professional care facilities",
+        modalRegisterBtn: "Register Now",
+        modalContactBtn: "Contact for Consultation",
+        modalCloseBtn: "Close",
+        
+        // Modal Features
+        modalBasicFeature1: "Basic fall detection",
+        modalBasicFeature2: "SMS alerts",
+        modalBasicFeature3: "24/7 email support",
+        modalBasicFeature4: "Weekly reports",
+        modalBasicFeature5: "HD 1080p Camera",
+        modalBasicFeature6: "7-day storage",
+        
+        modalPremiumFeature1: "Advanced AI stroke detection",
+        modalPremiumFeature2: "Multi-channel alerts (SMS, Call, Email)",
+        modalPremiumFeature3: "Camera health monitoring",
+        modalPremiumFeature4: "Voice control",
+        modalPremiumFeature5: "Family mobile app",
+        modalPremiumFeature6: "Detailed daily reports",
+        modalPremiumFeature7: "Priority hotline support",
+        modalPremiumFeature8: "4K Ultra HD Camera",
+        modalPremiumFeature9: "30-day storage",
+        
+        modalEnterpriseFeature1: "Healthcare system integration",
+        modalEnterpriseFeature2: "Centralized management dashboard",
+        modalEnterpriseFeature3: "API and custom integrations",
+        modalEnterpriseFeature4: "In-depth staff training",
+        modalEnterpriseFeature5: "24/7 technical support",
+        modalEnterpriseFeature6: "Advanced reporting and analytics",
+        modalEnterpriseFeature7: "Unlimited cameras",
+        modalEnterpriseFeature8: "Permanent storage",
+        
+        // Common Elements
         choosePlan: "Choose Plan",
         contactUs: "Contact Us",
         freeTrial: "7-day free trial",
@@ -330,6 +501,7 @@ const languages = {
         addressLabel: "Address",
         schoolAddress: "Nguyen Huu Huan High School, 11 Doan Ket, Binh Tho, Thu Duc, Ho Chi Minh City",
         phoneLabel: "Phone",
+        emailLabel: "Email",
         workingHoursLabel: "Working Hours",
         workingHours: "Monday - Friday: 8:00 - 17:00",
         contactFormTitle: "Send us a message",
@@ -380,6 +552,10 @@ const languages = {
         successMessage: "Thank you for leaving your information with VieGrand. <strong>We will contact you within 24 hours</strong> to provide detailed consultation about elderly healthcare services.",
         backToHome: "Back to Home",
         continueSignup: "Register More",
+        
+        // Processing and Status Messages
+        processingText: "Processing...",
+        successMessageText: "Thank you for leaving your information with VieGrand. We will contact you within 24 hours to provide detailed consultation about elderly healthcare services.",
         
         // Language
         languageCode: "US",
@@ -450,6 +626,39 @@ function updateContent() {
     safeUpdateElement('[data-lang="aboutSubtitle"]', lang.aboutSubtitle);
     safeUpdateElement('[data-lang="aboutIntro"]', lang.aboutIntro);
     
+    // Update About Us Story Section
+    safeUpdateElement('[data-lang="aboutStoryTitle"]', lang.aboutStoryTitle);
+    safeUpdateElement('[data-lang="aboutStoryText1"]', lang.aboutStoryText1, true);
+    safeUpdateElement('[data-lang="aboutStoryText2"]', lang.aboutStoryText2, true);
+    safeUpdateElement('[data-lang="aboutStoryQuote"]', lang.aboutStoryQuote);
+
+    // Update Mission & Vision
+    safeUpdateElement('[data-lang="aboutMissionTitle"]', lang.aboutMissionTitle);
+    safeUpdateElement('[data-lang="aboutMissionText"]', lang.aboutMissionText, true);
+    safeUpdateElement('[data-lang="aboutVisionTitle"]', lang.aboutVisionTitle);
+    safeUpdateElement('[data-lang="aboutVisionText"]', lang.aboutVisionText, true);
+
+    // Update Values Section
+    safeUpdateElement('[data-lang="valuesTitle"]', lang.valuesTitle);
+    safeUpdateElement('[data-lang="valuesSubtitle"]', lang.valuesSubtitle);
+    safeUpdateElement('[data-lang="value1Title"]', lang.value1Title);
+    safeUpdateElement('[data-lang="value1Desc"]', lang.value1Desc, true);
+    safeUpdateElement('[data-lang="value2Title"]', lang.value2Title);
+    safeUpdateElement('[data-lang="value2Desc"]', lang.value2Desc, true);
+    safeUpdateElement('[data-lang="value3Title"]', lang.value3Title);
+    safeUpdateElement('[data-lang="value3Desc"]', lang.value3Desc, true);
+    safeUpdateElement('[data-lang="value4Title"]', lang.value4Title);
+    safeUpdateElement('[data-lang="value4Desc"]', lang.value4Desc, true);
+    safeUpdateElement('[data-lang="value5Title"]', lang.value5Title);
+    safeUpdateElement('[data-lang="value5Desc"]', lang.value5Desc, true);
+    safeUpdateElement('[data-lang="value6Title"]', lang.value6Title);
+    safeUpdateElement('[data-lang="value6Desc"]', lang.value6Desc, true);
+
+    // Update Team Section
+    safeUpdateElement('[data-lang="teamTitle"]', lang.teamTitle);
+    safeUpdateElement('[data-lang="teamDescription"]', lang.teamDescription, true);
+    safeUpdateElement('[data-lang="teamTagline"]', lang.teamTagline);
+    
     // Update About Us Features
     safeUpdateElement('[data-lang="aboutFeature1Title"]', lang.aboutFeature1Title);
     safeUpdateElement('[data-lang="aboutFeature1Desc"]', lang.aboutFeature1Desc);
@@ -490,6 +699,8 @@ function updateContent() {
     safeUpdateElement('[data-lang="ctaTitle"]', lang.ctaTitle);
     safeUpdateElement('[data-lang="ctaDesc"]', lang.ctaDesc);
     safeUpdateElement('[data-lang="ctaButton"]', lang.ctaButton);
+    safeUpdateElement('[data-lang="ctaButtonPrimary"]', lang.ctaButtonPrimary);
+    safeUpdateElement('[data-lang="ctaButtonSecondary"]', lang.ctaButtonSecondary);
     
     // Update Pricing Section
     safeUpdateElement('[data-lang="pricingTitle"]', lang.pricingTitle);
@@ -532,7 +743,43 @@ function updateContent() {
     safeUpdateElement('[data-lang="enterpriseFeature6"]', lang.enterpriseFeature6);
     safeUpdateElement('[data-lang="enterpriseFeature7"]', lang.enterpriseFeature7);
     
-    // Common Elements
+    // Modal Content
+    safeUpdateElement('[data-lang="modalBasicTitle"]', lang.modalBasicTitle);
+    safeUpdateElement('[data-lang="modalBasicSubtitle"]', lang.modalBasicSubtitle);
+    safeUpdateElement('[data-lang="modalPremiumTitle"]', lang.modalPremiumTitle);
+    safeUpdateElement('[data-lang="modalPremiumSubtitle"]', lang.modalPremiumSubtitle);
+    safeUpdateElement('[data-lang="modalEnterpriseTitle"]', lang.modalEnterpriseTitle);
+    safeUpdateElement('[data-lang="modalEnterpriseSubtitle"]', lang.modalEnterpriseSubtitle);
+    safeUpdateElement('[data-lang="modalRegisterBtn"]', lang.modalRegisterBtn);
+    safeUpdateElement('[data-lang="modalContactBtn"]', lang.modalContactBtn);
+    safeUpdateElement('[data-lang="modalCloseBtn"]', lang.modalCloseBtn);
+
+    // Modal Features
+    safeUpdateElement('[data-lang="modalBasicFeature1"]', lang.modalBasicFeature1);
+    safeUpdateElement('[data-lang="modalBasicFeature2"]', lang.modalBasicFeature2);
+    safeUpdateElement('[data-lang="modalBasicFeature3"]', lang.modalBasicFeature3);
+    safeUpdateElement('[data-lang="modalBasicFeature4"]', lang.modalBasicFeature4);
+    safeUpdateElement('[data-lang="modalBasicFeature5"]', lang.modalBasicFeature5);
+    safeUpdateElement('[data-lang="modalBasicFeature6"]', lang.modalBasicFeature6);
+    safeUpdateElement('[data-lang="modalPremiumFeature1"]', lang.modalPremiumFeature1);
+    safeUpdateElement('[data-lang="modalPremiumFeature2"]', lang.modalPremiumFeature2);
+    safeUpdateElement('[data-lang="modalPremiumFeature3"]', lang.modalPremiumFeature3);
+    safeUpdateElement('[data-lang="modalPremiumFeature4"]', lang.modalPremiumFeature4);
+    safeUpdateElement('[data-lang="modalPremiumFeature5"]', lang.modalPremiumFeature5);
+    safeUpdateElement('[data-lang="modalPremiumFeature6"]', lang.modalPremiumFeature6);
+    safeUpdateElement('[data-lang="modalPremiumFeature7"]', lang.modalPremiumFeature7);
+    safeUpdateElement('[data-lang="modalPremiumFeature8"]', lang.modalPremiumFeature8);
+    safeUpdateElement('[data-lang="modalPremiumFeature9"]', lang.modalPremiumFeature9);
+    safeUpdateElement('[data-lang="modalEnterpriseFeature1"]', lang.modalEnterpriseFeature1);
+    safeUpdateElement('[data-lang="modalEnterpriseFeature2"]', lang.modalEnterpriseFeature2);
+    safeUpdateElement('[data-lang="modalEnterpriseFeature3"]', lang.modalEnterpriseFeature3);
+    safeUpdateElement('[data-lang="modalEnterpriseFeature4"]', lang.modalEnterpriseFeature4);
+    safeUpdateElement('[data-lang="modalEnterpriseFeature5"]', lang.modalEnterpriseFeature5);
+    safeUpdateElement('[data-lang="modalEnterpriseFeature6"]', lang.modalEnterpriseFeature6);
+    safeUpdateElement('[data-lang="modalEnterpriseFeature7"]', lang.modalEnterpriseFeature7);
+    safeUpdateElement('[data-lang="modalEnterpriseFeature8"]', lang.modalEnterpriseFeature8);
+    
+    // Common
     safeUpdateElement('[data-lang="choosePlan"]', lang.choosePlan);
     safeUpdateElement('[data-lang="contactUs"]', lang.contactUs);
     safeUpdateElement('[data-lang="freeTrial"]', lang.freeTrial);
@@ -543,11 +790,6 @@ function updateContent() {
     safeUpdateElement('[data-lang="needHelpDesc"]', lang.needHelpDesc);
     safeUpdateElement('[data-lang="contactSupport"]', lang.contactSupport);
     
-    safeUpdateElement('[data-lang="missionTitle"]', lang.missionTitle);
-    safeUpdateElement('[data-lang="missionText"]', lang.missionText);
-    safeUpdateElement('[data-lang="visionTitle"]', lang.visionTitle);
-    safeUpdateElement('[data-lang="visionText"]', lang.visionText);
-    
     // Contact section
     safeUpdateElement('[data-lang="contactSubtitle"]', lang.contactSubtitle);
     safeUpdateElement('[data-lang="contactInfoTitle"]', lang.contactInfoTitle);
@@ -556,12 +798,14 @@ function updateContent() {
     safeUpdateElement('[data-lang="addressLabel"]', lang.addressLabel);
     safeUpdateElement('[data-lang="schoolAddress"]', lang.schoolAddress);
     safeUpdateElement('[data-lang="phoneLabel"]', lang.phoneLabel);
+    safeUpdateElement('[data-lang="emailLabel"]', lang.emailLabel);
     safeUpdateElement('[data-lang="workingHoursLabel"]', lang.workingHoursLabel);
     safeUpdateElement('[data-lang="workingHours"]', lang.workingHours);
     safeUpdateElement('[data-lang="contactFormTitle"]', lang.contactFormTitle);
     safeUpdateElement('[data-lang="nameLabel"]', lang.nameLabel);
     safeUpdateElement('[data-lang="subjectLabel"]', lang.subjectLabel);
     safeUpdateElement('[data-lang="messageLabel"]', lang.messageLabel);
+    safeUpdateElement('[data-lang="messagePlaceholder"]', lang.messagePlaceholder);
     safeUpdateElement('[data-lang="sendMessage"]', lang.sendMessage);
     safeUpdateElement('[data-lang="aboutSchoolTitle"]', lang.aboutSchoolTitle);
     safeUpdateElement('[data-lang="aboutSchoolDesc"]', lang.aboutSchoolDesc);
@@ -588,6 +832,7 @@ function updateContent() {
     safeUpdateElement('[data-lang="other"]', lang.other);
     safeUpdateElement('[data-lang="addressLabel"]', lang.addressLabel);
     safeUpdateElement('[data-lang="needsLabel"]', lang.needsLabel);
+    safeUpdateElement('[data-lang="needsPlaceholder"]', lang.needsPlaceholder);
     safeUpdateElement('[data-lang="termsText"]', lang.termsText);
     safeUpdateElement('[data-lang="termsLink"]', lang.termsLink);
     safeUpdateElement('[data-lang="andText"]', lang.andText);
@@ -599,6 +844,10 @@ function updateContent() {
     safeUpdateElement('[data-lang="successMessage"]', lang.successMessage, true); // Allow HTML for <strong> tag
     safeUpdateElement('[data-lang="backToHome"]', lang.backToHome);
     safeUpdateElement('[data-lang="continueSignup"]', lang.continueSignup);
+    
+    // Processing and Status Messages
+    safeUpdateElement('[data-lang="processingText"]', lang.processingText);
+    safeUpdateElement('[data-lang="successMessageText"]', lang.successMessageText, true); // Allow HTML for <strong> tag
     
     // Handle placeholders
     const messagePlaceholderElement = document.querySelector('[data-lang-placeholder="messagePlaceholder"]');
@@ -616,8 +865,34 @@ function updateContent() {
     safeUpdateElement('[data-lang="ctaButtonPrimary"]', lang.ctaButtonPrimary);
     safeUpdateElement('[data-lang="ctaButtonSecondary"]', lang.ctaButtonSecondary);
     
+    // Update Technology Section
+    safeUpdateElement('[data-lang="techTitle"]', lang.techTitle);
+    safeUpdateElement('[data-lang="techSubtitle"]', lang.techSubtitle);
+    safeUpdateElement('[data-lang="deepLearning"]', lang.deepLearning);
+    safeUpdateElement('[data-lang="computerVision"]', lang.computerVision);
+    safeUpdateElement('[data-lang="cloudComputing"]', lang.cloudComputing);
+    safeUpdateElement('[data-lang="edgeSecurity"]', lang.edgeSecurity);
+    
+    // Update Statistics Section
+    safeUpdateElement('[data-lang="aiAccuracy"]', lang.aiAccuracy);
+    safeUpdateElement('[data-lang="responseTime"]', lang.responseTime);
+    safeUpdateElement('[data-lang="continuousMonitoring"]', lang.continuousMonitoring);
+    safeUpdateElement('[data-lang="encryptionSecurity"]', lang.encryptionSecurity);
+    
     // Update page title
-    document.title = lang.homePageTitle;
+    document.title = lang.pageTitle;
+    
+    // Update signup page title
+    const signupPageTitle = document.querySelector('title');
+    if (signupPageTitle && window.location.pathname.includes('signup')) {
+        signupPageTitle.textContent = lang.signupPageTitle;
+    }
+    
+    // Update mission and vision
+    safeUpdateElement('[data-lang="missionTitle"]', lang.missionTitle);
+    safeUpdateElement('[data-lang="missionText"]', lang.missionText);
+    safeUpdateElement('[data-lang="visionTitle"]', lang.visionTitle);
+    safeUpdateElement('[data-lang="visionText"]', lang.visionText);
 }
 
 // Update language button
