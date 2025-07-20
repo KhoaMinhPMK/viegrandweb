@@ -1,0 +1,539 @@
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Google Fonts - Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+    /* Contact Section Styles */
+    .contact-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .contact-section::before {
+        content: '';
+        position: absolute;
+        top: -30%;
+        right: -20%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(0, 74, 173, 0.03) 0%, transparent 70%);
+        border-radius: 50%;
+    }
+
+    .contact-section::after {
+        content: '';
+        position: absolute;
+        bottom: -40%;
+        left: -15%;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(64, 156, 255, 0.03) 0%, transparent 70%);
+        border-radius: 50%;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Header Section */
+    .section-header {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .section-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: #004aad;
+        margin-bottom: 20px;
+        font-family: 'Inter', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        margin: 20px auto 0;
+        border-radius: 2px;
+    }
+
+    .section-subtitle {
+        font-size: 1.3rem;
+        color: #4a5568;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+        font-weight: 500;
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* Contact Content */
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+        margin-bottom: 60px;
+    }
+
+    /* Contact Info */
+    .contact-info {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(15px);
+        padding: 50px 40px;
+        border-radius: 24px;
+        box-shadow: 0 25px 50px rgba(0, 74, 173, 0.08);
+        border: 1px solid rgba(0, 74, 173, 0.1);
+    }
+
+    .contact-info h3 {
+        font-size: 2rem;
+        color: #004aad;
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        padding: 20px;
+        background: rgba(0, 74, 173, 0.02);
+        border-radius: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+        background: rgba(0, 74, 173, 0.05);
+        transform: translateX(5px);
+    }
+
+    .contact-item i {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        color: white;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .contact-details h4 {
+        font-size: 1.1rem;
+        color: #1a202c;
+        margin-bottom: 5px;
+        font-weight: 600;
+        font-family: 'Inter', sans-serif;
+        text-align: left;
+    }
+
+    .contact-details p {
+        color: #4a5568;
+        margin: 0;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(15px);
+        padding: 50px 40px;
+        border-radius: 24px;
+        box-shadow: 0 25px 50px rgba(0, 74, 173, 0.08);
+        border: 1px solid rgba(0, 74, 173, 0.1);
+    }
+
+    .contact-form h3 {
+        font-size: 2rem;
+        color: #004aad;
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #1a202c;
+        font-weight: 600;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 15px 20px;
+        border: 2px solid rgba(0, 74, 173, 0.1);
+        border-radius: 12px;
+        font-size: 1rem;
+        font-family: 'Inter', sans-serif;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.8);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #004aad;
+        box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+        background: white;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 18px 30px;
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-family: 'Inter', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .submit-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.6s ease;
+    }
+
+    .submit-btn:hover::before {
+        left: 100%;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 74, 173, 0.3);
+    }
+
+    /* Map Section */
+    .map-section {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(15px);
+        padding: 50px 40px;
+        border-radius: 24px;
+        box-shadow: 0 25px 50px rgba(0, 74, 173, 0.08);
+        border: 1px solid rgba(0, 74, 173, 0.1);
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .map-section h3 {
+        font-size: 2rem;
+        color: #004aad;
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .map-section p {
+        color: #4a5568;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .school-info {
+        background: rgba(0, 74, 173, 0.05);
+        padding: 30px;
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+
+    .school-info h4 {
+        color: #004aad;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+
+    .school-info p {
+        color: #4a5568;
+        font-size: 1rem;
+        margin: 8px 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+        .contact-content {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+        }
+
+        .contact-info,
+        .contact-form {
+            padding: 40px 30px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+        }
+
+        .contact-info,
+        .contact-form,
+        .map-section {
+            padding: 30px 25px;
+        }
+
+        .contact-item {
+            padding: 15px;
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+            margin-right: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .contact-info h3,
+        .contact-form h3,
+        .map-section h3 {
+            font-size: 1.6rem;
+        }
+
+        .contact-info,
+        .contact-form,
+        .map-section {
+            padding: 25px 20px;
+        }
+    }
+</style>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2 class="section-title" data-lang="contact">Liên hệ</h2>
+            <p class="section-subtitle" data-lang="contactSubtitle">
+                Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ về VieGrand - giải pháp chăm sóc sức khỏe thông minh
+            </p>
+        </div>
+
+        <!-- Contact Content -->
+        <div class="contact-content">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3 data-lang="contactInfoTitle">Thông tin liên hệ</h3>
+
+                <div class="contact-item">
+                    <i class="fas fa-school"></i>
+                    <div class="contact-details">
+                        <h4 data-lang="schoolLabel">Trường học</h4>
+                        <p data-lang="schoolName">THPT Nguyễn Hữu Huân</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-details">
+                        <h4 data-lang="addressLabel">Địa chỉ</h4>
+                        <p data-lang="schoolAddress">THPT Nguyễn Hữu Huân, 11 Đoàn Kết, Bình Thọ</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <p>viegrand.contact@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="contact-details">
+                        <h4 data-lang="phoneLabel">Điện thoại</h4>
+                        <p>+84 xxx xxx xxx</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="contact-details">
+                        <h4 data-lang="workingHoursLabel">Giờ làm việc</h4>
+                        <p data-lang="workingHours">Thứ 2 - Thứ 6: 8:00 - 17:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3 data-lang="contactFormTitle">Gửi tin nhắn cho chúng tôi</h3>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" data-lang="nameLabel">Họ và tên *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" data-lang="phoneLabel">Số điện thoại</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" data-lang="subjectLabel">Chủ đề *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" data-lang="messageLabel">Nội dung tin nhắn *</label>
+                        <textarea id="message" name="message" required data-lang-placeholder="messagePlaceholder" placeholder="Nhập nội dung tin nhắn của bạn..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" data-lang="sendMessage">
+                        <i class="fas fa-paper-plane"></i> Gửi tin nhắn
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- School Information -->
+        <!-- <div class="map-section">
+            <h3 data-lang="aboutSchoolTitle">Về trường THPT Nguyễn Hữu Huân</h3>
+            <p data-lang="aboutSchoolDesc">
+                VieGrand được phát triển bởi đội ngũ học sinh tài năng tại trường THPT Nguyễn Hữu Huân
+            </p>
+            
+            <div class="school-info">
+                <h4 data-lang="projectTeamTitle">Đội ngũ phát triển dự án</h4>
+                <p data-lang="teamDescription">
+                    Chúng tôi là nhóm học sinh đam mê công nghệ và y học, mong muốn đóng góp vào việc 
+                    chăm sóc sức khỏe người cao tuổi thông qua các giải pháp thông minh.
+                </p>
+                <p data-lang="projectGoal">
+                    <strong>Mục tiêu dự án:</strong> Ứng dụng công nghệ AI để phát hiện sớm đột quỵ và 
+                    các tình huống khẩn cấp, góp phần bảo vệ sức khỏe người cao tuổi.
+                </p>
+            </div>
+        </div> -->
+    </div>
+</section>
+
+<script>
+    // Contact form submission handler
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        // Simple form validation
+        if (!data.name || !data.email || !data.subject || !data.message) {
+            alert('Vui lòng điền đầy đủ thông tin bắt buộc!');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+            alert('Vui lòng nhập địa chỉ email hợp lệ!');
+            return;
+        }
+        
+        // Simulate form submission
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+            alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.');
+            this.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }, 2000);
+    });
+
+    // Smooth animations for contact items
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Apply animation to contact items
+    document.addEventListener('DOMContentLoaded', () => {
+        const contactItems = document.querySelectorAll('.contact-item, .contact-form, .contact-info');
+        contactItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+    });
+</script>

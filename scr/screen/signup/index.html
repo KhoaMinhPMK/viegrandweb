@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký - VieGrand</title>
+    <link rel="icon" type="image/png" href="../../../assets/favicon.png">
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, 
+                rgba(0, 74, 173, 0.05) 0%, 
+                rgba(0, 102, 255, 0.08) 30%,
+                rgba(64, 156, 255, 0.03) 70%,
+                rgba(255, 255, 255, 0.95) 100%), 
+                url('../../../assets/bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .signup-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 20px 80px rgba(0, 74, 173, 0.15),
+                0 8px 32px rgba(0, 102, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            padding: 50px;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo {
+            display: block;
+            margin: 0 auto 30px;
+            height: 100px;
+            width: auto;
+        }
+        
+        .signup-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .signup-header h1 {
+            color: #004aad;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.5px;
+        }
+        
+        .signup-header p {
+            color: #666;
+            font-size: 1rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .signup-form {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e6ed;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #004aad;
+            box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin: 0;
+            accent-color: #004aad;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .checkbox-group label {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+            font-weight: 400;
+        }
+        
+        .checkbox-group a {
+            color: #004aad;
+            text-decoration: none;
+        }
+        
+        .checkbox-group a:hover {
+            text-decoration: underline;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #003380 0%, #004aad 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 74, 173, 0.3);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .login-link {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e6ed;
+        }
+        
+        .login-link p {
+            color: #666;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        .login-link a {
+            color: #004aad;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .login-link a:hover {
+            color: #0066ff;
+            text-decoration: underline;
+        }
+        
+        .back-home {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            border-radius: 25px;
+            color: #004aad;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 74, 173, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        .back-home:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateX(-3px);
+            box-shadow: 0 5px 15px rgba(0, 74, 173, 0.15);
+        }
+        
+        /* Success Modal */
+        .success-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .success-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .success-content {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            transform: scale(0.8) translateY(30px);
+            transition: transform 0.4s ease;
+            box-shadow: 0 25px 100px rgba(0, 74, 173, 0.3);
+        }
+        
+        .success-modal.show .success-content {
+            transform: scale(1) translateY(0);
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: white;
+            font-size: 2rem;
+            animation: checkmark 0.6s ease-out 0.2s both;
+        }
+        
+        @keyframes checkmark {
+            0% {
+                transform: scale(0) rotate(45deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(45deg);
+                opacity: 1;
+            }
+        }
+        
+        .success-content h2 {
+            color: #004aad;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+        
+        .success-content p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 0 0 30px 0;
+        }
+        
+        .success-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .success-btn {
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .success-btn.primary {
+            background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+            color: white;
+        }
+        
+        .success-btn.primary:hover {
+            background: linear-gradient(135deg, #003380 0%, #004aad 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 74, 173, 0.25);
+        }
+        
+        .success-btn.secondary {
+            background: rgba(0, 74, 173, 0.1);
+            color: #004aad;
+            border: 2px solid rgba(0, 74, 173, 0.2);
+        }
+        
+        .success-btn.secondary:hover {
+            background: rgba(0, 74, 173, 0.15);
+            border-color: rgba(0, 74, 173, 0.3);
+        }
+        
+        /* Loading state */
+        .submit-btn.loading {
+            pointer-events: none;
+            position: relative;
+        }
+        
+        .submit-btn.loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: spin 1s linear infinite;
+        }
+        
+        .submit-btn.loading span {
+            opacity: 0;
+        }
+        
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .signup-container {
+                padding: 30px 20px;
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .logo {
+                height: 80px;
+            }
+            
+            .signup-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .back-home {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 20px;
+                display: inline-flex;
+            }
+            
+            .success-content {
+                padding: 30px 20px;
+            }
+            
+            .success-actions {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .signup-container {
+                padding: 25px 15px;
+            }
+            
+            .logo {
+                height: 70px;
+            }
+            
+            .signup-header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 12px 15px;
+            }
+            
+            .submit-btn {
+                padding: 15px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../home/index.html" class="back-home" data-lang="backHome">
+        ← Về trang chủ
+    </a>
+    
+    <div class="signup-container">
+        <img src="../../../assets/logo.png" alt="VieGrand Logo" class="logo">
+        
+        <div class="signup-header">
+            <h1 data-lang="signupTitle">Đăng ký nhận tư vấn</h1>
+            <p data-lang="signupSubtitle">Để lại thông tin để nhận tư vấn miễn phí về dịch vụ chăm sóc sức khỏe người cao tuổi từ VieGrand</p>
+        </div>
+        
+        <form class="signup-form" id="signupForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName" data-lang="firstNameLabel">Họ và tên đệm</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName" data-lang="lastNameLabel">Tên</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" data-lang="emailLabel">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone" data-lang="phoneLabel">Số điện thoại</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="age" data-lang="ageLabel">Tuổi của bạn</label>
+                    <select id="age" name="age" required>
+                        <option value="" data-lang="selectAge">Chọn độ tuổi</option>
+                        <option value="18-25">18-25</option>
+                        <option value="26-35">26-35</option>
+                        <option value="36-45">36-45</option>
+                        <option value="46-55">46-55</option>
+                        <option value="56-65">56-65</option>
+                        <option value="65+">65+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="relationship" data-lang="relationshipLabel">Bạn là</label>
+                    <select id="relationship" name="relationship" required>
+                        <option value="" data-lang="selectRelationship">Chọn mối quan hệ</option>
+                        <option value="self" data-lang="self">Tôi tự sử dụng</option>
+                        <option value="child" data-lang="child">Con/cháu người cao tuổi</option>
+                        <option value="spouse" data-lang="spouse">Vợ/chồng người cao tuổi</option>
+                        <option value="caregiver" data-lang="caregiver">Người chăm sóc</option>
+                        <option value="other" data-lang="other">Khác</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="address" data-lang="addressLabel">Địa chỉ</label>
+                <input type="text" id="address" name="address" placeholder="Ví dụ: 123 Đường ABC, Quận 1, TP.HCM" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="needs" data-lang="needsLabel">Nhu cầu chăm sóc sức khỏe</label>
+                <textarea id="needs" name="needs" placeholder="Ví dụ: Theo dõi huyết áp, phát hiện sớm đột quỵ, tư vấn dinh dưỡng..." data-lang="needsPlaceholder"></textarea>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">
+                    <span data-lang="termsText">Tôi đồng ý với </span>
+                    <a href="#" data-lang="termsLink">Điều khoản sử dụng</a>
+                    <span data-lang="andText"> và </span>
+                    <a href="#" data-lang="privacyLink">Chính sách bảo mật</a>
+                    <span data-lang="ofViegrand"> của VieGrand</span>
+                </label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter" data-lang="newsletterText">
+                    Tôi muốn nhận thông tin về các tính năng mới và khuyến mãi từ VieGrand
+                </label>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                <span data-lang="signupBtn">Gửi thông tin nhận tư vấn</span>
+            </button>
+        </form>
+    </div>
+    
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-content">
+            <div class="success-icon">✓</div>
+            <h2 data-lang="successTitle">Đăng ký thành công!</h2>
+            <p data-lang="successMessage">
+                Cảm ơn bạn đã để lại thông tin với VieGrand. <strong>Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ tới</strong> để tư vấn chi tiết về dịch vụ chăm sóc sức khỏe người cao tuổi.
+            </p>
+            <div class="success-actions">
+                <a href="../home/index.html" class="success-btn primary" data-lang="backToHome">Về trang chủ</a>
+                <button onclick="closeSuccessModal()" class="success-btn secondary" data-lang="continueSignup">Đăng ký thêm</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Language Support -->
+    <script src="../../js/language.js"></script>
+    
+    <script>
+        // Form submission handling
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.classList.add('loading');
+            submitBtn.innerHTML = '<span>Đang xử lý...</span>';
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Reset button
+                submitBtn.classList.remove('loading');
+                submitBtn.innerHTML = originalText;
+                
+                // Show success modal
+                document.getElementById('successModal').classList.add('show');
+                
+                // Reset form
+                document.getElementById('signupForm').reset();
+            }, 2000);
+        });
+        
+        // Close success modal
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.remove('show');
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSuccessModal();
+            }
+        });
+        
+        // Language toggle function
+        function switchLanguage() {
+            if (typeof window.switchLanguageGlobal === 'function') {
+                window.switchLanguageGlobal();
+            }
+        }
+        
+        // Initialize language system when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initializeLanguage === 'function') {
+                initializeLanguage();
+            }
+        });
+        
+        // Form validation enhancements
+        document.querySelectorAll('input[required], select[required]').forEach(field => {
+            field.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    this.style.borderColor = '#ef4444';
+                } else {
+                    this.style.borderColor = '#22c55e';
+                }
+            });
+            
+            field.addEventListener('input', function() {
+                if (this.value.trim()) {
+                    this.style.borderColor = '#e0e6ed';
+                }
+            });
+        });
+        
+        // Email validation
+        document.getElementById('email').addEventListener('blur', function() {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (this.value && !emailRegex.test(this.value)) {
+                this.style.borderColor = '#ef4444';
+            } else if (this.value) {
+                this.style.borderColor = '#22c55e';
+            }
+        });
+        
+        // Phone validation
+        document.getElementById('phone').addEventListener('blur', function() {
+            const phoneRegex = /^[0-9+\-\s()]+$/;
+            if (this.value && !phoneRegex.test(this.value)) {
+                this.style.borderColor = '#ef4444';
+            } else if (this.value) {
+                this.style.borderColor = '#22c55e';
+            }
+        });
+    </script>
+</body>
+</html>

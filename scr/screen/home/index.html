@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="icon" type="image/png" href="../../../assets/favicon.png">
+    <!-- Google Fonts - Inter: Font hiện đại hỗ trợ tiếng Việt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            scroll-behavior: smooth;
+            font-weight: 400;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, 
+                rgba(0, 74, 173, 0.4) 0%, 
+                rgba(0, 102, 255, 0.3) 50%, 
+                rgba(64, 156, 255, 0.2) 100%), 
+                url('../../../assets/hero.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 0;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 74, 173, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 102, 255, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+            max-width: 900px;
+            padding: 0 40px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+            animation: fadeInUp 1.4s ease-out;
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #ffffff 0%, #e8f4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1.6s ease-out;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 1.8s ease-out;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 2s ease-out;
+        }
+        
+        .hero-button-primary {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+            color: #004aad;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-button-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .hero-button-primary:hover::before {
+            left: 100%;
+        }
+        
+        .hero-button-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+        }
+        
+        .hero-button-secondary {
+            display: inline-block;
+            padding: 18px 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-button-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        
+        .hero-scroll-indicator::after {
+            content: '↓';
+            display: block;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: px;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Component Styles */
+        .header-container {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 96%;
+            max-width: 1400px;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.15) 0%, 
+                rgba(255, 255, 255, 0.25) 30%,
+                rgba(255, 255, 255, 0.20) 60%,
+                rgba(255, 255, 255, 0.12) 100%);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            box-shadow: 
+                0 16px 64px rgba(0, 74, 173, 0.12),
+                0 8px 32px rgba(0, 102, 255, 0.08),
+                0 4px 16px rgba(64, 156, 255, 0.06),
+                inset 0 -1px 0 rgba(0, 74, 173, 0.05);
+            z-index: 1000;
+            border-radius: 80px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .header-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 215, 0, 0.08) 0%,
+                rgba(255, 255, 255, 0.15) 25%,
+                rgba(64, 156, 255, 0.05) 50%,
+                rgba(255, 255, 255, 0.12) 75%,
+                rgba(255, 215, 0, 0.06) 100%);
+            border-radius: 80px;
+            pointer-events: none;
+            opacity: 0.8;
+            animation: shimmer 4s ease-in-out infinite alternate;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                background: linear-gradient(135deg, 
+                    rgba(255, 215, 0, 0.08) 0%,
+                    rgba(255, 255, 255, 0.15) 25%,
+                    rgba(64, 156, 255, 0.05) 50%,
+                    rgba(255, 255, 255, 0.12) 75%,
+                    rgba(255, 215, 0, 0.06) 100%);
+                opacity: 0.8;
+            }
+            100% {
+                background: linear-gradient(135deg, 
+                    rgba(255, 215, 0, 0.12) 0%,
+                    rgba(255, 255, 255, 0.20) 25%,
+                    rgba(64, 156, 255, 0.08) 50%,
+                    rgba(255, 255, 255, 0.18) 75%,
+                    rgba(255, 215, 0, 0.10) 100%);
+                opacity: 1;
+            }
+        }
+        
+        .header-container:hover {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.25) 0%, 
+                rgba(255, 255, 255, 0.35) 30%,
+                rgba(255, 255, 255, 0.30) 60%,
+                rgba(255, 255, 255, 0.22) 100%);
+            box-shadow: 
+                0 24px 80px rgba(0, 74, 173, 0.18),
+                0 12px 40px rgba(0, 102, 255, 0.12),
+                0 6px 20px rgba(64, 156, 255, 0.08),
+                inset 0 -2px 0 rgba(0, 74, 173, 0.08);
+            transform: translateX(-50%) translateY(-2px);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 40px;
+            height: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            height: 65px;
+            width: auto;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 8px rgba(0, 74, 173, 0.1));
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 12px rgba(0, 74, 173, 0.2));
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 10px;
+        }
+        
+        .nav-menu li {
+            margin: 0;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #2c3e50;
+            padding: 14px 24px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, 
+                rgba(0, 74, 173, 0.08) 0%, 
+                rgba(0, 102, 255, 0.06) 50%, 
+                rgba(64, 156, 255, 0.04) 100%);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 74, 173, 0.1);
+            box-shadow: 
+                0 2px 8px rgba(0, 74, 173, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+        
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+            border-radius: 30px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+        
+        .nav-menu a:hover::before {
+            opacity: 1;
+        }
+        
+        .nav-menu a:hover {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 
+                0 8px 25px rgba(0, 74, 173, 0.25),
+                0 4px 12px rgba(0, 102, 255, 0.15);
+            border-color: rgba(0, 74, 173, 0.2);
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .language-toggle {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 74, 173, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 74, 173, 0.1);
+        }
+        
+        .language-toggle:hover {
+            background: rgba(255, 255, 255, 1);
+            border-color: rgba(0, 74, 173, 0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 74, 173, 0.15);
+        }
+        
+        .language-toggle .flag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #004aad;
+            line-height: 1;
+            letter-spacing: 0.5px;
+        }
+        
+        .language-toggle .lang-code {
+            display: none;
+        }
+        
+        .auth-btn {
+            padding: 14px 32px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            backdrop-filter: blur(12px);
+            display: inline-block;
+            overflow: hidden;
+        }
+        
+        .auth-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg) translateX(-100%);
+            transition: transform 0.8s ease;
+        }
+        
+        .auth-btn:hover::before {
+            transform: rotate(45deg) translateX(100%);
+        }
+        
+        .login-btn {
+            background: linear-gradient(135deg, 
+                rgba(0, 74, 173, 0.08) 0%, 
+                rgba(0, 102, 255, 0.06) 100%);
+            color: #004aad;
+            border: 2px solid rgba(0, 74, 173, 0.15);
+            box-shadow: 
+                0 4px 12px rgba(0, 74, 173, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+        
+        .login-btn:hover {
+            background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 
+                0 12px 40px rgba(0, 74, 173, 0.25),
+                0 6px 20px rgba(0, 102, 255, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border-color: transparent;
+        }
+        
+        .signup-btn {
+            background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                0 6px 20px rgba(0, 74, 173, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+        
+        .signup-btn:hover {
+            background: linear-gradient(135deg, #003380 0%, #004aad 100%);
+            transform: translateY(-3px);
+            box-shadow: 
+                0 15px 45px rgba(0, 74, 173, 0.35),
+                0 8px 25px rgba(0, 102, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .header-container {
+                width: 97%;
+            }
+            
+            .nav-menu {
+                gap: 8px;
+            }
+            
+            .nav-menu a {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+            
+            .auth-btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+                letter-spacing: 0.3px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                width: 98%;
+                top: 10px;
+                border-radius: 30px;
+            }
+            
+            .header-content {
+                height: 50px;
+                padding: 5px 25px;
+            }
+            
+            .logo {
+                height: 55px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .auth-buttons {
+                gap: 8px;
+            }
+            
+            .language-toggle {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .language-toggle .flag {
+                font-size: 0.75rem;
+            }
+            
+            .auth-btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+                border-radius: 25px;
+            }
+            
+            .hero-title {
+                font-size: 3.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero-button-primary,
+            .hero-button-secondary {
+                padding: 16px 35px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-container {
+                width: 99%;
+                top: 8px;
+                border-radius: 25px;
+            }
+            
+            .header-content {
+                height: 45px;
+                padding: 4px 20px;
+            }
+            
+            .logo {
+                height: 45px;
+            }
+            
+            .auth-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+                border-radius: 20px;
+            }
+            
+            .language-toggle {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .language-toggle .flag {
+                font-size: 0.7rem;
+            }
+            
+            .hero-content {
+                padding: 0 20px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .hero-button-primary,
+            .hero-button-secondary {
+                padding: 14px 30px;
+                font-size: 0.95rem;
+            }
+            
+            .hero-scroll-indicator {
+                bottom: 20px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Component -->
+    <header class="header-container">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="../../../assets/logo_header.png" alt="Logo" class="logo">
+            </div>
+            
+            <nav class="navigation">
+                <ul class="nav-menu">
+                    <li><a href="#hero" data-lang="home">Trang Chủ</a></li>
+                    <li><a href="#about" data-lang="about">Về chúng tôi</a></li>
+                    <li><a href="#features" data-lang="features">Chức năng</a></li>
+                    <li><a href="#pricing" data-lang="pricing">Giá cả</a></li>
+                    <li><a href="#contact" data-lang="contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="auth-buttons">
+                <!-- <a href="../login/index.html" class="auth-btn login-btn" data-lang="login">Đăng nhập</a> -->
+                <a href="../signup/index.html" class="auth-btn signup-btn" data-lang="signup">Đăng ký</a>
+                <button class="language-toggle" onclick="switchLanguage()" title="Switch Language">
+                    <span class="flag">VI</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <!-- <div class="hero-badge">✨ Trải nghiệm đẳng cấp thế giới</div> -->
+            <h1 class="hero-title">
+                <span data-lang="heroTitle">VIEGRAND</span><br>
+                <span data-lang="heroSubtitle">CHĂM SÓC CHA MẸ THEO CÁC HIỆN ĐẠI</span>
+            </h1>
+            <p class="hero-subtitle" data-lang="heroDescription">
+                Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br> Nơi công nghệ kết hợp cùng y học để mang đến sự an tâm cho bạn.
+            </p>
+            <div class="hero-buttons">
+                <a href="#features" class="hero-button-primary" data-lang="exploreBtnText">Khám phá ngay</a>
+                <a href="#demo" class="hero-button-secondary" data-lang="demoBtnText">Xem Demo</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator" data-lang="scrollText">
+            Cuộn xuống để khám phá
+        </div>
+    </section>
+
+    <!-- About Us Section - Loaded from external file -->
+    <div id="about-us-container">
+        <!-- Debug section - will be replaced when external content loads -->
+        <section id="about-debug" style="background: #f0f8ff; padding: 60px 20px; text-align: center;">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="color: #004aad; font-size: 2.5rem; margin-bottom: 20px;">Loading About Section...</h2>
+                <p style="color: #666; font-size: 1.2rem;">If this message persists, there may be an issue loading the external content.</p>
+                
+                <!-- Test grid to verify 3-column layout -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; max-width: 100%;">
+                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,74,173,0.1);">
+                        <div style="width: 60px; height: 60px; background: #004aad; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">1</div>
+                        <h3 style="color: #004aad; margin-bottom: 10px;">Test Column 1</h3>
+                        <p style="color: #666; line-height: 1.6;">This tests the 3-column grid layout to ensure it displays correctly.</p>
+                    </div>
+                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,74,173,0.1);">
+                        <div style="width: 60px; height: 60px; background: #0066ff; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">2</div>
+                        <h3 style="color: #004aad; margin-bottom: 10px;">Test Column 2</h3>
+                        <p style="color: #666; line-height: 1.6;">This tests the 3-column grid layout to ensure it displays correctly.</p>
+                    </div>
+                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,74,173,0.1);">
+                        <div style="width: 60px; height: 60px; background: #409cff; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">3</div>
+                        <h3 style="color: #004aad; margin-bottom: 10px;">Test Column 3</h3>
+                        <p style="color: #666; line-height: 1.6;">This tests the 3-column grid layout to ensure it displays correctly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Features Section - Loaded from external file -->
+    <div id="features-container"></div>
+
+    <!-- Pricing Section - Loaded from external file -->
+    <div id="pricing-container"></div>
+
+    <!-- Contact Section - Loaded from external file -->
+    <div id="contact-container"></div>
+    
+    <!-- Language JavaScript -->
+    <script src="../../js/language.js"></script>
+    
+    <!-- Load About Us Section -->
+    <script>
+        // Function to load external HTML content
+        function loadAboutUs() {
+            console.log('Starting to load aboutus.html...');
+            return fetch('./aboutus.html')
+                .then(response => {
+                    console.log('Fetch response status:', response.status);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    console.log('HTML content loaded, length:', html.length);
+                    document.getElementById('about-us-container').innerHTML = html;
+                    console.log('About Us section loaded successfully');
+                    
+                    // Force show the section in case of CSS issues
+                    const aboutSection = document.getElementById('about');
+                    if (aboutSection) {
+                        aboutSection.style.display = 'block';
+                        aboutSection.style.visibility = 'visible';
+                        aboutSection.style.opacity = '1';
+                        console.log('About section forced to display');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading about us section:', error);
+                    // Fallback content if loading fails
+                    document.getElementById('about-us-container').innerHTML = `
+                        <section id="about" class="about-section" style="display: block; visibility: visible; opacity: 1;">
+                            <div class="container">
+                                <div class="section-header">
+                                    <h2 class="section-title" data-lang="aboutTitle">Về VieGrand (Fallback)</h2>
+                                    <p class="section-subtitle" data-lang="aboutSubtitle">
+                                        Chúng tôi là những người tiên phong trong việc ứng dụng công nghệ để bảo vệ sức khỏe người cao tuổi.
+                                    </p>
+                                </div>
+                                <div class="features-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0;">
+                                    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
+                                        <h3>Test Feature 1</h3>
+                                        <p>This is a test feature to verify layout.</p>
+                                    </div>
+                                    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
+                                        <h3>Test Feature 2</h3>
+                                        <p>This is a test feature to verify layout.</p>
+                                    </div>
+                                    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
+                                        <h3>Test Feature 3</h3>
+                                        <p>This is a test feature to verify layout.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    `;
+                });
+        }
+
+        function loadFeatures() {
+            return fetch('./features.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('features-container').innerHTML = html;
+                    console.log('Features section loaded successfully');
+                })
+                .catch(error => {
+                    console.error('Error loading features section:', error);
+                    // Fallback content if loading fails
+                    document.getElementById('features-container').innerHTML = `
+                        <section id="features" class="features-section">
+                            <div class="container">
+                                <div class="section-header">
+                                    <h2 class="section-title" data-lang="featuresTitle">Tính Năng Nổi Bật</h2>
+                                    <p class="section-subtitle" data-lang="featuresSubtitle">
+                                        VieGrand tích hợp những công nghệ tiên tiến nhất để mang đến trải nghiệm chăm sóc sức khỏe toàn diện.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    `;
+                });
+        }
+
+        function loadPricing() {
+            return fetch('./pricing.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('pricing-container').innerHTML = html;
+                    console.log('Pricing section loaded successfully');
+                })
+                .catch(error => {
+                    console.error('Error loading pricing section:', error);
+                    // Fallback content if loading fails
+                    document.getElementById('pricing-container').innerHTML = `
+                        <section id="pricing" class="pricing-section">
+                            <div class="container">
+                                <div class="section-header">
+                                    <h2 class="section-title" data-lang="pricingTitle">Bảng Giá Dịch Vụ</h2>
+                                    <p class="section-subtitle" data-lang="pricingSubtitle">
+                                        Chọn gói dịch vụ phù hợp với nhu cầu của gia đình bạn.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    `;
+                });
+        }
+
+        function loadContact() {
+            return fetch('./contact.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('contact-container').innerHTML = html;
+                    console.log('Contact section loaded successfully');
+                })
+                .catch(error => {
+                    console.error('Error loading contact section:', error);
+                    // Fallback content if loading fails
+                    document.getElementById('contact-container').innerHTML = `
+                        <section id="contact" class="contact-section">
+                            <div class="container">
+                                <div class="section-header">
+                                    <h2 class="section-title" data-lang="contact">Liên hệ</h2>
+                                    <p class="section-subtitle" data-lang="contactSubtitle">
+                                        Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ về VieGrand.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    `;
+                });
+        }
+
+        // Smooth scroll navigation
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Language toggle function
+        function switchLanguage() {
+            console.log('switchLanguage called from index.html');
+            if (typeof window.switchLanguageGlobal === 'function') {
+                window.switchLanguageGlobal();
+                // Update the local button after global switch
+                setTimeout(updateLanguageButton, 100); // Small delay to ensure global variables are updated
+            } else {
+                console.warn('Language system not loaded yet');
+            }
+        }
+
+        // Update language button display
+        function updateLanguageButton() {
+            const button = document.querySelector('.language-toggle .flag');
+            if (button) {
+                // Hiển thị ngôn ngữ KHÁC với ngôn ngữ hiện tại
+                if (window.currentLanguage === 'vi') {
+                    button.textContent = 'VI'; // Đang tiếng Việt, hiển thị EN để chuyển sang English
+                } else {
+                    button.textContent = 'EN'; // Đang tiếng Anh, hiển thị VI để chuyển sang Việt
+                }
+                console.log('Button updated. Current lang:', window.currentLanguage, 'Button shows:', button.textContent);
+            } else {
+                console.warn('Language button not found in index.html');
+            }
+        }
+
+        // Load content when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Content Loaded - Starting to load sections...');
+            
+            // Show debug info
+            console.log('Current URL:', window.location.href);
+            console.log('About container found:', !!document.getElementById('about-us-container'));
+            
+            Promise.all([loadAboutUs(), loadFeatures(), loadPricing(), loadContact()])
+                .then(() => {
+                    console.log('All sections loaded, initializing language system...');
+                    // Initialize language system after all content is loaded
+                    if (typeof initializeLanguage === 'function') {
+                        initializeLanguage();
+                        updateLanguageButton();
+                        console.log('Language system initialized successfully');
+                    } else {
+                        console.warn('Language system not available');
+                    }
+                    
+                    // Initialize smooth scrolling
+                    initSmoothScroll();
+                })
+                .catch(error => {
+                    console.error('Error loading sections:', error);
+                    // Still try to initialize smooth scrolling
+                    initSmoothScroll();
+                });
+        });
+    </script>
+</body>
+</html>

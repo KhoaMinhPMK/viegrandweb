@@ -1,0 +1,630 @@
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Google Fonts - Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+    /* About Us Section Styles */
+    .about-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(0, 74, 173, 0.03) 0%, transparent 70%);
+        border-radius: 50%;
+    }
+
+    .about-section::after {
+        content: '';
+        position: absolute;
+        bottom: -30%;
+        left: -15%;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(64, 156, 255, 0.03) 0%, transparent 70%);
+        border-radius: 50%;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Header Section */
+    .section-header {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .section-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: #004aad;
+        margin-bottom: 20px;
+        font-family: 'Inter', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        margin: 20px auto 0;
+        border-radius: 2px;
+    }
+
+    .section-subtitle {
+        font-size: 1.3rem;
+        color: #4a5568;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+        font-weight: 500;
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* Story Section */
+    .story-section {
+        margin-bottom: 80px;
+    }
+
+    .story-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .story-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #2d3748;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .story-text h3 {
+        font-size: 2rem;
+        color: #004aad;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .story-text p {
+        margin-bottom: 20px;
+    }
+
+    .story-highlight {
+        background: linear-gradient(135deg, rgba(0, 74, 173, 0.05) 0%, rgba(0, 102, 255, 0.03) 100%);
+        padding: 30px;
+        border-radius: 15px;
+        border-left: 4px solid #004aad;
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    .story-image {
+        position: relative;
+    }
+
+    .story-image::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: -20px;
+        bottom: -20px;
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        border-radius: 15px;
+        opacity: 0.1;
+        z-index: 1;
+    }
+
+    .story-image img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 15px;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 20px 40px rgba(0, 74, 173, 0.15);
+    }
+
+    /* Mission & Vision Section */
+    .mission-vision {
+        margin-bottom: 80px;
+    }
+
+    .mission-vision-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-top: 60px;
+    }
+
+    .mission-card, .vision-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 74, 173, 0.08);
+        border: 1px solid rgba(0, 74, 173, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mission-card:hover, .vision-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 60px rgba(0, 74, 173, 0.15);
+    }
+
+    .mission-card h3, .vision-card h3 {
+        font-size: 1.8rem;
+        color: #004aad;
+        margin-bottom: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .mission-card i, .vision-card i {
+        font-size: 2rem;
+        color: #0066ff;
+    }
+
+    .mission-card p, .vision-card p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #4a5568;
+        font-weight: 500;
+    }
+
+    /* Values Section */
+    .values-section {
+        margin-bottom: 80px;
+    }
+
+    .values-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .values-title {
+        font-size: 2.5rem;
+        color: #004aad;
+        font-weight: 700;
+        margin-bottom: 15px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .values-subtitle {
+        font-size: 1.1rem;
+        color: #4a5568;
+        font-weight: 500;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 35px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .value-card {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(15px);
+        padding: 35px 30px;
+        border-radius: 24px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 74, 173, 0.08);
+        border: 1px solid rgba(0, 74, 173, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        min-height: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .value-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+        transform-origin: left;
+    }
+
+    .value-card::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(0, 102, 255, 0.03) 0%, transparent 70%);
+        border-radius: 50%;
+        transition: all 0.4s ease;
+        transform: scale(0);
+    }
+
+    .value-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .value-card:hover::after {
+        transform: scale(1);
+    }
+
+    .value-card:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 30px 60px rgba(0, 74, 173, 0.18);
+        border-color: rgba(0, 102, 255, 0.2);
+    }
+
+    .value-icon {
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(135deg, rgba(0, 74, 173, 0.1) 0%, rgba(0, 102, 255, 0.05) 100%);
+        border: 3px solid rgba(0, 74, 173, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .value-icon::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        border-radius: 50%;
+        transition: all 0.4s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    .value-card:hover .value-icon {
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        border-color: #0066ff;
+        transform: scale(1.15) rotate(10deg);
+        box-shadow: 0 20px 40px rgba(0, 74, 173, 0.3);
+    }
+
+    .value-card:hover .value-icon::before {
+        width: 120%;
+        height: 120%;
+    }
+
+    .value-icon i {
+        font-size: 2.2rem;
+        color: #004aad;
+        transition: all 0.4s ease;
+        position: relative;
+        z-index: 2;
+        filter: drop-shadow(0 2px 4px rgba(0, 74, 173, 0.2));
+    }
+
+    .value-card:hover .value-icon i {
+        color: white;
+        transform: scale(1.1);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+
+    .value-title {
+        font-size: 1.2rem;
+        color: #1a202c;
+        font-weight: 700;
+        margin-bottom: 15px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .value-description {
+        font-size: 0.95rem;
+        color: #4a5568;
+        line-height: 1.6;
+        font-weight: 500;
+    }
+
+    /* Quote Section */
+    .quote-section {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .quote-box {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px 40px;
+        background: linear-gradient(135deg, rgba(0, 74, 173, 0.05) 0%, rgba(0, 102, 255, 0.03) 100%);
+        border-radius: 20px;
+        border-left: 5px solid #004aad;
+        position: relative;
+    }
+
+    .quote-box::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 30px;
+        font-size: 4rem;
+        color: #004aad;
+        opacity: 0.3;
+        font-family: serif;
+    }
+
+    .quote-text {
+        font-size: 1.3rem;
+        color: #2d3748;
+        font-style: italic;
+        line-height: 1.6;
+        font-weight: 600;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+    }
+
+    /* Team Section */
+    .team-section {
+        text-align: center;
+    }
+
+    .team-title {
+        font-size: 2.5rem;
+        color: #004aad;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .team-description {
+        font-size: 1.1rem;
+        color: #4a5568;
+        max-width: 600px;
+        margin: 0 auto 40px;
+        line-height: 1.7;
+        font-weight: 500;
+    }
+
+    .team-tagline {
+        font-size: 1.5rem;
+        color: #004aad;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .team-tagline::before,
+    .team-tagline::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 2px;
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+    }
+
+    .team-tagline::before {
+        left: -60px;
+    }
+
+    .team-tagline::after {
+        right: -60px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+        .story-content,
+        .mission-vision-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .values-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 25px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .about-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+        }
+        
+        .values-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, 1fr);
+            gap: 20px;
+        }
+        
+        .value-card {
+            min-height: 220px;
+            padding: 25px 20px;
+        }
+        
+        .value-icon {
+            width: 75px;
+            height: 75px;
+            margin-bottom: 20px;
+        }
+        
+        .value-icon i {
+            font-size: 1.8rem;
+        }
+        
+        .quote-box {
+            padding: 30px 25px;
+        }
+        
+        .quote-text {
+            font-size: 1.1rem;
+        }
+        
+        .team-tagline::before,
+        .team-tagline::after {
+            display: none;
+        }
+    }
+</style>
+
+<!-- About Us Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <!-- Header -->
+        <div class="section-header">
+            <h2 class="section-title" data-lang="aboutTitle">Về VieGrand</h2>
+            <p class="section-subtitle" data-lang="aboutSubtitle">
+                Câu chuyện về những học sinh trẻ với ước mơ tạo nên sự khác biệt
+            </p>
+        </div>
+
+        <!-- Story Section -->
+        <div class="story-section">
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>Khởi Đầu Từ Trái Tim</h3>
+                    <p>VieGrand được sinh ra từ những trải nghiệm thực tế của chúng tôi - một nhóm học sinh THPT Nguyễn Hữu Huân. Khi chứng kiến những khó khăn mà ông bà, cha mẹ gặp phải trong việc chăm sóc sức khỏe, chúng tôi nhận ra rằng công nghệ có thể là cầu nối để giải quyết vấn đề này.</p>
+                    <p>Chúng tôi không chỉ muốn tạo ra một sản phẩm công nghệ, mà mong muốn xây dựng một giải pháp mang tính nhân văn, giúp các gia đình Việt Nam duy trì và phát huy truyền thống hiếu thảo trong thời đại số.</p>
+                </div>
+                <div class="story-image">
+                    <img src="../../../assets/featureimage1.png" alt="VieGrand Story">
+                </div>
+            </div>
+
+            <div class="story-highlight">
+                <p>"Từ những đêm thức trắng nghiên cứu công nghệ AI, đến những lần thử nghiệm không thành công, chúng tôi luôn được thúc đẩy bởi một niềm tin: công nghệ phải phục vụ tình người."</p>
+            </div>
+        </div>
+
+        <!-- Mission & Vision -->
+        <div class="mission-vision">
+            <div class="mission-vision-grid">
+                <div class="mission-card">
+                    <h3><i class="fas fa-heart"></i> Sứ Mệnh</h3>
+                    <p>Ứng dụng công nghệ AI và IoT để tạo ra giải pháp chăm sóc sức khỏe toàn diện, giúp người cao tuổi sống khỏe mạnh, hạnh phúc và giúp các gia đình Việt duy trì truyền thống hiếu thảo trong thời đại số.</p>
+                </div>
+                <div class="vision-card">
+                    <h3><i class="fas fa-eye"></i> Tầm Nhìn</h3>
+                    <p>Trở thành nền tảng chăm sóc người cao tuổi thông minh, nhân ái và đáng tin cậy hàng đầu tại Việt Nam, góp phần xây dựng một xã hội có trái tim, nơi mỗi gia đình đều được hỗ trợ trong việc chăm sóc những người thân yêu.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Values -->
+        <div class="values-section">
+            <div class="values-header">
+                <h3 class="values-title">Giá Trị Cốt Lõi</h3>
+                <p class="values-subtitle">Những nguyên tắc định hướng mọi hoạt động của chúng tôi</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4 class="value-title">Yêu Thương & Quan Tâm</h4>
+                    <p class="value-description">Yêu thương và sự quan tâm là nền tảng của mọi sản phẩm chăm sóc sức khỏe tốt.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4 class="value-title">Đổi Mới Sáng Tạo</h4>
+                    <p class="value-description">Áp dụng công nghệ tiên tiến nhất để giải quyết vấn đề thực tế trong chăm sóc người cao tuổi.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="value-title">An Toàn & Tin Cậy</h4>
+                    <p class="value-description">Đảm bảo độ tin cậy và bảo mật cao nhất trong mọi tính năng và dữ liệu người dùng.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users-gear"></i>
+                    </div>
+                    <h4 class="value-title">Hỗ Trợ Gia Đình</h4>
+                    <p class="value-description">Không chỉ chăm sóc người cao tuổi mà còn hỗ trợ con cháu thực hiện trách nhiệm hiếu thảo.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h4 class="value-title">Dễ Sử Dụng</h4>
+                    <p class="value-description">Thiết kế giao diện đơn giản, phù hợp với người cao tuổi và dễ dàng cho cả gia đình.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h4 class="value-title">Phù Hợp Văn Hóa Việt</h4>
+                    <p class="value-description">Thiết kế dành riêng cho gia đình Việt, tôn trọng và phát huy giá trị truyền thống hiếu thảo.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inspirational Quote -->
+        <div class="quote-section">
+            <div class="quote-box">
+                <p class="quote-text" data-lang="aboutQuote">
+                    Chúng tôi tin rằng: công nghệ không chỉ là công cụ, mà còn có thể trở thành người bạn đồng hành thầm lặng, tiếp nối sự hiếu thảo và lan tỏa yêu thương trong mỗi gia đình Việt.
+                </p>
+            </div>
+        </div>
+
+        <!-- Team -->
+        <!-- <div class="team-section">
+            <h3 class="team-title">Đội Ngũ VieGrand</h3>
+            <p class="team-description">
+                Chúng tôi là những học sinh trẻ đầy nhiệt huyết từ trường THPT Nguyễn Hữu Huân, với ước mơ ứng dụng công nghệ để tạo nên những giá trị tích cực cho xã hội.
+            </p>
+            <div class="team-tagline">VieGrand – Chăm Sóc Cha Mẹ Theo Cách Hiện Đại</div>
+        </div> -->
+    </div>
+</section>

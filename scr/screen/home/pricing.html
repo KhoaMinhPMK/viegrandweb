@@ -1,0 +1,1279 @@
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Google Fonts - Inter: Font hiện đại hỗ trợ tiếng Việt -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+    /* Pricing Section - Luxury & Sophisticated Design */
+    .pricing-section {
+        padding: 100px 0 80px;
+        background: linear-gradient(135deg, 
+            #fafbfc 0%, 
+            #ffffff 25%, 
+            #f8fafd 50%, 
+            #ffffff 75%, 
+            #f5f7fa 100%);
+        position: relative;
+        overflow: hidden;
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* Elegant Background Effects */
+    .pricing-section::before {
+        content: '';
+        position: absolute;
+        top: -40%;
+        right: -25%;
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, 
+            rgba(0, 74, 173, 0.03) 0%, 
+            rgba(0, 102, 255, 0.02) 30%,
+            transparent 70%);
+        border-radius: 50%;
+        animation: elegantFloat 25s ease-in-out infinite;
+        opacity: 0.7;
+    }
+
+    .pricing-section::after {
+        content: '';
+        position: absolute;
+        bottom: -35%;
+        left: -25%;
+        width: 700px;
+        height: 700px;
+        background: radial-gradient(circle, 
+            rgba(99, 102, 241, 0.03) 0%, 
+            rgba(139, 92, 246, 0.02) 40%,
+            transparent 70%);
+        border-radius: 50%;
+        animation: elegantFloat 30s ease-in-out infinite reverse;
+        opacity: 0.6;
+    }
+
+    @keyframes elegantFloat {
+        0%, 100% { 
+            transform: translate(0, 0) scale(1) rotate(0deg); 
+            opacity: 0.6;
+        }
+        25% { 
+            transform: translate(30px, -40px) scale(1.08) rotate(2deg); 
+            opacity: 0.8;
+        }
+        50% { 
+            transform: translate(-20px, 20px) scale(0.95) rotate(-1deg); 
+            opacity: 0.7;
+        }
+        75% { 
+            transform: translate(25px, 30px) scale(1.05) rotate(1.5deg); 
+            opacity: 0.9;
+        }
+    }
+
+    @keyframes luxuryFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(80px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    @keyframes premiumScale {
+        from {
+            opacity: 0;
+            transform: scale(0.8) rotateY(10deg);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) rotateY(0deg);
+        }
+    }
+
+    @keyframes elegantPulse {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(0, 74, 173, 0.4);
+        }
+        50% {
+            transform: scale(1.03);
+            box-shadow: 0 0 0 25px rgba(0, 74, 173, 0);
+        }
+    }
+
+    @keyframes luxuryShimmer {
+        0% {
+            background-position: -300px 0;
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            background-position: calc(300px + 100%) 0;
+            opacity: 0;
+        }
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Section Header - Luxury Typography */
+    .section-header {
+        text-align: center;
+        margin-bottom: 70px;
+        position: relative;
+        z-index: 3;
+    }
+
+    .section-title {
+        font-size: 3.2rem;
+        font-weight: 900;
+        color: #0f172a;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, 
+            #1e293b 0%, 
+            #334155 20%,
+            #0f172a 40%,
+            #1e293b 60%,
+            #334155 80%,
+            #0f172a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -1.5px;
+        line-height: 1.1;
+        text-transform: uppercase;
+        position: relative;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .section-title::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            #cbd5e1 50%, 
+            transparent 100%);
+        opacity: 0.6;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(135deg, 
+            #0ea5e9 0%, 
+            #3b82f6 50%, 
+            #1d4ed8 100%);
+        border-radius: 2px;
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    }
+
+    .section-subtitle {
+        font-size: 1.1rem;
+        color: #475569;
+        max-width: 650px;
+        margin: 30px auto 0;
+        line-height: 1.7;
+        font-weight: 500;
+        position: relative;
+        opacity: 0.9;
+    }
+
+    .section-subtitle::before,
+    .section-subtitle::after {
+        content: '"';
+        font-size: 1.6rem;
+        color: #cbd5e1;
+        position: absolute;
+        top: -8px;
+        font-weight: 300;
+        opacity: 0.5;
+    }
+
+    .section-subtitle::before {
+        left: -20px;
+    }
+
+    .section-subtitle::after {
+        right: -20px;
+        transform: scaleX(-1);
+    }
+
+    /* Luxury Pricing Plans Grid */
+    .pricing-plans {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        perspective: 1000px;
+    }
+
+    /* Luxury Pricing Card */
+    .pricing-card {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(25px) saturate(1.2);
+        border-radius: 24px;
+        padding: 45px 35px 40px;
+        position: relative;
+        border: 1px solid rgba(226, 232, 240, 0.4);
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        overflow: hidden;
+        box-shadow: 
+            0 20px 60px rgba(15, 23, 42, 0.08),
+            0 8px 30px rgba(30, 41, 59, 0.04),
+            0 4px 15px rgba(51, 65, 85, 0.02);
+        z-index: 1;
+        transform-style: preserve-3d;
+        animation: luxuryFadeIn 0.8s ease-out;
+    }
+
+    .pricing-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(148, 163, 184, 0.3) 20%,
+            rgba(203, 213, 225, 0.6) 50%,
+            rgba(148, 163, 184, 0.3) 80%,
+            transparent 100%);
+        transition: all 0.5s ease;
+    }
+
+    .pricing-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.05) 50%,
+            rgba(255, 255, 255, 0) 100%);
+        pointer-events: none;
+        border-radius: 24px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .pricing-card:hover::after {
+        opacity: 1;
+    }
+
+    .pricing-card:hover {
+        transform: translateY(-15px) rotateX(3deg);
+        border-color: rgba(59, 130, 246, 0.2);
+        box-shadow: 
+            0 30px 80px rgba(15, 23, 42, 0.12),
+            0 15px 40px rgba(30, 41, 59, 0.06),
+            0 6px 20px rgba(51, 65, 85, 0.04),
+            0 0 0 1px rgba(59, 130, 246, 0.1);
+    }
+
+    /* Enhanced Luxury Popular Badge */
+    .pricing-card.popular {
+        border: 2px solid transparent;
+        background: linear-gradient(rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98)),
+                   linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
+        background-clip: padding-box, border-box;
+        transform: scale(1.06) translateY(-10px) rotateX(1deg);
+        z-index: 5;
+        position: relative;
+        animation: premiumScale 1s ease-out;
+    }
+
+    .pricing-card.popular::before {
+        background: linear-gradient(90deg, 
+            rgba(59, 130, 246, 0.8) 0%, 
+            rgba(29, 78, 216, 0.9) 50%, 
+            rgba(30, 64, 175, 0.8) 100%);
+        height: 2px;
+        box-shadow: 0 2px 15px rgba(59, 130, 246, 0.4);
+    }
+
+    .pricing-card.popular::after {
+        content: 'PHỔ BIẾN NHẤT';
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, 
+            #3b82f6 0%, 
+            #1d4ed8 50%, 
+            #1e40af 100%);
+        color: white;
+        padding: 14px 35px;
+        border-radius: 0 0 20px 20px;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        box-shadow: 
+            0 12px 35px rgba(59, 130, 246, 0.4),
+            0 4px 15px rgba(29, 78, 216, 0.2);
+        text-align: center;
+        min-width: 180px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .pricing-card.popular::after {
+        animation: luxuryShimmer 3s ease-in-out infinite;
+        background-image: linear-gradient(135deg, 
+            #3b82f6 0%, 
+            #1d4ed8 25%,
+            #60a5fa 50%,
+            #1d4ed8 75%,
+            #1e40af 100%);
+    }
+
+    /* Luxury Plan Header */
+    .plan-header {
+        text-align: center;
+        margin-bottom: 35px;
+        position: relative;
+    }
+
+    .plan-icon {
+        width: 75px;
+        height: 75px;
+        margin: 0 auto 25px;
+        background: linear-gradient(135deg, 
+            rgba(248, 250, 252, 0.9) 0%, 
+            rgba(241, 245, 249, 0.8) 100%);
+        border: 2px solid rgba(148, 163, 184, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #475569;
+        font-size: 1.8rem;
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 
+            0 6px 24px rgba(15, 23, 42, 0.1),
+            0 3px 12px rgba(51, 65, 85, 0.05),
+            inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .plan-icon::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: linear-gradient(135deg, 
+            #475569 0%, 
+            #334155 50%, 
+            #1e293b 100%);
+        border-radius: 50%;
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    .pricing-card:hover .plan-icon::before {
+        width: 110%;
+        height: 110%;
+    }
+
+    .pricing-card:hover .plan-icon {
+        border-color: rgba(71, 85, 105, 0.4);
+        transform: scale(1.12) rotateY(12deg);
+        color: white;
+        box-shadow: 
+            0 15px 50px rgba(15, 23, 42, 0.2),
+            0 8px 25px rgba(51, 65, 85, 0.1);
+    }
+
+    .pricing-card.popular .plan-icon {
+        background: linear-gradient(135deg, 
+            #3b82f6 0%, 
+            #1d4ed8 50%, 
+            #1e40af 100%);
+        border-color: rgba(59, 130, 246, 0.3);
+        color: white;
+        box-shadow: 
+            0 12px 40px rgba(59, 130, 246, 0.2),
+            0 6px 20px rgba(29, 78, 216, 0.1);
+    }
+
+    .plan-name {
+        font-size: 1.9rem;
+        font-weight: 900;
+        color: #0f172a;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: -0.6px;
+        position: relative;
+        background: linear-gradient(135deg, 
+            #0f172a 0%, 
+            #1e293b 50%, 
+            #334155 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .plan-description {
+        color: #64748b;
+        font-size: 1rem;
+        line-height: 1.6;
+        font-weight: 500;
+        margin-bottom: 0;
+        opacity: 0.9;
+        font-style: italic;
+    }
+
+    /* Luxury Plan Price */
+    .plan-price {
+        text-align: center;
+        margin-bottom: 35px;
+        padding: 25px 0;
+        border-top: 1px solid rgba(226, 232, 240, 0.6);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        position: relative;
+        background: linear-gradient(135deg, 
+            rgba(248, 250, 252, 0.3) 0%, 
+            rgba(255, 255, 255, 0.1) 100%);
+    }
+
+    .plan-price::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(59, 130, 246, 0.5) 50%, 
+            transparent 100%);
+    }
+
+    .plan-price::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(59, 130, 246, 0.5) 50%, 
+            transparent 100%);
+    }
+
+    .price-amount {
+        font-size: 3.2rem;
+        font-weight: 900;
+        color: #1e293b;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 6px;
+        line-height: 1;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .price-amount::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(ellipse at center, 
+            rgba(59, 130, 246, 0.03) 0%, 
+            transparent 70%);
+        z-index: -1;
+        border-radius: 50%;
+    }
+
+    .currency {
+        font-size: 1.9rem;
+        color: #64748b;
+        font-weight: 700;
+        opacity: 0.8;
+    }
+
+    .period {
+        font-size: 1rem;
+        color: #64748b;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        opacity: 0.7;
+    }
+
+    .pricing-card.popular .price-amount {
+        color: #1d4ed8;
+        background: linear-gradient(135deg, 
+            #3b82f6 0%, 
+            #1d4ed8 50%, 
+            #1e40af 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Luxury Features List */
+    .plan-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 35px 0;
+    }
+
+    .plan-features li {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 14px 0;
+        font-size: 1rem;
+        color: #334155;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.4);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+    }
+
+    .plan-features li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .plan-features li::before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        right: -20px;
+        top: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, 
+            rgba(59, 130, 246, 0.03) 0%, 
+            rgba(147, 197, 253, 0.04) 100%);
+        border-radius: 12px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: -1;
+    }
+
+    .plan-features li:hover::before {
+        opacity: 1;
+    }
+
+    .plan-features li:hover {
+        color: #1e293b;
+        transform: translateX(3px);
+        padding: 14px 20px;
+        margin: 0 -20px;
+    }
+
+    .feature-icon {
+        width: 8px;
+        height: 8px;
+        background: linear-gradient(135deg, 
+            #10b981 0%, 
+            #059669 100%);
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: transparent;
+        font-size: 0;
+        flex-shrink: 0;
+        margin-top: 8px;
+        position: relative;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: 
+            0 2px 6px rgba(16, 185, 129, 0.15),
+            0 1px 3px rgba(5, 150, 105, 0.1);
+    }
+
+    .feature-icon::before {
+        display: none;
+    }
+
+    .plan-features li:hover .feature-icon {
+        transform: translateY(-1px) scale(1.2);
+        box-shadow: 
+            0 3px 8px rgba(16, 185, 129, 0.25),
+            0 2px 4px rgba(5, 150, 105, 0.15);
+    }
+
+    .plan-features li:hover .feature-icon::before {
+        display: none;
+    }
+
+    .pricing-card.popular .feature-icon {
+        background: linear-gradient(135deg, 
+            #3b82f6 0%, 
+            #1d4ed8 100%);
+        box-shadow: 
+            0 2px 6px rgba(59, 130, 246, 0.15),
+            0 1px 3px rgba(29, 78, 216, 0.1);
+    }
+
+    .pricing-card.popular .feature-icon::before {
+        display: none;
+    }
+
+    .pricing-card.popular .plan-features li:hover .feature-icon {
+        box-shadow: 
+            0 3px 8px rgba(59, 130, 246, 0.25),
+            0 2px 4px rgba(29, 78, 216, 0.15);
+    }
+
+    /* Luxury CTA Button */
+    .plan-cta {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .cta-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 40px;
+        background: linear-gradient(135deg, 
+            rgba(30, 41, 59, 0.95) 0%, 
+            rgba(51, 65, 85, 0.9) 50%,
+            rgba(15, 23, 42, 0.95) 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1rem;
+        letter-spacing: 0.8px;
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+        cursor: pointer;
+        text-transform: uppercase;
+        box-shadow: 
+            0 8px 30px rgba(15, 23, 42, 0.2),
+            0 4px 15px rgba(30, 41, 59, 0.12),
+            0 2px 8px rgba(51, 65, 85, 0.08);
+        backdrop-filter: blur(10px);
+    }
+
+    .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.3) 25%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0.3) 75%,
+            transparent 100%);
+        transition: left 0.8s ease;
+        z-index: 1;
+    }
+
+    .cta-button::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.05) 100%);
+        border-radius: 48px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+    }
+
+    .cta-button:hover::before {
+        left: 100%;
+    }
+
+    .cta-button:hover::after {
+        opacity: 1;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 
+            0 15px 45px rgba(15, 23, 42, 0.3),
+            0 8px 20px rgba(30, 41, 59, 0.2),
+            0 3px 10px rgba(51, 65, 85, 0.12);
+        background: linear-gradient(135deg, 
+            #1e293b 0%, 
+            #334155 50%, 
+            #475569 100%);
+    }
+
+    .pricing-card.popular .cta-button {
+        background: linear-gradient(135deg, 
+            #10b981 0%, 
+            #059669 50%, 
+            #047857 100%);
+        box-shadow: 
+            0 8px 30px rgba(16, 185, 129, 0.2),
+            0 4px 15px rgba(5, 150, 105, 0.12),
+            0 2px 8px rgba(4, 120, 87, 0.08);
+    }
+
+    .pricing-card.popular .cta-button:hover {
+        background: linear-gradient(135deg, 
+            #059669 0%, 
+            #047857 50%, 
+            #065f46 100%);
+        box-shadow: 
+            0 15px 45px rgba(16, 185, 129, 0.3),
+            0 8px 20px rgba(5, 150, 105, 0.2),
+            0 3px 10px rgba(4, 120, 87, 0.12);
+    }
+
+    /* Luxury Free Trial Badge */
+    .free-trial {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .trial-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, 
+            rgba(16, 185, 129, 0.08) 0%, 
+            rgba(5, 150, 105, 0.06) 50%,
+            rgba(4, 120, 87, 0.04) 100%);
+        color: #047857;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border: 1px solid rgba(16, 185, 129, 0.25);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 
+            0 4px 15px rgba(16, 185, 129, 0.1),
+            0 2px 8px rgba(5, 150, 105, 0.05);
+    }
+
+    .trial-badge::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.2) 0%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.1) 100%);
+        border-radius: 28px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .trial-badge:hover::before {
+        opacity: 1;
+    }
+
+    .pricing-card.popular .trial-badge {
+        background: linear-gradient(135deg, 
+            rgba(59, 130, 246, 0.08) 0%, 
+            rgba(29, 78, 216, 0.06) 50%,
+            rgba(30, 64, 175, 0.04) 100%);
+        color: #1e40af;
+        border-color: rgba(59, 130, 246, 0.25);
+        box-shadow: 
+            0 4px 15px rgba(59, 130, 246, 0.1),
+            0 2px 8px rgba(29, 78, 216, 0.05);
+    }
+
+    /* Luxury Contact Section */
+    .contact-section {
+        text-align: center;
+        margin-top: 70px;
+        padding: 55px 45px;
+        background: linear-gradient(135deg, 
+            rgba(248, 250, 252, 0.8) 0%, 
+            rgba(255, 255, 255, 0.9) 30%,
+            rgba(241, 245, 249, 0.7) 70%,
+            rgba(248, 250, 252, 0.8) 100%);
+        backdrop-filter: blur(15px);
+        border-radius: 28px;
+        border: 1px solid rgba(226, 232, 240, 0.6);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 
+            0 20px 60px rgba(15, 23, 42, 0.08),
+            0 10px 30px rgba(30, 41, 59, 0.04),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .contact-section::before {
+        content: '';
+        position: absolute;
+        top: -60%;
+        left: -60%;
+        width: 220%;
+        height: 220%;
+        background: conic-gradient(from 0deg at 50% 50%,
+            rgba(59, 130, 246, 0.03) 0deg,
+            rgba(147, 197, 253, 0.02) 60deg,
+            rgba(59, 130, 246, 0.03) 120deg,
+            rgba(147, 197, 253, 0.02) 180deg,
+            rgba(59, 130, 246, 0.03) 240deg,
+            rgba(147, 197, 253, 0.02) 300deg,
+            rgba(59, 130, 246, 0.03) 360deg);
+        animation: luxuryRotate 40s linear infinite;
+        opacity: 0.6;
+    }
+
+    @keyframes luxuryRotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .contact-title {
+        font-size: 2.1rem;
+        font-weight: 900;
+        color: #0f172a;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
+        background: linear-gradient(135deg, 
+            #0f172a 0%, 
+            #1e293b 50%, 
+            #334155 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.8px;
+    }
+
+    .contact-description {
+        font-size: 1.05rem;
+        color: #475569;
+        margin-bottom: 35px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+        font-weight: 500;
+        position: relative;
+        z-index: 2;
+        opacity: 0.9;
+    }
+
+    .contact-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 40px;
+        background: linear-gradient(135deg, 
+            rgba(248, 250, 252, 0.9) 0%, 
+            rgba(255, 255, 255, 0.8) 100%);
+        color: #1e293b;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1rem;
+        border: 2px solid rgba(226, 232, 240, 0.6);
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        position: relative;
+        z-index: 2;
+        backdrop-filter: blur(10px);
+        box-shadow: 
+            0 6px 20px rgba(15, 23, 42, 0.1),
+            0 3px 10px rgba(30, 41, 59, 0.05);
+    }
+
+    .contact-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, 
+            #1e293b 0%, 
+            #334155 50%, 
+            #475569 100%);
+        border-radius: 48px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+
+    .contact-button:hover::before {
+        opacity: 1;
+    }
+
+    .contact-button:hover {
+        color: white;
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 
+            0 12px 35px rgba(15, 23, 42, 0.18),
+            0 6px 18px rgba(30, 41, 59, 0.1);
+        border-color: rgba(30, 41, 59, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+        .pricing-section {
+            padding: 80px 30px;
+        }
+        
+        .pricing-plans {
+            grid-template-columns: 1fr;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+        }
+        
+        .contact-section {
+            padding: 50px 30px;
+            margin-top: 60px;
+        }
+        
+        .contact-title {
+            font-size: 1.9rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .pricing-section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+        }
+
+        .pricing-plans {
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        .pricing-card {
+            padding: 35px 25px;
+        }
+
+        .pricing-card.popular {
+            transform: none;
+            margin: 0;
+        }
+
+        .plan-name {
+            font-size: 1.6rem;
+        }
+
+        .price-amount {
+            font-size: 2.5rem;
+        }
+        
+        .cta-button {
+            padding: 15px 35px;
+            font-size: 0.95rem;
+        }
+
+        .contact-section {
+            padding: 40px 25px;
+            margin-top: 50px;
+        }
+        
+        .contact-title {
+            font-size: 1.7rem;
+        }
+        
+        .contact-description {
+            font-size: 1rem;
+        }
+        
+        .contact-button {
+            padding: 15px 35px;
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .pricing-section {
+            padding: 50px 15px;
+        }
+        
+        .section-title {
+            font-size: 1.9rem;
+        }
+        
+        .pricing-card {
+            padding: 30px 20px;
+        }
+        
+        .plan-icon {
+            font-size: 2.2rem;
+            width: 70px;
+            height: 70px;
+        }
+        
+        .plan-name {
+            font-size: 1.4rem;
+        }
+
+        .price-amount {
+            font-size: 2.2rem;
+        }
+
+        .cta-button {
+            padding: 14px 30px;
+            font-size: 1rem;
+        }
+        
+        .contact-section {
+            padding: 35px 20px;
+        }
+        
+        .contact-title {
+            font-size: 1.5rem;
+        }
+        
+        .contact-button {
+            padding: 14px 30px;
+            font-size: 0.95rem;
+        }
+    }
+</style>
+
+<!-- Pricing Section -->
+<section id="pricing" class="pricing-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title" data-lang="pricingTitle">Bảng Giá Dịch Vụ</h2>
+            <p class="section-subtitle" data-lang="pricingSubtitle">
+                Chọn gói dịch vụ phù hợp với nhu cầu của gia đình bạn. Tất cả gói đều bao gồm hỗ trợ 24/7 và cập nhật miễn phí.
+            </p>
+        </div>
+        
+        <div class="pricing-plans">
+            <!-- Basic Plan -->
+            <div class="pricing-card">
+                <div class="plan-header">
+                    <div class="plan-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="plan-name" data-lang="basicPlanName">Gói Cơ Bản</h3>
+                    <p class="plan-description" data-lang="basicPlanDesc">
+                        Phù hợp cho gia đình nhỏ với nhu cầu giám sát cơ bản
+                    </p>
+                </div>
+                
+                <div class="plan-price">
+                    <div class="price-amount">
+                        <span class="currency">₫</span>
+                        <span data-lang="basicPrice">299,000</span>
+                    </div>
+                    <div class="period" data-lang="perMonth">/tháng</div>
+                </div>
+                
+                <ul class="plan-features">
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="basicFeature2">Phát hiện té ngã cơ bản</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="basicFeature3">Cảnh báo qua SMS</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="basicFeature4">Hỗ trợ email 24/7</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="basicFeature5">Báo cáo hàng tuần</span>
+                    </li>
+                </ul>
+                
+                <div class="plan-cta">
+                    <a href="#contact" class="cta-button" data-lang="choosePlan">Chọn Gói</a>
+                </div>
+                
+                <div class="free-trial">
+                    <span class="trial-badge" data-lang="freeTrial">Dùng thử 7 ngày miễn phí</span>
+                </div>
+            </div>
+            
+            <!-- Premium Plan (Popular) -->
+            <div class="pricing-card popular">
+                <div class="plan-header">
+                    <div class="plan-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="plan-name" data-lang="premiumPlanName">Gói Cao Cấp</h3>
+                    <p class="plan-description" data-lang="premiumPlanDesc">
+                        Giải pháp toàn diện với AI tiên tiến và tính năng thông minh
+                    </p>
+                </div>
+                
+                <div class="plan-price">
+                    <div class="price-amount">
+                        <span class="currency">₫</span>
+                        <span data-lang="premiumPrice">599,000</span>
+                    </div>
+                    <div class="period" data-lang="perMonth">/tháng</div>
+                </div>
+                
+                <ul class="plan-features">
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="premiumFeature2">AI phát hiện đột quỵ tiên tiến</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="premiumFeature3">Cảnh báo đa kênh (SMS, Call, Email)</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="premiumFeature4">Giám sát sức khỏe qua camera</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="premiumFeature5">Điều khiển bằng giọng nói</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="premiumFeature6">Ứng dụng mobile cho gia đình</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="premiumFeature7">Báo cáo chi tiết hàng ngày</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="premiumFeature8">Hỗ trợ hotline ưu tiên</span>
+                    </li>
+                </ul>
+                
+                <div class="plan-cta">
+                    <a href="#contact" class="cta-button" data-lang="choosePlan">Chọn Gói</a>
+                </div>
+                
+                <div class="free-trial">
+                    <span class="trial-badge" data-lang="freeTrial">Dùng thử 14 ngày miễn phí</span>
+                </div>
+            </div>
+            
+            <!-- Enterprise Plan -->
+            <div class="pricing-card">
+                <div class="plan-header">
+                    <div class="plan-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="plan-name" data-lang="enterprisePlanName">Gói Doanh Nghiệp</h3>
+                    <p class="plan-description" data-lang="enterprisePlanDesc">
+                        Dành cho viện dưỡng lão và cơ sở chăm sóc chuyên nghiệp
+                    </p>
+                </div>
+                
+                <div class="plan-price">
+                    <div class="price-amount">
+                        <span data-lang="contactPrice">Liên hệ</span>
+                    </div>
+                    <div class="period" data-lang="customPrice">Giá tùy chỉnh</div>
+                </div>
+                
+                <ul class="plan-features">
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="enterpriseFeature2">Tích hợp hệ thống y tế</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="enterpriseFeature3">Dashboard quản lý tập trung</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="enterpriseFeature4">API và tích hợp tùy chỉnh</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="enterpriseFeature5">Đào tạo nhân viên chuyên sâu</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="enterpriseFeature6">Hỗ trợ kỹ thuật 24/7</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"></div>
+                        <span data-lang="enterpriseFeature7">Báo cáo và phân tích nâng cao</span>
+                    </li>
+                </ul>
+                
+                <div class="plan-cta">
+                    <a href="#contact" class="cta-button" data-lang="contactUs">Liên Hệ</a>
+                </div>
+                
+                <div class="free-trial">
+                    <span class="trial-badge" data-lang="customDemo">Demo tùy chỉnh miễn phí</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h3 class="contact-title" data-lang="needHelpTitle">Cần Tư Vấn Thêm?</h3>
+            <p class="contact-description" data-lang="needHelpDesc">
+                Đội ngũ chuyên gia của chúng tôi sẵn sàng hỗ trợ bạn chọn gói dịch vụ phù hợp nhất cho nhu cầu của gia đình.
+            </p>
+            <a href="#contact" class="contact-button" data-lang="contactSupport">
+                <i class="fas fa-phone-alt"></i> Liên Hệ Tư Vấn
+            </a>
+        </div>
+    </div>
+</section>
