@@ -214,6 +214,7 @@ const languages = {
         
         // Contact section
         contactSubtitle: "Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ về VieGrand - giải pháp chăm sóc sức khỏe thông minh",
+        contactFormSubtitle: "Chúng tôi sẽ phản hồi trong vòng 24 giờ",
         contactInfoTitle: "Thông tin liên hệ",
         schoolLabel: "Trường học",
         schoolName: "THPT Nguyễn Hữu Huân",
@@ -495,6 +496,7 @@ const languages = {
         
         // Contact section
         contactSubtitle: "Contact us for consultation and support about VieGrand - intelligent healthcare solution",
+        contactFormSubtitle: "We will respond within 24 hours",
         contactInfoTitle: "Contact Information",
         schoolLabel: "School",
         schoolName: "Nguyen Huu Huan High School",
@@ -792,6 +794,7 @@ function updateContent() {
     
     // Contact section
     safeUpdateElement('[data-lang="contactSubtitle"]', lang.contactSubtitle);
+    safeUpdateElement('[data-lang="contactFormSubtitle"]', lang.contactFormSubtitle);
     safeUpdateElement('[data-lang="contactInfoTitle"]', lang.contactInfoTitle);
     safeUpdateElement('[data-lang="schoolLabel"]', lang.schoolLabel);
     safeUpdateElement('[data-lang="schoolName"]', lang.schoolName);
