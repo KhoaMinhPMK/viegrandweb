@@ -671,8 +671,8 @@
             
             <div class="auth-buttons  transition-time">
                 <!-- <a href="../login/index.html" class="auth-btn login-btn" data-lang="login">Đăng nhập</a> -->
-                <a href="../signup/index.html" class="auth-btn signup-btn transition-time data-lang="signup>Đăng ký</a>
-                <button class="language-toggle" onclick="switchLanguage()" title="Switch Language">
+                <a href="../signup/index.html" class="auth-btn signup-btn transition-time" data-lang="signup">Đăng ký</a>
+                <button class="language-toggle" onclick="switchLanguage()" title="Switch Language" aria-label="Switch Language">
                     <span class="flag">VI</span>
                 </button>
             </div>
@@ -684,11 +684,11 @@
         <div class="hero-content">
             <!-- <div class="hero-badge">✨ Trải nghiệm đẳng cấp thế giới</div> -->
             <h1 class="hero-title">
-                <span data-lang="heroTitle">VIEGRAND</span><br>
+                <span data-lang="heroTitle">VIEGRAND</span><br/>
                 <span style="color: #ffffff;" data-lang="heroSubtitle">CHĂM SÓC NGƯỜI THÂN THEO CÁCH HIỆN ĐẠI</span>
             </h1>
             <p class="hero-subtitle" data-lang="heroDescription" style="text-align: center;">
-                Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br> Nơi công nghệ kết hợp cùng y học, mang đến sự an tâm cho bạn.
+                Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br/> Nơi công nghệ kết hợp cùng y học, mang đến sự an tâm cho bạn.
             </p>
             <div class="hero-buttons">
                 <a href="#features" class="hero-button-primary transition-time" data-lang="exploreBtnText">Khám phá ngay</a>
@@ -701,27 +701,27 @@
     <!-- About Us Section - Loaded from external file -->
     <div id="about-us-container">
         <!-- Debug section - will be replaced when external content loads -->
-        <section id="about-debug" style="background: #f0f8ff; padding: 60px 20px; text-align: center;">
+        <section id="about-debug" style="background: var(--bg-secondary); padding: 60px 20px; text-align: center;">
             <div style="max-width: 1200px; margin: 0 auto;">
-                <h2 style="color: #004aad; font-size: 2.5rem; margin-bottom: 20px;">Loading About Section...</h2>
-                <p style="color: #666; font-size: 1.2rem;">If this message persists, there may be an issue loading the external content.</p>
+                <h2 style="color: var(--brand-primary); font-size: 2.5rem; margin-bottom: 20px;">Loading About Section...</h2>
+                <p style="color: var(--text-secondary); font-size: 1.2rem;">If this message persists, there may be an issue loading the external content.</p>
                 
                 <!-- Test grid to verify 3-column layout -->
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; max-width: 100%;">
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,74,173,0.1);">
-                        <div style="width: 60px; height: 60px; background: #004aad; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">1</div>
-                        <h3 style="color: #004aad; margin-bottom: 10px;">Test Column 1</h3>
-                        <p style="color: #666; line-height: 1.6;">This tests the 3-column grid layout to ensure it displays correctly.</p>
+                    <div style="background: var(--bg-card); padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,74,173,0.1);">
+                        <div style="width: 60px; height: 60px; background: var(--brand-primary); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">1</div>
+                        <h3 style="color: var(--brand-primary); margin-bottom: 10px;">Test Column 1</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">This tests the 3-column grid layout to ensure it displays correctly.</p>
                     </div>
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,74,173,0.1);">
-                        <div style="width: 60px; height: 60px; background: #0066ff; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">2</div>
-                        <h3 style="color: #004aad; margin-bottom: 10px;">Test Column 2</h3>
-                        <p style="color: #666; line-height: 1.6;">This tests the 3-column grid layout to ensure it displays correctly.</p>
+                    <div style="background: var(--bg-card); padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,74,173,0.1);">
+                        <div style="width: 60px; height: 60px; background: var(--brand-secondary); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">2</div>
+                        <h3 style="color: var(--brand-primary); margin-bottom: 10px;">Test Column 2</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">This tests the 3-column grid layout to ensure it displays correctly.</p>
                     </div>
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,74,173,0.1);">
-                        <div style="width: 60px; height: 60px; background: #409cff; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">3</div>
-                        <h3 style="color: #004aad; margin-bottom: 10px;">Test Column 3</h3>
-                        <p style="color: #666; line-height: 1.6;">This tests the 3-column grid layout to ensure it displays correctly.</p>
+                    <div style="background: var(--bg-card); padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,74,173,0.1);">
+                        <div style="width: 60px; height: 60px; background: var(--brand-tertiary); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">3</div>
+                        <h3 style="color: var(--brand-primary); margin-bottom: 10px;">Test Column 3</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">This tests the 3-column grid layout to ensure it displays correctly.</p>
                     </div>
                 </div>
             </div>
@@ -783,17 +783,17 @@
                                     </p>
                                 </div>
                                 <div class="features-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0;">
-                                    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
-                                        <h3>Test Feature 1</h3>
-                                        <p>This is a test feature to verify layout.</p>
+                                    <div style="background: var(--bg-card); padding: 20px; border-radius: 10px; text-align: center;">
+                                        <h3 style="color: var(--brand-primary);">Test Feature 1</h3>
+                                        <p style="color: var(--text-secondary);">This is a test feature to verify layout.</p>
                                     </div>
-                                    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
-                                        <h3>Test Feature 2</h3>
-                                        <p>This is a test feature to verify layout.</p>
+                                    <div style="background: var(--bg-card); padding: 20px; border-radius: 10px; text-align: center;">
+                                        <h3 style="color: var(--brand-primary);">Test Feature 2</h3>
+                                        <p style="color: var(--text-secondary);">This is a test feature to verify layout.</p>
                                     </div>
-                                    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
-                                        <h3>Test Feature 3</h3>
-                                        <p>This is a test feature to verify layout.</p>
+                                    <div style="background: var(--bg-card); padding: 20px; border-radius: 10px; text-align: center;">
+                                        <h3 style="color: var(--brand-primary);">Test Feature 3</h3>
+                                        <p style="color: var(--text-secondary);">This is a test feature to verify layout.</p>
                                     </div>
                                 </div>
                             </div>

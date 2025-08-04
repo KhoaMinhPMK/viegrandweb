@@ -23,7 +23,7 @@ const languages = {
         // Hero Section
         heroTitle: "VIEGRAND",
         heroSubtitle: "CHĂM SÓC NGƯỜI THÂN THEO CÁCH HIỆN ĐẠI",
-        heroDescription: "Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br> Nơi công nghệ kết hợp cùng y học, mang đến sự an tâm cho bạn.",
+        heroDescription: "Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br/> Nơi công nghệ kết hợp cùng y học, mang đến sự an tâm cho bạn.",
         exploreBtnText: "Khám phá ngay",
         demoBtnText: "Xem Demo",
         scrollText: "Cuộn xuống để khám phá",
@@ -311,7 +311,7 @@ const languages = {
         // Hero Section
         heroTitle: "VIEGRAND",
         heroSubtitle: "CARING FOR PARENTS THE MODERN WAY",
-        heroDescription: "Early stroke detection app designed for the elderly <br> Where technology combines with medicine to bring you peace of mind.",
+        heroDescription: "Early stroke detection app designed for the elderly <br/> Where technology combines with medicine to bring you peace of mind.",
         exploreBtnText: "Explore Now",
         demoBtnText: "Watch Demo",
         scrollText: "Scroll down to explore",

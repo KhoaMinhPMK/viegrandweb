@@ -9,7 +9,7 @@
     /* Contact Section Styles */
     .contact-section {
         padding: 100px 0;
-        background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+        background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
         position: relative;
         overflow: hidden;
     }
@@ -53,7 +53,7 @@
     .section-title {
         font-size: 3.5rem;
         font-weight: 800;
-        color: #004aad;
+        color: var(--brand-primary);
         margin-bottom: 20px;
         font-family: 'Inter', sans-serif;
         text-transform: uppercase;
@@ -72,7 +72,7 @@
 
     .section-subtitle {
         font-size: 1.3rem;
-        color: #4a5568;
+        color: var(--text-secondary);
         max-width: 600px;
         margin: 0 auto;
         line-height: 1.6;
@@ -85,24 +85,25 @@
     .contact-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 80px;
+        gap: 60px;
         align-items: start;
         margin-bottom: 60px;
     }
 
     /* Contact Info */
     .contact-info {
-        background: rgba(255, 255, 255, 0.9);
+        background: var(--bg-card);
         backdrop-filter: blur(15px);
         padding: 50px 40px;
         border-radius: 24px;
         box-shadow: 0 25px 50px rgba(0, 74, 173, 0.08);
-        border: 1px solid rgba(0, 74, 173, 0.1);
+        border: 1px solid var(--border-color);
+        height: fit-content;
     }
 
     .contact-info h3 {
         font-size: 2rem;
-        color: #004aad;
+        color: var(--brand-primary);
         margin-bottom: 30px;
         font-weight: 700;
         font-family: 'Inter', sans-serif;
@@ -113,20 +114,24 @@
         align-items: center;
         margin-bottom: 25px;
         padding: 20px;
-        background: rgba(0, 74, 173, 0.02);
+        background: var(--form-icon-bg);
         border-radius: 15px;
         transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
     }
 
     .contact-item:hover {
-        background: rgba(0, 74, 173, 0.05);
+        background: var(--form-focus-icon-bg);
         transform: translateX(5px);
+        text-decoration: none;
+        color: inherit;
     }
 
     .contact-item i {
         width: 50px;
         height: 50px;
-        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        background: var(--brand-gradient);
         color: white;
         border-radius: 12px;
         display: flex;
@@ -139,7 +144,7 @@
 
     .contact-details h4 {
         font-size: 1.1rem;
-        color: #1a202c;
+        color: var(--text-primary);
         margin-bottom: 5px;
         font-weight: 600;
         font-family: 'Inter', sans-serif;
@@ -147,7 +152,7 @@
     }
 
     .contact-details p {
-        color: #4a5568;
+        color: var(--text-secondary);
         margin: 0;
         font-weight: 500;
         text-align: left;
@@ -155,18 +160,16 @@
 
     /* Contact Form */
     .contact-form {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+        background: var(--bg-card);
         backdrop-filter: blur(25px);
-        padding: 60px 50px;
-        border-radius: 28px;
+        padding: 50px 40px;
+        border-radius: 24px;
         box-shadow: 
             0 30px 60px rgba(0, 74, 173, 0.15),
             0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-        flex: 1;
-        min-width: 0;
         position: relative;
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid var(--border-color);
     }
 
     .contact-form::before {
@@ -175,8 +178,8 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 5px;
-        background: linear-gradient(135deg, #004aad 0%, #0066ff 50%, #004aad 100%);
+        height: 4px;
+        background: var(--brand-gradient);
         background-size: 200% 100%;
         animation: gradientShift 3s ease-in-out infinite;
     }
@@ -189,17 +192,17 @@
     /* Form Header */
     .form-header {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
     .form-icon {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 25px;
+        margin: 0 auto 20px;
     }
 
     .icon-bg {
@@ -208,9 +211,9 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(0, 74, 173, 0.08) 0%, rgba(0, 102, 255, 0.04) 100%);
+        background: var(--form-icon-bg);
         border-radius: 50%;
-        border: 2px solid rgba(0, 74, 173, 0.1);
+        border: 2px solid var(--form-border);
         animation: pulse 2s ease-in-out infinite;
     }
 
@@ -220,23 +223,23 @@
     }
 
     .form-icon i {
-        font-size: 2.5rem;
-        color: #004aad;
+        font-size: 2rem;
+        color: var(--brand-primary);
         position: relative;
         z-index: 2;
         filter: drop-shadow(0 2px 4px rgba(0, 74, 173, 0.2));
     }
 
     .contact-form h3 {
-        color: #004aad;
-        font-size: 2rem;
+        color: var(--brand-primary);
+        font-size: 1.8rem;
         margin-bottom: 10px;
         font-weight: 700;
         text-align: center;
     }
 
     .form-subtitle {
-        color: #64748b;
+        color: var(--text-secondary);
         font-size: 1rem;
         font-weight: 500;
         text-align: center;
@@ -267,9 +270,9 @@
     /* Input Wrapper */
     .input-wrapper {
         position: relative;
-        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-        border-radius: 18px;
-        border: 2px solid transparent;
+        background: var(--form-bg);
+        border-radius: 16px;
+        border: 2px solid var(--form-border);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -282,18 +285,18 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(0, 74, 173, 0.03) 0%, rgba(0, 102, 255, 0.02) 100%);
+        background: var(--form-icon-bg);
         opacity: 0;
         transition: opacity 0.4s ease;
     }
 
     .input-wrapper:focus-within {
-        border-color: #004aad;
+        border-color: var(--form-focus-border);
         box-shadow: 
             0 0 0 4px rgba(0, 74, 173, 0.08),
             0 8px 25px rgba(0, 74, 173, 0.12);
-        transform: translateY(-3px);
-        background: #ffffff;
+        transform: translateY(-2px);
+        background: var(--bg-card);
     }
 
     .input-wrapper:focus-within::before {
@@ -301,19 +304,19 @@
     }
 
     .textarea-wrapper {
-        min-height: 160px;
+        min-height: 140px;
     }
 
     /* Input Icons */
     .input-icon-container {
         position: absolute;
-        left: 20px;
+        left: 16px;
         top: 50%;
         transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(135deg, rgba(0, 74, 173, 0.08) 0%, rgba(0, 102, 255, 0.04) 100%);
-        border-radius: 12px;
+        width: 36px;
+        height: 36px;
+        background: var(--form-icon-bg);
+        border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -322,18 +325,18 @@
     }
 
     .textarea-wrapper .input-icon-container {
-        top: 25px;
+        top: 20px;
         transform: none;
     }
 
     .input-icon {
-        color: #64748b;
-        font-size: 1.1rem;
+        color: var(--form-icon-color);
+        font-size: 1rem;
         transition: all 0.4s ease;
     }
 
     .input-wrapper:focus-within .input-icon-container {
-        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        background: var(--form-focus-icon-bg);
         transform: translateY(-50%) scale(1.1);
         box-shadow: 0 4px 12px rgba(0, 74, 173, 0.3);
     }
@@ -343,7 +346,7 @@
     }
 
     .input-wrapper:focus-within .input-icon {
-        color: white;
+        color: var(--form-focus-icon-color);
         transform: scale(1.1);
     }
 
@@ -353,8 +356,8 @@
         left: 60px;
         top: 50%;
         transform: translateY(-50%);
-        color: #64748b;
-        font-size: 1rem;
+        color: var(--form-label);
+        font-size: 0.95rem;
         font-weight: 500;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         pointer-events: none;
@@ -364,7 +367,7 @@
 
     .textarea-icon + .floating-label {
         left: 60px;
-        top: 25px;
+        top: 20px;
         transform: none;
     }
 
@@ -372,11 +375,11 @@
     .form-group input,
     .form-group textarea {
         width: 100%;
-        padding: 22px 22px 22px 70px;
+        padding: 18px 18px 18px 60px;
         border: none;
         background: transparent;
-        font-size: 1rem;
-        color: #1e293b;
+        font-size: 0.95rem;
+        color: var(--form-text);
         font-family: 'Inter', sans-serif;
         font-weight: 500;
         transition: all 0.4s ease;
@@ -385,11 +388,11 @@
     }
 
     .form-group textarea {
-        padding-top: 30px;
-        padding-bottom: 22px;
-        min-height: 160px;
+        padding-top: 25px;
+        padding-bottom: 18px;
+        min-height: 140px;
         resize: vertical;
-        line-height: 1.7;
+        line-height: 1.6;
     }
 
     /* Focus Border Animation */
@@ -399,7 +402,7 @@
         left: 50%;
         width: 0;
         height: 3px;
-        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        background: var(--brand-gradient);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         transform: translateX(-50%);
         border-radius: 2px;
@@ -411,7 +414,7 @@
 
     .form-group input::placeholder,
     .form-group textarea::placeholder {
-        color: #94a3b8;
+        color: var(--form-placeholder);
         opacity: 0;
         transition: opacity 0.3s ease;
     }
@@ -427,36 +430,36 @@
     .form-group textarea:focus + .floating-label,
     .form-group textarea:not(:placeholder-shown) + .floating-label {
         top: 8px;
-        left: 20px;
-        font-size: 0.8rem;
-        color: #004aad;
+        left: 16px;
+        font-size: 0.75rem;
+        color: var(--form-focus-border);
         font-weight: 600;
-        background: #ffffff;
-        padding: 0 8px;
+        background: var(--bg-card);
+        padding: 0 6px;
         border-radius: 4px;
     }
 
     .textarea-icon + .floating-label {
         top: 8px;
-        left: 20px;
+        left: 16px;
     }
 
     /* Form Actions */
     .form-actions {
-        margin-top: 40px;
+        margin-top: 30px;
         text-align: center;
     }
 
     /* Submit Button */
     .submit-btn {
         width: 100%;
-        max-width: 320px;
-        padding: 20px 45px;
-        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        max-width: 280px;
+        padding: 18px 40px;
+        background: var(--brand-gradient);
         color: white;
         border: none;
-        border-radius: 20px;
-        font-size: 1.1rem;
+        border-radius: 16px;
+        font-size: 1rem;
         font-weight: 600;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -466,9 +469,9 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 12px;
+        gap: 10px;
         box-shadow: 
-            0 10px 30px rgba(0, 74, 173, 0.25),
+            0 8px 25px rgba(0, 74, 173, 0.25),
             0 0 0 1px rgba(255, 255, 255, 0.1) inset;
     }
 
@@ -500,9 +503,9 @@
     }
 
     .submit-btn:hover {
-        transform: translateY(-4px);
+        transform: translateY(-3px);
         box-shadow: 
-            0 20px 40px rgba(0, 74, 173, 0.35),
+            0 15px 35px rgba(0, 74, 173, 0.35),
             0 0 0 1px rgba(255, 255, 255, 0.2) inset;
     }
 
@@ -511,7 +514,7 @@
     }
 
     .submit-btn:active {
-        transform: translateY(-2px);
+        transform: translateY(-1px);
     }
 
     .submit-btn:disabled {
@@ -532,7 +535,7 @@
     .submit-btn.loading .btn-loading {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
     }
 
     /* Map Section */
@@ -690,14 +693,18 @@
             font-size: 1.1rem;
         }
 
+        .contact-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
         .contact-info,
-        .contact-form,
-        .map-section {
+        .contact-form {
             padding: 30px 25px;
         }
 
         .contact-item {
-            padding: 15px;
+            padding: 16px;
         }
 
         .contact-item i {
@@ -708,22 +715,35 @@
         }
         
         .form-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
         }
         
         .form-icon i {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
         
         .input-icon-container {
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
+            left: 12px;
         }
         
         .form-group input,
         .form-group textarea {
-            padding: 20px 20px 20px 65px;
+            padding: 16px 16px 16px 50px;
+            font-size: 0.9rem;
+        }
+        
+        .floating-label {
+            left: 50px;
+            font-size: 0.85rem;
+        }
+        
+        .submit-btn {
+            padding: 16px 30px;
+            font-size: 0.95rem;
+            max-width: 260px;
         }
         
         .notification {
@@ -739,15 +759,22 @@
         }
 
         .contact-info h3,
-        .contact-form h3,
-        .map-section h3 {
-            font-size: 1.6rem;
+        .contact-form h3 {
+            font-size: 1.4rem;
+        }
+
+        .contact-content {
+            gap: 30px;
         }
 
         .contact-info,
-        .contact-form,
-        .map-section {
+        .contact-form {
             padding: 25px 20px;
+        }
+        
+        .form-row {
+            grid-template-columns: 1fr;
+            gap: 15px;
         }
         
         .input-wrapper {
@@ -756,23 +783,48 @@
         
         .form-group input,
         .form-group textarea {
-            padding: 18px 18px 18px 55px;
-            font-size: 0.95rem;
+            padding: 14px 14px 14px 45px;
+            font-size: 0.85rem;
         }
         
         .input-icon-container {
-            width: 32px;
-            height: 32px;
-            left: 15px;
+            width: 28px;
+            height: 28px;
+            left: 10px;
         }
         
         .input-icon {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
         
         .floating-label {
-            left: 55px;
+            left: 45px;
+            font-size: 0.8rem;
+        }
+        
+        .submit-btn {
+            padding: 14px 25px;
             font-size: 0.9rem;
+            max-width: 240px;
+        }
+        
+        .contact-item {
+            padding: 12px;
+        }
+        
+        .contact-item i {
+            width: 35px;
+            height: 35px;
+            font-size: 0.9rem;
+            margin-right: 12px;
+        }
+        
+        .contact-details h4 {
+            font-size: 0.9rem;
+        }
+        
+        .contact-details p {
+            font-size: 0.8rem;
         }
         
         .submit-btn {
@@ -780,6 +832,10 @@
             font-size: 1rem;
             max-width: 280px;
         }
+    }
+
+    .submit-btn {
+        cursor: pointer;
     }
 </style>
 
@@ -800,7 +856,7 @@
             <div class="contact-info">
                 <h3 data-lang="contactInfoTitle">Thông tin liên hệ</h3>
 
-                <a class="contact-item transition-time   style="text-decoration: none;" href="https://thptnguyenhuuhuan.hcm.edu.vn/homegd1">
+                <a class="contact-item" href="https://thptnguyenhuuhuan.hcm.edu.vn/homegd1">
                     <i class="fas fa-school"></i>
                     <div class="contact-details">
                         <h4 data-lang="schoolLabel">Trường học</h4>
@@ -808,7 +864,7 @@
                     </div>
                 </a>  
 
-                <a class="contact-item transition-time"   style="text-decoration: none;"  href="https://maps.app.goo.gl/XodzsNJKM5JHy6hW6">
+                <a class="contact-item" href="https://maps.app.goo.gl/XodzsNJKM5JHy6hW6">
                     <i class="fas fa-map-marker-alt"></i>
                     <div class="contact-details">
                         <h4 data-lang="addressLabel">Địa chỉ</h4>
@@ -816,7 +872,7 @@
                     </div>
                 </a>
 
-                <a class="contact-item  transition-time"    style="text-decoration: none;" href="mailto:viegrand.contact@gmail.com">
+                <a class="contact-item" href="mailto:viegrand.contact@gmail.com">
                     <i class="fas fa-envelope"></i>
                     <div class="contact-details">
                         <h4 data-lang="emailLabel">Email</h4>
@@ -824,7 +880,7 @@
                     </div>
                 </a>
 
-                <a class="contact-item  transition-time"   style="text-decoration: none;" href="tel:+84 xxx xxx xxx">
+                <a class="contact-item" href="tel:+84 xxx xxx xxx">
                     <i class="fas fa-phone"></i>
                     <div class="contact-details">
                         <h4 data-lang="phoneLabel">Điện thoại</h4>
@@ -832,13 +888,13 @@
                     </div>
                 </a>
 
-                <a class="contact-item transition-time">
+                <div class="contact-item">
                     <i class="fas fa-clock"></i>
                     <div class="contact-details">
                         <h4 data-lang="workingHoursLabel">Giờ làm việc</h4>
                         <p data-lang="workingHours">Thứ 2 - Thứ 6: 8:00 - 17:00</p>
                     </div>
-                </a>
+                </div>
             </div>
 
             <!-- Contact Form -->
@@ -913,7 +969,7 @@
                     </div>
 
                     <div class="form-actions">
-                        <button type="submit" class="submit-btn" data-lang="sendMessage">
+                        <button type="submit" class="submit-btn" data-lang="sendMessage" onclick="alert('Gửi tin nhắn thành công!')">
                             <span class="btn-text">
                                 <i class="fas fa-paper-plane"></i>
                                 <span>Gửi tin nhắn</span>

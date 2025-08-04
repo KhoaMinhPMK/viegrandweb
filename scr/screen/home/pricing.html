@@ -138,15 +138,15 @@
     .section-title {
         font-size: 3.2rem;
         font-weight: 900;
-        color: #0f172a;
+        color: var(--text-primary);
         margin-bottom: 20px;
         background: linear-gradient(135deg, 
-            #1e293b 0%, 
-            #334155 20%,
-            #0f172a 40%,
-            #1e293b 60%,
-            #334155 80%,
-            #0f172a 100%);
+            var(--text-primary) 0%, 
+            var(--text-secondary) 20%,
+            var(--text-primary) 40%,
+            var(--text-secondary) 60%,
+            var(--text-primary) 80%,
+            var(--text-primary) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -190,7 +190,7 @@
 
     .section-subtitle {
         font-size: 1.1rem;
-        color: #475569;
+        color: var(--text-secondary);
         max-width: 650px;
         margin: 30px auto 0;
         line-height: 1.7;
@@ -204,7 +204,7 @@
     .section-subtitle::after {
         content: '"';
         font-size: 1.6rem;
-        color: #cbd5e1;
+        color: var(--text-muted);
         position: absolute;
         top: -8px;
         font-weight: 300;
@@ -440,22 +440,22 @@
     .plan-name {
         font-size: 1.9rem;
         font-weight: 900;
-        color: #0f172a;
+        color: var(--text-primary);
         margin-bottom: 15px;
         text-transform: uppercase;
         letter-spacing: -0.6px;
         position: relative;
         background: linear-gradient(135deg, 
-            #0f172a 0%, 
-            #1e293b 50%, 
-            #334155 100%);
+            var(--text-primary) 0%, 
+            var(--text-secondary) 50%, 
+            var(--text-muted) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
     }
 
     .plan-description {
-        color: #64748b;
+        color: var(--text-secondary);
         font-size: 1rem;
         line-height: 1.6;
         font-weight: 500;
