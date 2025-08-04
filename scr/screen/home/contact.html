@@ -953,21 +953,15 @@
 
 <script>
     // Contact form submission handler
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
         // Get form data
         const formData = new FormData(this);
-        const data = {
-            full_name: formData.get('name'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            subject: formData.get('subject'),
-            message: formData.get('message')
-        };
+        const data = Object.fromEntries(formData);
         
         // Simple form validation
-        if (!data.full_name || !data.email || !data.subject || !data.message) {
+        if (!data.name || !data.email || !data.subject || !data.message) {
             showNotification('Vui lòng điền đầy đủ thông tin bắt buộc!', 'error');
             return;
         }
@@ -980,7 +974,7 @@
         }
         
         // Phone validation (if provided)
-        if (data.phone && data.phone.trim() !== '') {
+        if (data.phone) {
             const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
             if (!phoneRegex.test(data.phone)) {
                 showNotification('Vui lòng nhập số điện thoại hợp lệ!', 'error');
@@ -988,102 +982,21 @@
             }
         }
         
-        // Subject length validation
-        if (data.subject.length > 255) {
-            showNotification('Chủ đề quá dài. Tối đa 255 ký tự.', 'error');
-            return;
-        }
-        
-        // Message length validation
-        if (data.message.length > 5000) {
-            showNotification('Tin nhắn quá dài. Tối đa 5000 ký tự.', 'error');
-            return;
-        }
-        
-        // Submit form to server
+        // Simulate form submission
         const submitBtn = this.querySelector('.submit-btn');
         
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
         
-        try {
-            // Production API endpoint
-            const apiUrl = 'https://viegrand.site/php/contact_form_production.php';
-            
-            console.log('=== FORM SUBMISSION START ===');
-            console.log('Data to send:', data);
-            console.log('API URL:', apiUrl);
-            console.log('Timestamp:', new Date().toISOString());
-            
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                },
-                body: JSON.stringify(data)
-            });
-            
-            console.log('Response status:', response.status);
-            console.log('Response headers:', [...response.headers.entries()]);
-            
-            // Get response text first to handle both JSON and error responses
-            const responseText = await response.text();
-            console.log('Raw response:', responseText);
-            
-            let result;
-            try {
-                result = JSON.parse(responseText);
-            } catch (parseError) {
-                console.error('JSON parse error:', parseError);
-                throw new Error('Server returned invalid response: ' + responseText.substring(0, 200));
-            }
-            
-            console.log('Parsed response:', result);
-            
-            if (result.success) {
-                showNotification(result.message || 'Tin nhắn đã được gửi thành công!', 'success');
-                this.reset();
-                resetFloatingLabels();
-                
-                console.log('✅ SUCCESS - Message ID:', result.data?.id);
-                console.log('=== FORM SUBMISSION SUCCESS ===');
-            } else {
-                showNotification(result.message || 'Có lỗi xảy ra khi gửi tin nhắn.', 'error');
-                console.error('❌ API ERROR:', result);
-                
-                if (result.error_details) {
-                    console.error('Error details:', result.error_details);
-                }
-            }
-            
-        } catch (error) {
-            console.error('💥 SUBMISSION ERROR:', error);
-            console.error('Error details:', {
-                name: error.name,
-                message: error.message,
-                stack: error.stack
-            });
-            
-            // Show user-friendly error message
-            let errorMessage = 'Có lỗi xảy ra khi gửi tin nhắn. ';
-            
-            if (error.name === 'TypeError' && error.message.includes('fetch')) {
-                errorMessage += 'Không thể kết nối đến server. Vui lòng kiểm tra kết nối internet.';
-            } else if (error.message.includes('404')) {
-                errorMessage += 'Không tìm thấy API endpoint. Vui lòng liên hệ quản trị viên.';
-            } else if (error.message.includes('500')) {
-                errorMessage += 'Lỗi server nội bộ. Vui lòng thử lại sau.';
-            } else {
-                errorMessage += 'Vui lòng thử lại sau hoặc liên hệ trực tiếp qua email: viegrand.contact@gmail.com';
-            }
-            
-            showNotification(errorMessage, 'error');
-            console.log('=== FORM SUBMISSION ERROR ===');
-        } finally {
+        setTimeout(() => {
+            showNotification('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.', 'success');
+            this.reset();
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
-        }
+            
+            // Reset floating labels
+            resetFloatingLabels();
+        }, 2000);
     });
 
     // Notification system
