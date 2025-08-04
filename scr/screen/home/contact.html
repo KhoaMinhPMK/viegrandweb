@@ -982,21 +982,44 @@
             }
         }
         
-        // Simulate form submission
+        // Submit form to backend
         const submitBtn = this.querySelector('.submit-btn');
         
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
         
-        setTimeout(() => {
-            showNotification('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.', 'success');
-            this.reset();
+        // Send data to PHP backend
+        fetch('/contact-handler.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(result => {
+            if (result.success) {
+                showNotification(result.message, 'success');
+                this.reset();
+                resetFloatingLabels();
+            } else {
+                showNotification(result.message || 'Đã xảy ra lỗi khi gửi tin nhắn', 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Form submission error:', error);
+            showNotification('Không thể kết nối đến máy chủ. Vui lòng thử lại sau.', 'error');
+        })
+        .finally(() => {
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
-            
-            // Reset floating labels
-            resetFloatingLabels();
-        }, 2000);
+        });
     });
 
     // Notification system
