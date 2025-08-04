@@ -1060,6 +1060,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function handleContactFormSubmit(event) {
     event.preventDefault();
     
+    console.log('Form submission caught!');
+    alert('Form submission detected!');
+    
     const form = event.target;
     const submitBtn = form.querySelector('.submit-btn');
     const btnText = submitBtn.querySelector('.btn-text');
@@ -1096,16 +1099,24 @@ function handleContactFormSubmit(event) {
         return;
     }
     
+    // Debug: Log the form data being sent
+    console.log('Sending form data:', formData);
+    
     // Send data to server
-    fetch('https://viegrand.site/api/submit_contact.php', {
+    fetch('//viegrand.site/api/submit_contact.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData)
     })
-    .then(response => response.json())
+    .then(response => {
+        console.log('Response status:', response.status);
+        console.log('Response headers:', response.headers);
+        return response.json();
+    })
     .then(data => {
+        console.log('Response data:', data);
         if (data.success) {
             showNotification('Thành công', data.message, 'success');
             form.reset();
@@ -1120,7 +1131,7 @@ function handleContactFormSubmit(event) {
         }
     })
     .catch(error => {
-        console.error('Error:', error);
+        console.error('Fetch error:', error);
         showNotification('Lỗi', 'Không thể kết nối đến máy chủ. Vui lòng thử lại sau.', 'error');
     })
     .finally(() => {
