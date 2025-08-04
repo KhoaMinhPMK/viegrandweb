@@ -1,9 +1,19 @@
 <?php
+// Debug: Log that the script is being called
+error_log("Contact form API called at: " . date('Y-m-d H:i:s'));
+
 // Set headers for CORS and JSON response
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST');
-header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Methods: POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, X-Requested-With');
+header('Access-Control-Max-Age: 86400');
+
+// Handle preflight OPTIONS request
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
 
 // Only allow POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -27,6 +37,9 @@ try {
     
     // Get JSON input
     $input = json_decode(file_get_contents('php://input'), true);
+    
+    // Debug: Log the received data
+    error_log("Contact form submission received: " . json_encode($input));
     
     if (!$input) {
         throw new Exception('Invalid JSON input');
