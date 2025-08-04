@@ -1007,11 +1007,11 @@
         submitBtn.disabled = true;
         
         try {
-            // Use debug API for troubleshooting
-            let apiUrl = '../../../php/contact_form_debug.php';
+            // Direct connection to production VPS backend
+            const apiUrl = 'https://viegrand.site/php/contact_form_debug.php';
             
             console.log('Sending data:', data);
-            console.log('API URL:', apiUrl);
+            console.log('Production API URL:', apiUrl);
             
             const response = await fetch(apiUrl, {
                 method: 'POST',

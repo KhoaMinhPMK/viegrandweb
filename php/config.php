@@ -8,21 +8,14 @@
 
 // Database configuration
 class DatabaseConfig {
-    // Automatically detect if we're on local or live server
+    // Production VPS configuration - direct connection to viegrand.site
     public static function getHost() {
-        // Check if we're running locally
-        $serverName = $_SERVER['SERVER_NAME'] ?? $_SERVER['HTTP_HOST'] ?? 'localhost';
-        
-        if (in_array($serverName, ['localhost', '127.0.0.1', '::1']) || 
-            strpos($serverName, 'localhost') !== false) {
-            return 'localhost'; // Local development
-        } else {
-            return 'viegrand.site'; // Live server
-        }
+        // Always use production VPS
+        return 'viegrand.site';
     }
     
-    // Database host - automatically detected
-    public static $host = null; // Will be set dynamically
+    // Database host - production VPS
+    public static $host = 'viegrand.site';
     
     // Database name
     public static $database = 'viegrand_admin';
@@ -57,11 +50,6 @@ class Database {
     public static function connect() {
         if (self::$connection === null) {
             try {
-                // Set host dynamically if not already set
-                if (DatabaseConfig::$host === null) {
-                    DatabaseConfig::$host = DatabaseConfig::getHost();
-                }
-                
                 $dsn = "mysql:host=" . DatabaseConfig::$host . 
                        ";dbname=" . DatabaseConfig::$database . 
                        ";charset=" . DatabaseConfig::$charset;
