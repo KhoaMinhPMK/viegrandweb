@@ -11,14 +11,14 @@ if (!defined('VIEGRAND_ACCESS')) {
 }
 
 // Cấu hình database cho WEB ADMIN (login web)
-define('DB_HOST', 'viegrand.site');
+define('DB_HOST', 'localhost');
 define('DB_NAME', 'viegrand_admin'); // Database cho login web admin
 define('DB_USER', 'root'); 
 define('DB_PASS', ''); 
 define('DB_CHARSET', 'utf8mb4');
 
 // Cấu hình database VIEGRAND CHÍNH (database có sẵn của bạn)
-define('MAIN_DB_HOST', 'viegrand.site');
+define('MAIN_DB_HOST', 'localhost');
 define('MAIN_DB_NAME', 'viegrand'); // Database viegrand có sẵn
 define('MAIN_DB_USER', 'root');
 define('MAIN_DB_PASS', '');
@@ -294,7 +294,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 header('Access-Control-Allow-Credentials: true');
 
 // Xử lý CORS cho preflight requests
-if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
