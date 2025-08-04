@@ -13,10 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Database configuration
-$host = 'localhost';
+$host = '127.0.0.1';  // Using IP instead of localhost
 $dbname = 'viegrand_admin';
-$username = 'admin';
-$password = '';
+$username = 'root';
+$password = '';      // Empty password for root
 $charset = 'utf8mb4';
 
 try {
