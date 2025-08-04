@@ -953,15 +953,21 @@
 
 <script>
     // Contact form submission handler
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         
         // Get form data
         const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
+        const data = {
+            full_name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            subject: formData.get('subject'),
+            message: formData.get('message')
+        };
         
         // Simple form validation
-        if (!data.name || !data.email || !data.subject || !data.message) {
+        if (!data.full_name || !data.email || !data.subject || !data.message) {
             showNotification('Vui lòng điền đầy đủ thông tin bắt buộc!', 'error');
             return;
         }
@@ -974,7 +980,7 @@
         }
         
         // Phone validation (if provided)
-        if (data.phone) {
+        if (data.phone && data.phone.trim() !== '') {
             const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
             if (!phoneRegex.test(data.phone)) {
                 showNotification('Vui lòng nhập số điện thoại hợp lệ!', 'error');
@@ -982,21 +988,84 @@
             }
         }
         
-        // Simulate form submission
+        // Subject length validation
+        if (data.subject.length > 255) {
+            showNotification('Chủ đề quá dài. Tối đa 255 ký tự.', 'error');
+            return;
+        }
+        
+        // Message length validation
+        if (data.message.length > 5000) {
+            showNotification('Tin nhắn quá dài. Tối đa 5000 ký tự.', 'error');
+            return;
+        }
+        
+        // Submit form to server
         const submitBtn = this.querySelector('.submit-btn');
         
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
         
-        setTimeout(() => {
-            showNotification('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.', 'success');
-            this.reset();
+        try {
+            // Use debug API for troubleshooting
+            let apiUrl = '../../../php/contact_form_debug.php';
+            
+            console.log('Sending data:', data);
+            console.log('API URL:', apiUrl);
+            
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+            
+            console.log('Response status:', response.status);
+            console.log('Response headers:', response.headers);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const result = await response.json();
+            console.log('Server response:', result);
+            
+            if (result.success) {
+                showNotification(result.message || 'Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất.', 'success');
+                this.reset();
+                resetFloatingLabels();
+                
+                // Log success for debugging
+                console.log('Message sent successfully:', result);
+            } else {
+                showNotification(result.message || 'Có lỗi xảy ra khi gửi tin nhắn.', 'error');
+                console.error('Server error:', result);
+                
+                // Show debug info if available
+                if (result.debug) {
+                    console.error('Debug info:', result.debug);
+                }
+            }
+            
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            
+            // Show user-friendly error message
+            if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                showNotification('Không thể kết nối đến server. Vui lòng kiểm tra kết nối internet.', 'error');
+            } else if (error.message.includes('404')) {
+                showNotification('Không tìm thấy API endpoint. Vui lòng liên hệ quản trị viên.', 'error');
+            } else if (error.message.includes('500')) {
+                showNotification('Lỗi server nội bộ. Vui lòng thử lại sau.', 'error');
+            } else {
+                showNotification('Có lỗi xảy ra. Vui lòng thử lại sau hoặc liên hệ trực tiếp qua email.', 'error');
+            }
+        } finally {
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
-            
-            // Reset floating labels
-            resetFloatingLabels();
-        }, 2000);
+        }
     });
 
     // Notification system

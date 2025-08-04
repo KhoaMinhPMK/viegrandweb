@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VieGrand - Test Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #004aad;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #004aad;
+        }
+        
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        .debug {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            color: #495057;
+            font-family: monospace;
+            white-space: pre-wrap;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 VieGrand Contact Form Test</h1>
+        <p>Sử dụng form này để test việc gửi tin nhắn và debug các lỗi.</p>
+        
+        <form id="testForm">
+            <div class="form-group">
+                <label for="full_name">Họ và tên *</label>
+                <input type="text" id="full_name" name="full_name" required value="Nguyễn Văn Test">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required value="test@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" name="phone" value="0123456789">
+            </div>
+            
+            <div class="form-group">
+                <label for="subject">Chủ đề *</label>
+                <input type="text" id="subject" name="subject" required value="Test Message">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Tin nhắn *</label>
+                <textarea id="message" name="message" required>Đây là tin nhắn test để kiểm tra hệ thống contact form của VieGrand.</textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submitBtn">
+                Gửi tin nhắn test
+            </button>
+        </form>
+        
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('testForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const resultDiv = document.getElementById('result');
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {
+                full_name: formData.get('full_name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+            
+            console.log('Sending data:', data);
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Đang gửi...';
+            resultDiv.style.display = 'none';
+            
+            try {
+                const response = await fetch('contact_form_debug.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                console.log('Response status:', response.status);
+                console.log('Response headers:', [...response.headers]);
+                
+                const result = await response.json();
+                console.log('Server response:', result);
+                
+                resultDiv.style.display = 'block';
+                
+                if (result.success) {
+                    resultDiv.className = 'result success';
+                    resultDiv.innerHTML = `
+                        <strong>✅ Thành công!</strong><br>
+                        ${result.message}
+                        <div class="debug">ID tin nhắn: ${result.id || 'N/A'}</div>
+                    `;
+                } else {
+                    resultDiv.className = 'result error';
+                    resultDiv.innerHTML = `
+                        <strong>❌ Lỗi!</strong><br>
+                        ${result.message}
+                        ${result.debug ? '<div class="debug">Debug: ' + JSON.stringify(result.debug, null, 2) + '</div>' : ''}
+                    `;
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                
+                resultDiv.style.display = 'block';
+                resultDiv.className = 'result error';
+                resultDiv.innerHTML = `
+                    <strong>❌ Lỗi kết nối!</strong><br>
+                    ${error.message}
+                    <div class="debug">Chi tiết: ${error.stack}</div>
+                `;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Gửi tin nhắn test';
+            }
+        });
+    </script>
+</body>
+</html>
