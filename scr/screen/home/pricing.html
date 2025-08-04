@@ -883,14 +883,11 @@
     .contact-title {
         font-size: 2.1rem;
         font-weight: 900;
-        color: #0f172a;
+        color: var(--text-primary);
         margin-bottom: 20px;
         position: relative;
         z-index: 2;
-        background: linear-gradient(135deg, 
-            #0f172a 0%, 
-            #1e293b 50%, 
-            #334155 100%);
+        background: var(--brand-gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -899,7 +896,7 @@
 
     .contact-description {
         font-size: 1.05rem;
-        color: #475569;
+        color: var(--text-secondary);
         margin-bottom: 35px;
         max-width: 600px;
         margin-left: auto;
@@ -916,24 +913,20 @@
         align-items: center;
         gap: 12px;
         padding: 16px 40px;
-        background: linear-gradient(135deg, 
-            rgba(248, 250, 252, 0.9) 0%, 
-            rgba(255, 255, 255, 0.8) 100%);
-        color: #1e293b;
+        background: var(--bg-card);
+        color: var(--text-primary);
         text-decoration: none;
         border-radius: 50px;
         font-weight: 800;
         font-size: 1rem;
-        border: 2px solid rgba(226, 232, 240, 0.6);
+        border: 2px solid var(--border-color);
         transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         text-transform: uppercase;
         letter-spacing: 0.8px;
         position: relative;
         z-index: 2;
         backdrop-filter: blur(10px);
-        box-shadow: 
-            0 6px 20px rgba(15, 23, 42, 0.1),
-            0 3px 10px rgba(30, 41, 59, 0.05);
+        box-shadow: var(--shadow-light);
     }
 
     .contact-button::before {
@@ -943,10 +936,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, 
-            #1e293b 0%, 
-            #334155 50%, 
-            #475569 100%);
+        background: var(--brand-gradient);
         border-radius: 48px;
         opacity: 0;
         transition: opacity 0.3s ease;
@@ -960,10 +950,8 @@
     .contact-button:hover {
         color: white;
         transform: translateY(-3px) scale(1.02);
-        box-shadow: 
-            0 12px 35px rgba(15, 23, 42, 0.18),
-            0 6px 18px rgba(30, 41, 59, 0.1);
-        border-color: rgba(30, 41, 59, 0.3);
+        box-shadow: var(--shadow-medium);
+        border-color: var(--brand-primary);
     }
 
     /* Responsive Design */

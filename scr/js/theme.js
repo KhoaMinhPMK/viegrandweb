@@ -37,16 +37,18 @@ class ThemeController {
     applyTheme(theme) {
         const root = document.documentElement;
         
-        // Remove existing theme attributes
+        // Remove existing theme attributes and styles
         root.removeAttribute('data-theme');
+        root.style.removeProperty('--actual-theme');
         
         if (theme === 'system') {
-            // Don't set data-theme, let CSS handle system preference
+            // For system mode, don't set data-theme attribute
+            // This allows the CSS media queries to work naturally
             const systemTheme = this.getSystemTheme();
-            root.style.setProperty('--actual-theme', systemTheme);
+            console.log('System theme detected:', systemTheme);
         } else {
+            // For light/dark modes, set the data-theme attribute
             root.setAttribute('data-theme', theme);
-            root.style.setProperty('--actual-theme', theme);
         }
 
         // Add transition class for smooth theme changes
@@ -60,12 +62,15 @@ class ThemeController {
         this.updateThemeToggle();
         
         // Dispatch custom event for other components to listen
+        const actualTheme = theme === 'system' ? this.getSystemTheme() : theme;
         window.dispatchEvent(new CustomEvent('themeChanged', { 
             detail: { 
                 theme, 
-                actualTheme: theme === 'system' ? this.getSystemTheme() : theme 
+                actualTheme 
             } 
         }));
+        
+        console.log('Theme applied:', theme, 'Actual theme:', actualTheme);
     }
 
     createThemeToggle() {
@@ -199,10 +204,18 @@ class ThemeController {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         mediaQuery.addEventListener('change', (e) => {
             if (this.currentTheme === 'system') {
-                // Re-apply system theme to trigger updates
-                this.applyTheme('system');
+                console.log('System theme changed to:', e.matches ? 'dark' : 'light');
+                this.applyTheme('system'); // Re-apply system theme
             }
         });
+        
+        // Also ensure system theme is properly applied on initial load
+        if (this.currentTheme === 'system') {
+            // Force a re-application of system theme
+            setTimeout(() => {
+                this.applyTheme('system');
+            }, 100);
+        }
     }
 
     // Method to get current effective theme (resolves 'system' to actual theme)
@@ -223,6 +236,22 @@ class ThemeController {
         const currentIndex = this.themes.indexOf(this.currentTheme);
         const nextIndex = (currentIndex + 1) % this.themes.length;
         this.setTheme(this.themes[nextIndex]);
+    }
+
+    // Debug method to compare system and dark themes
+    debugThemeComparison() {
+        const root = document.documentElement;
+        const systemTheme = this.getSystemTheme();
+        
+        console.log('=== Theme Debug Information ===');
+        console.log('Current theme setting:', this.currentTheme);
+        console.log('System preference:', systemTheme);
+        console.log('Has data-theme attribute:', root.hasAttribute('data-theme'));
+        console.log('data-theme value:', root.getAttribute('data-theme'));
+        console.log('CSS variables check:');
+        console.log('- --bg-primary:', getComputedStyle(root).getPropertyValue('--bg-primary'));
+        console.log('- --text-primary:', getComputedStyle(root).getPropertyValue('--text-primary'));
+        console.log('- --brand-primary:', getComputedStyle(root).getPropertyValue('--brand-primary'));
     }
 }
 
@@ -254,6 +283,14 @@ document.addEventListener('keydown', (e) => {
         e.preventDefault();
         if (themeController) {
             themeController.cycleTheme();
+        }
+    }
+    
+    // Debug shortcut (Ctrl/Cmd + Shift + D)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'D') {
+        e.preventDefault();
+        if (themeController) {
+            themeController.debugThemeComparison();
         }
     }
 });

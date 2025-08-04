@@ -158,18 +158,33 @@
         text-align: left;
     }
 
-    /* Contact Form */
+    /* Contact Form - Modern Redesign */
     .contact-form {
-        background: var(--bg-card);
-        backdrop-filter: blur(25px);
-        padding: 50px 40px;
-        border-radius: 24px;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.12) 0%, 
+            rgba(255, 255, 255, 0.06) 50%,
+            rgba(255, 255, 255, 0.02) 100%);
+        backdrop-filter: blur(40px);
+        padding: 60px 50px;
+        border-radius: 32px;
         box-shadow: 
-            0 30px 60px rgba(0, 74, 173, 0.15),
-            0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            0 25px 80px rgba(0, 0, 0, 0.12),
+            0 8px 32px rgba(0, 0, 0, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
         position: relative;
         overflow: hidden;
-        border: 1px solid var(--border-color);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .contact-form:hover {
+        transform: translateY(-8px);
+        box-shadow: 
+            0 35px 100px rgba(0, 0, 0, 0.18),
+            0 12px 40px rgba(0, 0, 0, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.15);
     }
 
     .contact-form::before {
@@ -178,10 +193,28 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 4px;
-        background: var(--brand-gradient);
+        height: 6px;
+        background: linear-gradient(90deg, 
+            #004aad 0%, #0066ff 25%, #409cff 50%, #0066ff 75%, #004aad 100%);
         background-size: 200% 100%;
-        animation: gradientShift 3s ease-in-out infinite;
+        animation: gradientShift 4s ease-in-out infinite;
+    }
+
+    .contact-form::after {
+        content: '';
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle, 
+            rgba(0, 74, 173, 0.15) 0%, 
+            rgba(0, 102, 255, 0.08) 50%,
+            transparent 100%);
+        border-radius: 50%;
+        backdrop-filter: blur(20px);
+        z-index: 0;
+        animation: float 6s ease-in-out infinite;
     }
 
     @keyframes gradientShift {
@@ -189,20 +222,27 @@
         50% { background-position: 100% 50%; }
     }
 
-    /* Form Header */
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(180deg); }
+    }
+
+    /* Form Header - Modern Design */
     .form-header {
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
+        position: relative;
+        z-index: 2;
     }
 
     .form-icon {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 20px;
+        margin: 0 auto 25px;
     }
 
     .icon-bg {
@@ -211,44 +251,101 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--form-icon-bg);
+        background: linear-gradient(135deg, 
+            rgba(0, 74, 173, 0.2) 0%, 
+            rgba(0, 102, 255, 0.15) 50%,
+            rgba(64, 156, 255, 0.1) 100%);
         border-radius: 50%;
-        border: 2px solid var(--form-border);
-        animation: pulse 2s ease-in-out infinite;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        animation: pulse 3s ease-in-out infinite;
+        backdrop-filter: blur(10px);
     }
 
     @keyframes pulse {
-        0%, 100% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.05); opacity: 0.8; }
+        0%, 100% { 
+            transform: scale(1) rotate(0deg); 
+            opacity: 1; 
+        }
+        50% { 
+            transform: scale(1.08) rotate(180deg); 
+            opacity: 0.9; 
+        }
     }
 
     .form-icon i {
-        font-size: 2rem;
+        font-size: 2.5rem;
         color: var(--brand-primary);
         position: relative;
         z-index: 2;
-        filter: drop-shadow(0 2px 4px rgba(0, 74, 173, 0.2));
+        filter: drop-shadow(0 4px 8px rgba(0, 74, 173, 0.3));
+        animation: iconGlow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes iconGlow {
+        0% { filter: drop-shadow(0 4px 8px rgba(0, 74, 173, 0.3)); }
+        100% { filter: drop-shadow(0 4px 12px rgba(0, 74, 173, 0.5)); }
     }
 
     .contact-form h3 {
-        color: var(--brand-primary);
-        font-size: 1.8rem;
-        margin-bottom: 10px;
-        font-weight: 700;
+        color: var(--text-primary);
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        font-weight: 800;
         text-align: center;
+        background: var(--brand-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.5px;
+        position: relative;
+        z-index: 2;
     }
 
     .form-subtitle {
         color: var(--text-secondary);
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-weight: 500;
         text-align: center;
         margin: 0;
+        line-height: 1.6;
+        opacity: 0.9;
+        position: relative;
+        z-index: 2;
     }
 
     /* Modern Form Layout */
     .modern-form {
         position: relative;
+        z-index: 2;
+    }
+
+    /* Decorative Elements */
+    .contact-form .decorative-dot-1 {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        background: radial-gradient(circle, 
+            rgba(0, 74, 173, 0.1) 0%, 
+            transparent 70%);
+        border-radius: 50%;
+        animation: float 8s ease-in-out infinite reverse;
+        z-index: 1;
+    }
+
+    .contact-form .decorative-dot-2 {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        width: 60px;
+        height: 60px;
+        background: radial-gradient(circle, 
+            rgba(0, 102, 255, 0.08) 0%, 
+            transparent 70%);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+        z-index: 1;
     }
 
     .form-row {
@@ -267,15 +364,20 @@
         grid-column: 1 / -1;
     }
 
-    /* Input Wrapper */
+    /* Input Wrapper - Modern Design */
     .input-wrapper {
         position: relative;
-        background: var(--form-bg);
-        border-radius: 16px;
-        border: 2px solid var(--form-border);
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.08) 0%, 
+            rgba(255, 255, 255, 0.04) 100%);
+        border-radius: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.15);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        box-shadow: 
+            0 4px 16px rgba(0, 0, 0, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
     }
 
     .input-wrapper::before {
@@ -291,12 +393,15 @@
     }
 
     .input-wrapper:focus-within {
-        border-color: var(--form-focus-border);
+        border-color: var(--brand-primary);
         box-shadow: 
-            0 0 0 4px rgba(0, 74, 173, 0.08),
-            0 8px 25px rgba(0, 74, 173, 0.12);
-        transform: translateY(-2px);
-        background: var(--bg-card);
+            0 0 0 4px rgba(0, 74, 173, 0.15),
+            0 12px 32px rgba(0, 74, 173, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        transform: translateY(-3px) scale(1.02);
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.12) 0%, 
+            rgba(255, 255, 255, 0.06) 100%);
     }
 
     .input-wrapper:focus-within::before {
@@ -307,21 +412,25 @@
         min-height: 140px;
     }
 
-    /* Input Icons */
+    /* Input Icons - Modern Design */
     .input-icon-container {
         position: absolute;
-        left: 16px;
+        left: 18px;
         top: 50%;
         transform: translateY(-50%);
-        width: 36px;
-        height: 36px;
-        background: var(--form-icon-bg);
-        border-radius: 10px;
+        width: 42px;
+        height: 42px;
+        background: linear-gradient(135deg, 
+            rgba(0, 74, 173, 0.15) 0%, 
+            rgba(0, 102, 255, 0.1) 100%);
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 2;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
     }
 
     .textarea-wrapper .input-icon-container {
@@ -393,6 +502,8 @@
         min-height: 140px;
         resize: vertical;
         line-height: 1.6;
+        font-size: 0.95rem;
+        font-weight: 500;
     }
 
     /* Focus Border Animation */
@@ -415,13 +526,17 @@
     .form-group input::placeholder,
     .form-group textarea::placeholder {
         color: var(--form-placeholder);
-        opacity: 0;
-        transition: opacity 0.3s ease;
+        opacity: 0.8;
+        font-size: 0.95rem;
+        font-weight: 500;
+        font-family: "Inter", sans-serif;
+        transition: all 0.3s ease;
     }
 
     .form-group input:focus::placeholder,
     .form-group textarea:focus::placeholder {
-        opacity: 1;
+        opacity: 0.6;
+        transform: translateY(-2px);
     }
 
     /* Floating Label Animation */
@@ -450,17 +565,18 @@
         text-align: center;
     }
 
-    /* Submit Button */
+    /* Submit Button - Modern Design */
     .submit-btn {
         width: 100%;
-        max-width: 280px;
-        padding: 18px 40px;
-        background: var(--brand-gradient);
+        max-width: 320px;
+        padding: 20px 50px;
+        background: linear-gradient(135deg, 
+            #004aad 0%, #0066ff 50%, #409cff 100%);
         color: white;
         border: none;
-        border-radius: 16px;
-        font-size: 1rem;
-        font-weight: 600;
+        border-radius: 20px;
+        font-size: 1.1rem;
+        font-weight: 700;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         font-family: 'Inter', sans-serif;
@@ -469,10 +585,14 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        gap: 12px;
         box-shadow: 
-            0 8px 25px rgba(0, 74, 173, 0.25),
-            0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            0 12px 32px rgba(0, 74, 173, 0.3),
+            0 4px 16px rgba(0, 102, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        backdrop-filter: blur(10px);
     }
 
     .submit-btn::before {
@@ -503,10 +623,21 @@
     }
 
     .submit-btn:hover {
-        transform: translateY(-3px);
+        transform: translateY(-5px) scale(1.02);
         box-shadow: 
-            0 15px 35px rgba(0, 74, 173, 0.35),
-            0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+            0 20px 40px rgba(0, 74, 173, 0.4),
+            0 8px 20px rgba(0, 102, 255, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        background: linear-gradient(135deg, 
+            #0066ff 0%, #409cff 50%, #60a5fa 100%);
+    }
+
+    .submit-btn:active {
+        transform: translateY(-2px) scale(0.98);
+        box-shadow: 
+            0 10px 25px rgba(0, 74, 173, 0.3),
+            0 4px 12px rgba(0, 102, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
 
     .submit-btn:hover::before {
@@ -939,6 +1070,8 @@
 
             <!-- Contact Form -->
             <div class="contact-form">
+                <div class="decorative-dot-1"></div>
+                <div class="decorative-dot-2"></div>
                 <div class="form-header">
                     <div class="form-icon">
                         <div class="icon-bg"></div>
