@@ -14,6 +14,12 @@ const languages = {
         login: "Đăng nhập",
         signup: "Đăng ký",
         
+        // Theme System
+        themeLight: "Chế độ sáng",
+        themeDark: "Chế độ tối", 
+        themeSystem: "Theo hệ thống",
+        themeToggle: "Chuyển đổi chủ đề",
+        
         // Hero Section
         heroTitle: "VIEGRAND",
         heroSubtitle: "CHĂM SÓC NGƯỜI THÂN THEO CÁCH HIỆN ĐẠI",
@@ -296,6 +302,12 @@ const languages = {
         login: "Login",
         signup: "Sign Up",
         
+        // Theme System
+        themeLight: "Light mode",
+        themeDark: "Dark mode",
+        themeSystem: "System preference", 
+        themeToggle: "Toggle theme",
+        
         // Hero Section
         heroTitle: "VIEGRAND",
         heroSubtitle: "CARING FOR PARENTS THE MODERN WAY",
@@ -566,7 +578,7 @@ const languages = {
 };
 
 // Current language state
-let currentLanguage = localStorage.getItem('language') || 'vi';
+currentLanguage = localStorage.getItem('language') || 'vi';
 console.log('Initial language from localStorage:', localStorage.getItem('language'));
 console.log('Current language set to:', currentLanguage);
 

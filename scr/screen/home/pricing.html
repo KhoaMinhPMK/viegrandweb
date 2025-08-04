@@ -249,6 +249,8 @@
         z-index: 1;
         transform-style: preserve-3d;
         animation: luxuryFadeIn 0.8s ease-out;
+        transition: all 0.3s ease !important;
+
     }
 
     .pricing-card::before {
@@ -264,7 +266,9 @@
             rgba(203, 213, 225, 0.6) 50%,
             rgba(148, 163, 184, 0.3) 80%,
             transparent 100%);
-        transition: all 0.5s ease;
+        /* transition: all 0.5s ease; */
+        transition: all 0.3s ease !important;
+
     }
 
     .pricing-card::after {
@@ -282,10 +286,14 @@
         border-radius: 24px;
         opacity: 0;
         transition: opacity 0.3s ease;
+        transition: all 0.3s ease !important;
+
     }
 
     .pricing-card:hover::after {
         opacity: 1;
+        transition: all 0.3s ease !important;
+        
     }
 
     .pricing-card:hover {
@@ -296,6 +304,8 @@
             0 15px 40px rgba(30, 41, 59, 0.06),
             0 6px 20px rgba(51, 65, 85, 0.04),
             0 0 0 1px rgba(59, 130, 246, 0.1);
+
+        transition: all 0.3s ease !important;
     }
 
     /* Enhanced Luxury Popular Badge */
@@ -688,6 +698,7 @@
             0 4px 15px rgba(0, 102, 255, 0.1),
             0 2px 8px rgba(0, 74, 173, 0.08);
         backdrop-filter: blur(10px);
+        
     }
 
     .cta-button::before {
@@ -722,6 +733,9 @@
         opacity: 0;
         transition: opacity 0.3s ease;
         z-index: 0;
+
+        transition: all 0.3s ease !important;
+
     }
 
     .cta-button:hover::before {
@@ -806,6 +820,7 @@
 
     .trial-badge:hover::before {
         opacity: 1;
+        cursor: pointer;
     }
 
     .pricing-card.popular .trial-badge {
@@ -1359,11 +1374,11 @@
                 </ul>
                 
                 <div class="plan-cta">
-                    <a href="#" class="cta-button" onclick="openModal('basicModal'); return false;" data-lang="choosePlan">Chọn Gói</a>
+                    <a href="#" class="cta-button  transition-time" onclick="openModal('basicModal'); return false;" data-lang="choosePlan">Chọn Gói</a>
                 </div>
                 
                 <div class="free-trial">
-                    <span class="trial-badge" data-lang="freeTrial">Dùng thử 7 ngày miễn phí</span>
+                    <a class="trial-badge transition-time" data-lang="freeTrial">Dùng thử 7 ngày miễn phí</a>
                 </div>
             </div>
             
@@ -1419,11 +1434,11 @@
                 </ul>
                 
                 <div class="plan-cta">
-                    <a href="#" class="cta-button" onclick="openModal('premiumModal'); return false;" data-lang="choosePlan">Chọn Gói</a>
+                    <a href="#" class="cta-button  transition-time" onclick="openModal('premiumModal'); return false;" data-lang="choosePlan">Chọn Gói</a>
                 </div>
                 
                 <div class="free-trial">
-                    <span class="trial-badge" data-lang="freeTrial">Dùng thử 14 ngày miễn phí</span>
+                    <a class="trial-badge transition-time" data-lang="freeTrial">Dùng thử 14 ngày miễn phí</a>
                 </div>
             </div>
             
@@ -1474,7 +1489,7 @@
                 </ul>
                 
                 <div class="plan-cta">
-                    <a href="#" class="cta-button" onclick="openModal('enterpriseModal'); return false;" data-lang="contactUs">Liên Hệ</a>
+                    <a href="#" class="cta-button transition-time" onclick="openModal('enterpriseModal'); return false;" data-lang="contactUs">Liên Hệ</a>
                 </div>
                 
                 <div class="free-trial">

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-lang="pageTitle">Trang chủ</title>
     <link rel="icon" type="image/png" href="../../../assets/favicon.png">
+    <!-- Theme System CSS -->
+    <link rel="stylesheet" href="../../css/theme.css">
     <!-- Google Fonts - Inter: Font hiện đại hỗ trợ tiếng Việt -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -298,7 +300,7 @@
                 0 12px 40px rgba(0, 102, 255, 0.12),
                 0 6px 20px rgba(64, 156, 255, 0.08),
                 inset 0 -2px 0 rgba(0, 74, 173, 0.08);
-            transform: translateX(-50%) translateY(-2px);
+            /* transform: translateX(-50%) translateY(-2px); */
         }
         
         .header-content {
@@ -314,13 +316,15 @@
         .logo {
             height: 65px;
             width: auto;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease !important;
             filter: drop-shadow(0 2px 8px rgba(0, 74, 173, 0.1));
         }
         
         .logo:hover {
             transform: scale(1.05);
             filter: drop-shadow(0 4px 12px rgba(0, 74, 173, 0.2));
+            transition: all 0.3s ease !important;
+            cursor: pointer;
         }
         
         .nav-menu {
@@ -373,11 +377,15 @@
         
         .nav-menu a:hover::before {
             opacity: 1;
+            cursor: pointer;
         }
         
         .nav-menu a:hover {
             color: white;
             transform: translateY(-2px);
+
+            
+            
             box-shadow: 
                 0 8px 25px rgba(0, 74, 173, 0.25),
                 0 4px 12px rgba(0, 102, 255, 0.15);
@@ -491,7 +499,7 @@
         
         .signup-btn:hover {
             background: linear-gradient(135deg, #003380 0%, #004aad 100%);
-            transform: translateY(-3px);
+            /* transform: translateY(-3px); */
             box-shadow: 
                 0 15px 45px rgba(0, 74, 173, 0.35),
                 0 8px 25px rgba(0, 102, 255, 0.2),
@@ -647,9 +655,9 @@
     <!-- Header Component -->
     <header class="header-container">
         <div class="header-content">
-            <div class="logo-section">
+            <a class="logo-section" href="https://google.com">
                 <img src="../../../assets/logo_header.png" alt="Logo" class="logo">
-            </div>
+            </a>
             
             <nav class="navigation">
                 <ul class="nav-menu">
@@ -661,9 +669,9 @@
                 </ul>
             </nav>
             
-            <div class="auth-buttons">
+            <div class="auth-buttons  transition-time">
                 <!-- <a href="../login/index.html" class="auth-btn login-btn" data-lang="login">Đăng nhập</a> -->
-                <a href="../signup/index.html" class="auth-btn signup-btn" data-lang="signup">Đăng ký</a>
+                <a href="../signup/index.html" class="auth-btn signup-btn transition-time data-lang="signup>Đăng ký</a>
                 <button class="language-toggle" onclick="switchLanguage()" title="Switch Language">
                     <span class="flag">VI</span>
                 </button>
@@ -683,8 +691,8 @@
                 Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br> Nơi công nghệ kết hợp cùng y học, mang đến sự an tâm cho bạn.
             </p>
             <div class="hero-buttons">
-                <a href="#features" class="hero-button-primary" data-lang="exploreBtnText">Khám phá ngay</a>
-                <a href="#demo" class="hero-button-secondary" data-lang="demoBtnText">Xem Demo</a>
+                <a href="#features" class="hero-button-primary transition-time" data-lang="exploreBtnText">Khám phá ngay</a>
+                <a href="#demo" class="hero-button-secondary  transition-time" data-lang="demoBtnText">Xem Demo</a>
             </div>
         </div>
 
@@ -731,6 +739,9 @@
     
     <!-- Language JavaScript -->
     <script src="../../js/language.js"></script>
+    
+    <!-- Theme Controller JavaScript -->
+    <script src="../../js/theme.js"></script>
     
     <!-- Load About Us Section -->
     <script>

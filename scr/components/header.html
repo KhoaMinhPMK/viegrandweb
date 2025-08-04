@@ -12,19 +12,19 @@
             transform: translateX(-50%);
             width: 96%;
             max-width: 1400px;
-            background: linear-gradient(135deg, 
+            background: var(--bg-glass, linear-gradient(135deg, 
                 rgba(255, 255, 255, 0.85) 0%, 
                 rgba(248, 252, 255, 0.90) 50%, 
-                rgba(240, 248, 255, 0.85) 100%);
+                rgba(240, 248, 255, 0.85) 100%));
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
-            box-shadow: 
+            box-shadow: var(--shadow-light, 
                 0 8px 32px rgba(0, 74, 173, 0.15),
                 0 4px 12px rgba(0, 74, 173, 0.08),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+                inset 0 1px 0 rgba(255, 255, 255, 0.8));
             z-index: 1000;
             border-radius: 80px;
-            border: 1px solid rgba(0, 74, 173, 0.15);
+            border: 1px solid var(--border-color, rgba(0, 74, 173, 0.15));
         }
         
         .header-container::before {
@@ -77,13 +77,13 @@
         
         .nav-menu a {
             text-decoration: none;
-            color: #2c3e50;
+            color: var(--text-primary, #2c3e50);
             padding: 14px 24px;
             border-radius: 30px;
-            background: linear-gradient(135deg, 
+            background: var(--bg-glass, linear-gradient(135deg, 
                 rgba(0, 74, 173, 0.08) 0%, 
                 rgba(0, 102, 255, 0.06) 50%, 
-                rgba(64, 156, 255, 0.04) 100%);
+                rgba(64, 156, 255, 0.04) 100%));
             font-weight: 600;
             font-size: 0.95rem;
             letter-spacing: 0.3px;
@@ -91,10 +91,10 @@
             display: inline-block;
             position: relative;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 74, 173, 0.1);
-            box-shadow: 
+            border: 1px solid var(--border-color, rgba(0, 74, 173, 0.1));
+            box-shadow: var(--shadow-light, 
                 0 2px 8px rgba(0, 74, 173, 0.08),
-                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+                inset 0 1px 0 rgba(255, 255, 255, 0.5));
         }
         
         .nav-menu a::before {
@@ -354,7 +354,7 @@
             updateLanguageButton();
         };
     </script>
-    <header class="header-container">
+    <header class="header-container transition-time">
         <div class="header-content">
             <div class="logo-section">
                 <img src="../../../assets/logo_header.png" alt="Logo" class="logo">
