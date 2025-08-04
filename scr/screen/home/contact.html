@@ -1007,11 +1007,13 @@
         submitBtn.disabled = true;
         
         try {
-            // Direct connection to production VPS backend
-            const apiUrl = 'https://viegrand.site/php/contact_form_debug.php';
+            // Production API endpoint
+            const apiUrl = 'https://viegrand.site/php/contact_form_production.php';
             
-            console.log('Sending data:', data);
-            console.log('Production API URL:', apiUrl);
+            console.log('=== FORM SUBMISSION START ===');
+            console.log('Data to send:', data);
+            console.log('API URL:', apiUrl);
+            console.log('Timestamp:', new Date().toISOString());
             
             const response = await fetch(apiUrl, {
                 method: 'POST',
@@ -1023,45 +1025,61 @@
             });
             
             console.log('Response status:', response.status);
-            console.log('Response headers:', response.headers);
+            console.log('Response headers:', [...response.headers.entries()]);
             
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            // Get response text first to handle both JSON and error responses
+            const responseText = await response.text();
+            console.log('Raw response:', responseText);
+            
+            let result;
+            try {
+                result = JSON.parse(responseText);
+            } catch (parseError) {
+                console.error('JSON parse error:', parseError);
+                throw new Error('Server returned invalid response: ' + responseText.substring(0, 200));
             }
             
-            const result = await response.json();
-            console.log('Server response:', result);
+            console.log('Parsed response:', result);
             
             if (result.success) {
-                showNotification(result.message || 'Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất.', 'success');
+                showNotification(result.message || 'Tin nhắn đã được gửi thành công!', 'success');
                 this.reset();
                 resetFloatingLabels();
                 
-                // Log success for debugging
-                console.log('Message sent successfully:', result);
+                console.log('✅ SUCCESS - Message ID:', result.data?.id);
+                console.log('=== FORM SUBMISSION SUCCESS ===');
             } else {
                 showNotification(result.message || 'Có lỗi xảy ra khi gửi tin nhắn.', 'error');
-                console.error('Server error:', result);
+                console.error('❌ API ERROR:', result);
                 
-                // Show debug info if available
-                if (result.debug) {
-                    console.error('Debug info:', result.debug);
+                if (result.error_details) {
+                    console.error('Error details:', result.error_details);
                 }
             }
             
         } catch (error) {
-            console.error('Error submitting form:', error);
+            console.error('💥 SUBMISSION ERROR:', error);
+            console.error('Error details:', {
+                name: error.name,
+                message: error.message,
+                stack: error.stack
+            });
             
             // Show user-friendly error message
+            let errorMessage = 'Có lỗi xảy ra khi gửi tin nhắn. ';
+            
             if (error.name === 'TypeError' && error.message.includes('fetch')) {
-                showNotification('Không thể kết nối đến server. Vui lòng kiểm tra kết nối internet.', 'error');
+                errorMessage += 'Không thể kết nối đến server. Vui lòng kiểm tra kết nối internet.';
             } else if (error.message.includes('404')) {
-                showNotification('Không tìm thấy API endpoint. Vui lòng liên hệ quản trị viên.', 'error');
+                errorMessage += 'Không tìm thấy API endpoint. Vui lòng liên hệ quản trị viên.';
             } else if (error.message.includes('500')) {
-                showNotification('Lỗi server nội bộ. Vui lòng thử lại sau.', 'error');
+                errorMessage += 'Lỗi server nội bộ. Vui lòng thử lại sau.';
             } else {
-                showNotification('Có lỗi xảy ra. Vui lòng thử lại sau hoặc liên hệ trực tiếp qua email.', 'error');
+                errorMessage += 'Vui lòng thử lại sau hoặc liên hệ trực tiếp qua email: viegrand.contact@gmail.com';
             }
+            
+            showNotification(errorMessage, 'error');
+            console.log('=== FORM SUBMISSION ERROR ===');
         } finally {
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
