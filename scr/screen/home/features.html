@@ -543,13 +543,37 @@
       padding: 40px 25px;
     }
   }
+  
+  /* FadeInUp Animation Keyframes */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Scroll-triggered animation classes */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1.2s ease-out;
+  }
+  
+  .animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
 
 <!-- Features Section -->
 <section id="features" class="features-section">
   <div class="container">
     <!-- Header -->
-    <div class="section-header">
+    <div class="section-header animate-on-scroll">
       <h2 class="section-title" data-lang="featuresTitle">Tính Năng Nổi Bật</h2>
       <p class="section-subtitle" data-lang="featuresSubtitle">
         VieGrand tích hợp những công nghệ tiên tiến nhất để mang đến trải nghiệm
@@ -558,9 +582,9 @@
     </div>
 
     <!-- Main Features - Simple Grid Layout -->
-    <div class="features-grid">
+    <div class="features-grid animate-on-scroll">
       <!-- AI Detection Feature -->
-      <div class="feature-card">
+      <div class="feature-card animate-on-scroll">
         <div class="feature-icon"></div>
         <h3 class="feature-title" data-lang="feature1Title">
           Phát Hiện AI Thông Minh
@@ -578,7 +602,7 @@
       </div>
 
       <!-- Emergency Alert Feature -->
-      <div class="feature-card">
+      <div class="feature-card animate-on-scroll">
         <div class="feature-icon"></div>
         <h3 class="feature-title" data-lang="feature2Title">
           Cảnh Báo Khẩn Cấp
@@ -596,7 +620,7 @@
       </div>
 
       <!-- Health Monitoring Feature -->
-      <div class="feature-card">
+      <div class="feature-card animate-on-scroll">
         <div class="feature-icon"></div>
         <h3 class="feature-title" data-lang="feature3Title">
           Theo Dõi Sức Khỏe Không Tiếp Xúc
@@ -614,7 +638,7 @@
       </div>
 
       <!-- Family Connection Feature -->
-      <div class="feature-card">
+      <div class="feature-card animate-on-scroll">
         <div class="feature-icon"></div>
         <h3 class="feature-title" data-lang="feature4Title">
           Kết Nối Gia Đình Thông Minh
@@ -632,7 +656,7 @@
       </div>
 
       <!-- Stroke Detection Feature -->
-      <div class="feature-card">
+      <div class="feature-card animate-on-scroll">
         <div class="feature-icon"></div>
         <h3 class="feature-title" data-lang="feature5Title">
           Phát Hiện Sớm Đột Quỵ
@@ -650,7 +674,7 @@
       </div>
 
       <!-- Voice Control Feature -->
-      <div class="feature-card">
+      <div class="feature-card animate-on-scroll">
         <div class="feature-icon"></div>
         <h3 class="feature-title" data-lang="feature6Title">
           Điều Khiển Giọng Nói Tiếng Việt
@@ -669,23 +693,23 @@
     </div>
 
     <!-- Technology Stack -->
-    <div class="technology-section">
-      <div class="tech-header">
+    <div class="technology-section animate-on-scroll">
+      <div class="tech-header animate-on-scroll">
         <h3 class="tech-title" data-lang="techTitle">Công Nghệ Tiên Tiến</h3>
         <p class="tech-subtitle" data-lang="techSubtitle">
           Được xây dựng trên nền tảng công nghệ hàng đầu thế giới
         </p>
       </div>
 
-      <div class="tech-grid">
-        <div class="tech-card">
+      <div class="tech-grid animate-on-scroll">
+        <div class="tech-card animate-on-scroll">
           <div class="tech-icon">
             <i class="fas fa-brain"></i>
           </div>
           <div class="tech-name" data-lang="deepLearning">Deep Learning</div>
         </div>
 
-        <div class="tech-card">
+        <div class="tech-card animate-on-scroll">
           <div class="tech-icon">
             <i class="fas fa-video"></i>
           </div>
@@ -694,7 +718,7 @@
           </div>
         </div>
 
-        <div class="tech-card">
+        <div class="tech-card animate-on-scroll">
           <div class="tech-icon">
             <i class="fas fa-cloud"></i>
           </div>
@@ -703,7 +727,7 @@
           </div>
         </div>
 
-        <div class="tech-card">
+        <div class="tech-card animate-on-scroll">
           <div class="tech-icon">
             <i class="fas fa-shield-alt"></i>
           </div>
@@ -713,28 +737,28 @@
     </div>
 
     <!-- Performance Statistics -->
-    <div class="stats-section">
+    <div class="stats-section animate-on-scroll">
       <div class="stats-grid">
-        <div class="stat-card">
+        <div class="stat-card animate-on-scroll">
           <span class="stat-number">99.5%</span>
           <div class="stat-label" data-lang="aiAccuracy">Độ Chính Xác AI</div>
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card animate-on-scroll">
           <span class="stat-number">15s</span>
           <div class="stat-label" data-lang="responseTime">
             Thời Gian Phản Ứng
           </div>
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card animate-on-scroll">
           <span class="stat-number">24/7</span>
           <div class="stat-label" data-lang="continuousMonitoring">
             Giám Sát Liên Tục
           </div>
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card animate-on-scroll">
           <span class="stat-number">256bit</span>
           <div class="stat-label" data-lang="encryptionSecurity">
             Mã Hóa Bảo Mật
@@ -744,7 +768,7 @@
     </div>
 
     <!-- Call to Action -->
-    <div class="cta-section">
+    <div class="cta-section animate-on-scroll">
       <div class="cta-content">
         <h3 class="cta-title" data-lang="ctaTitle">Sẵn Sàng Trải Nghiệm?</h3>
         <p class="cta-description" data-lang="ctaDesc">

@@ -535,45 +535,57 @@
             display: none;
         }
     }
+    
+    /* FadeInUp Animation Keyframes */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 </style>
 
 <!-- About Us Section -->
 <section id="about" class="about-section">
     <div class="container">
         <!-- Header -->
-        <div class="section-header">
-            <h2 class="section-title" data-lang="aboutTitle">VIEGRAND</h2>
-            <p class="section-subtitle" data-lang="aboutSubtitle" style="text-align: center;">
+        <div class="section-header" style="animation: fadeInUp 1.2s ease-out;">
+            <h2 class="section-title" data-lang="aboutTitle" style="animation: fadeInUp 1.4s ease-out;">VIEGRAND</h2>
+            <p class="section-subtitle" data-lang="aboutSubtitle" style="text-align: center; animation: fadeInUp 1.6s ease-out;">
                 Câu chuyện về những học sinh trẻ với ước mơ tạo nên sự khác biệt
             </p>
         </div>
 
         <!-- Story Section -->
-        <div class="story-section">
+        <div class="story-section" style="animation: fadeInUp 1.8s ease-out;">
             <div class="story-content">
-                <div class="story-text">
+                <div class="story-text" style="animation: fadeInUp 2.0s ease-out;">
                     <h3 data-lang="aboutStoryTitle">Khởi Đầu Từ Trái Tim</h3>
                     <p data-lang="aboutStoryText1">VieGrand ra đời từ những trải nghiệm thực tế của chúng tôi - một nhóm học sinh THPT Nguyễn Hữu Huân. Xuất phát từ sự thấu hiểu những khó khăn mà ông bà, cha mẹ gặp phải trong quá trình chăm sóc sức khỏe, tập thể nhóm đã nhận thấy tiềm năng của công nghệ như một cầu nối hiệu quả nhằm hỗ trợ và cải thiện chất lượng cuộc sống cho người thân yêu.</p>
                     <p data-lang="aboutStoryText2">Chúng tôi không chỉ muốn tạo ra một sản phẩm công nghệ, mà mong muốn xây dựng một giải pháp mang tính nhân văn, giúp các gia đình Việt Nam duy trì và phát huy truyền thống hiếu thảo trong thời đại số.</p>
                 </div>
-                <div class="story-image">
+                <div class="story-image" style="animation: fadeInUp 2.2s ease-out;">
                     <img src="../../../assets/featureimage1.png" alt="VieGrand Story">
                 </div>
             </div>
 
-            <div class="story-highlight">
+            <div class="story-highlight" style="animation: fadeInUp 2.4s ease-out;">
                 <p style="text-align: center;" data-lang="aboutStoryQuote">"Từ những đêm thức trắng nghiên cứu công nghệ AI, đến những lần thử nghiệm không thành công, chúng tôi luôn được thúc đẩy bởi một niềm tin: công nghệ phải phục vụ tình người."</p>
             </div>
         </div>
 
         <!-- Mission & Vision -->
-        <div class="mission-vision">
+        <div class="mission-vision" style="animation: fadeInUp 2.6s ease-out;">
             <div class="mission-vision-grid">
-                <div class="mission-card">
+                <div class="mission-card" style="animation: fadeInUp 2.8s ease-out;">
                     <h3><i class="fas fa-heart"></i> <span data-lang="aboutMissionTitle">Sứ Mệnh</span></h3>
                     <p data-lang="aboutMissionText">Ứng dụng công nghệ AI và IoT để tạo ra giải pháp chăm sóc sức khỏe toàn diện, giúp người cao tuổi sống khỏe mạnh, hạnh phúc và giúp các gia đình Việt duy trì truyền thống hiếu thảo trong thời đại số.</p>
                 </div>
-                <div class="vision-card">
+                <div class="vision-card" style="animation: fadeInUp 3.0s ease-out;">
                     <h3><i class="fas fa-eye"></i> <span data-lang="aboutVisionTitle">Tầm Nhìn</span></h3>
                     <p data-lang="aboutVisionText">Trở thành nền tảng chăm sóc người cao tuổi thông minh, nhân ái và đáng tin cậy hàng đầu tại Việt Nam, góp phần xây dựng một xã hội có trái tim, nơi mỗi gia đình đều được hỗ trợ trong việc chăm sóc những người thân yêu.</p>
                 </div>

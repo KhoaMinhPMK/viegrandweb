@@ -662,18 +662,45 @@
           submitBtn.innerHTML =
             '<span data-lang="processingText">Đang xử lý...</span>';
 
-          // Simulate API call
-          setTimeout(() => {
+          // Collect form data
+          const formData = new FormData(this);
+          const formObject = {};
+          
+          // Convert FormData to object
+          formData.forEach((value, key) => {
+            formObject[key] = value;
+          });
+
+          // Submit to API
+          fetch('../../../api/submit_signup.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formObject)
+          })
+          .then(response => response.json())
+          .then(data => {
             // Reset button
             submitBtn.classList.remove("loading");
             submitBtn.innerHTML = originalText;
 
-            // Show success modal
-            document.getElementById("successModal").classList.add("show");
-
-            // Reset form
-            document.getElementById("signupForm").reset();
-          }, 2000);
+            if (data.success) {
+              // Show success modal
+              document.getElementById("successModal").classList.add("show");
+              // Reset form
+              document.getElementById("signupForm").reset();
+            } else {
+              // Show error message
+              alert(data.message || 'Đã xảy ra lỗi. Vui lòng thử lại.');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            submitBtn.classList.remove("loading");
+            submitBtn.innerHTML = originalText;
+            alert('Đã xảy ra lỗi kết nối. Vui lòng thử lại sau.');
+          });
         });
 
       // Close success modal

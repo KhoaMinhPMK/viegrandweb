@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Signup API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: #004aad;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0066ff;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Signup API</h1>
+    
+    <form id="testForm">
+        <div class="form-group">
+            <label for="firstName">Họ và tên đệm:</label>
+            <input type="text" id="firstName" name="firstName" value="Nguyễn Văn" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="lastName">Tên:</label>
+            <input type="text" id="lastName" name="lastName" value="A" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="test@example.com" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" name="phone" value="0123456789" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="age">Tuổi:</label>
+            <select id="age" name="age" required>
+                <option value="26-35" selected>26-35</option>
+                <option value="18-25">18-25</option>
+                <option value="36-45">36-45</option>
+                <option value="46-55">46-55</option>
+                <option value="56-65">56-65</option>
+                <option value="65+">65+</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="relationship">Mối quan hệ:</label>
+            <select id="relationship" name="relationship" required>
+                <option value="child" selected>Con/cháu người cao tuổi</option>
+                <option value="self">Tôi tự sử dụng</option>
+                <option value="spouse">Vợ/chồng người cao tuổi</option>
+                <option value="caregiver">Người chăm sóc</option>
+                <option value="other">Khác</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="address">Địa chỉ:</label>
+            <input type="text" id="address" name="address" value="Số 11, đường Đoàn kết, Bình Thọ, TP.HCM" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="needs">Nhu cầu chăm sóc sức khỏe:</label>
+            <textarea id="needs" name="needs" rows="4" required>Theo dõi huyết áp, phát hiện sớm đột quỵ, tư vấn dinh dưỡng</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="terms" value="on" checked required>
+                Đồng ý với điều khoản sử dụng
+            </label>
+        </div>
+        
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="newsletter" value="on">
+                Nhận thông tin khuyến mãi
+            </label>
+        </div>
+        
+        <button type="submit">Test Submit</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <script>
+        document.getElementById('testForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const formObject = {};
+            
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            
+            fetch('api/submit_signup.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formObject)
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                resultDiv.className = data.success ? 'result success' : 'result error';
+                resultDiv.innerHTML = `
+                    <h3>${data.success ? 'Success' : 'Error'}</h3>
+                    <p><strong>Message:</strong> ${data.message}</p>
+                    ${data.data ? `<p><strong>ID:</strong> ${data.data.id}</p>` : ''}
+                    ${data.errors ? `<p><strong>Errors:</strong> ${data.errors.join(', ')}</p>` : ''}
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            })
+            .catch(error => {
+                const resultDiv = document.getElementById('result');
+                resultDiv.className = 'result error';
+                resultDiv.innerHTML = `
+                    <h3>Network Error</h3>
+                    <p>Error: ${error.message}</p>
+                `;
+            });
+        });
+    </script>
+</body>
+</html> 
