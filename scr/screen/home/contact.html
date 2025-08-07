@@ -923,13 +923,11 @@
         
         // Prepare form data for API
         const formData = {
-            name: data.name.trim(),
+            full_name: data.name.trim(),
             email: data.email.trim(),
             phone: data.phone ? data.phone.trim() : '',
             subject: data.subject.trim(),
-            message: data.message.trim(),
-            timestamp: new Date().toISOString(),
-            source: 'website_contact_form'
+            message: data.message.trim()
         };
         
         console.log('Sending form data:', formData);
