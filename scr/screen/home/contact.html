@@ -709,7 +709,7 @@
                     <p class="form-subtitle" data-lang="contactFormSubtitle">Chúng tôi sẽ phản hồi trong vòng 24 giờ</p>
                 </div>
                 
-                <form id="contactForm" class="modern-form">
+                <form id="contactForm" class="modern-form" onsubmit="return false;">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name" class="input-label" data-lang="nameLabel">
@@ -787,7 +787,7 @@
                     </div>
 
                     <div class="submit-container">
-                        <button type="submit" class="submit-btn">
+                        <button type="button" class="submit-btn" onclick="document.getElementById('contactForm').dispatchEvent(new Event('submit'));">
                             <div class="btn-content">
                                 <i class="fas fa-paper-plane"></i>
                                 <span data-lang="sendMessage">Gửi tin nhắn</span>
@@ -828,6 +828,12 @@
     // Enhanced Contact form submission handler
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
+        e.stopPropagation();
+        
+        // Ensure no page refresh
+        if (e.defaultPrevented === false) {
+            e.preventDefault();
+        }
         
         // Clear previous validation states
         clearValidationStates();
@@ -885,11 +891,12 @@
         
         if (!isValid) {
             showNotification('Vui lòng kiểm tra lại thông tin và điền đầy đủ các trường bắt buộc!', 'error');
-            return;
+            return false;
         }
         
         // Submit form
         submitForm(data, this);
+        return false;
     });
 
     function clearValidationStates() {
