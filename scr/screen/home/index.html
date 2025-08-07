@@ -1158,6 +1158,92 @@
             font-size: 0.9rem;
             opacity: 0.9;
         }
+
+        /* Splash Cursor Effects */
+        .cursor-ripple {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 74, 173, 0.3) 0%, rgba(0, 102, 255, 0.2) 50%, transparent 100%);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            animation: rippleEffect 0.8s ease-out forwards;
+        }
+
+        @keyframes rippleEffect {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 100px;
+                height: 100px;
+                opacity: 0;
+            }
+        }
+
+        /* Glow effect for interactive elements */
+        .interactive-element {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .interactive-element::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: radial-gradient(circle, rgba(0, 74, 173, 0.2) 0%, transparent 70%);
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .interactive-element:hover::before {
+            opacity: 1;
+        }
+
+        /* Custom cursor for interactive elements */
+        .custom-cursor {
+            cursor: none;
+        }
+
+        .custom-cursor .cursor-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: var(--brand-primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+        }
+
+        .custom-cursor .cursor-ring {
+            position: fixed;
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--brand-primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: all 0.2s ease;
+            opacity: 0.6;
+        }
+
+        .custom-cursor .cursor-ring.hover {
+            width: 40px;
+            height: 40px;
+            border-width: 1px;
+            opacity: 0.3;
+        }
     </style>
 </head>
 <body>
@@ -1680,6 +1766,82 @@
             }
         });
 
+        // Splash Cursor System
+        function initSplashCursor() {
+            // Create cursor elements
+            const cursorDot = document.createElement('div');
+            const cursorRing = document.createElement('div');
+            cursorDot.className = 'cursor-dot';
+            cursorRing.className = 'cursor-ring';
+            document.body.appendChild(cursorDot);
+            document.body.appendChild(cursorRing);
+
+            // Track mouse movement
+            let mouseX = 0;
+            let mouseY = 0;
+            let cursorX = 0;
+            let cursorY = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            // Smooth cursor animation
+            function animateCursor() {
+                cursorX += (mouseX - cursorX) * 0.1;
+                cursorY += (mouseY - cursorY) * 0.1;
+                
+                cursorDot.style.left = cursorX + 'px';
+                cursorDot.style.top = cursorY + 'px';
+                cursorRing.style.left = cursorX + 'px';
+                cursorRing.style.top = cursorY + 'px';
+                
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+
+            // Handle hover effects
+            const interactiveElements = document.querySelectorAll('a, button, .cta-button, .hero-button-primary, .hero-button-secondary, input, textarea, select');
+            
+            interactiveElements.forEach(element => {
+                element.classList.add('interactive-element');
+                
+                element.addEventListener('mouseenter', () => {
+                    cursorRing.classList.add('hover');
+                });
+                
+                element.addEventListener('mouseleave', () => {
+                    cursorRing.classList.remove('hover');
+                });
+            });
+
+            // Create ripple effect on click
+            document.addEventListener('click', (e) => {
+                const ripple = document.createElement('div');
+                ripple.className = 'cursor-ripple';
+                ripple.style.left = e.clientX + 'px';
+                ripple.style.top = e.clientY + 'px';
+                document.body.appendChild(ripple);
+                
+                // Remove ripple after animation
+                setTimeout(() => {
+                    ripple.remove();
+                }, 800);
+            });
+
+            // Hide cursor when leaving window
+            document.addEventListener('mouseleave', () => {
+                cursorDot.style.opacity = '0';
+                cursorRing.style.opacity = '0';
+            });
+
+            document.addEventListener('mouseenter', () => {
+                cursorDot.style.opacity = '1';
+                cursorRing.style.opacity = '0.6';
+            });
+        }
+
         // Enhanced Scroll Animation System
         function initScrollAnimations() {
             const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-fade-in, .animate-slide-left, .animate-slide-right, .animate-scale, .animate-stagger, .animate-flip-up, .animate-bounce-in, .animate-elastic, .animate-slide-up-fade, .animate-zoom-rotate, .animate-slide-down, .animate-rotate-in, .animate-pulse-in, .animate-slide-in-left, .animate-slide-in-right, .animate-flip-horizontal, .animate-scale-up, .animate-wobble-in, .animate-fade-in-up, .animate-bounce-in, .animate-scale-up, .animate-wobble-in, .animate-rotate-in, .animate-pulse-in, .animate-slide-down, .animate-zoom-rotate, .animate-flip-up, .animate-elastic');
@@ -1742,6 +1904,9 @@
 
         // Back to Top Button Functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize splash cursor
+            initSplashCursor();
+            
             // Initialize scroll animations
             initScrollAnimations();
             
