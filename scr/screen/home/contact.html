@@ -941,6 +941,9 @@
         console.log('JSON string to send:', JSON.stringify(formData));
         
         // Send data to server - using the API endpoint
+        console.log('Attempting to send data to:', 'https://viegrand.site/api/submit_contact.php');
+        console.log('Request payload:', JSON.stringify(formData));
+        
         fetch('https://viegrand.site/api/submit_contact.php', {
             method: 'POST',
             headers: {
@@ -950,8 +953,19 @@
         })
         .then(response => {
             console.log('Response status:', response.status);
-            console.log('Response headers:', response.headers);
             console.log('Response ok:', response.ok);
+            console.log('Response headers:', response.headers);
+            
+            // Log response text for debugging
+            return response.text().then(text => {
+                console.log('Raw response text:', text);
+                try {
+                    return JSON.parse(text);
+                } catch (e) {
+                    console.error('Failed to parse JSON response:', e);
+                    throw new Error('Invalid JSON response: ' + text);
+                }
+            });
             
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

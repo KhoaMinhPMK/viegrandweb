@@ -1026,11 +1026,127 @@
                 });
         });
 
-        // Contact Form Handling - Let contact.html handle its own form
+        // Contact Form Handling
         function initializeContactForm() {
-            console.log('Contact form will be handled by contact.html - no additional setup needed');
-            // The contact.html file includes its own JavaScript for form handling
-            // No need to add duplicate event listeners here
+            console.log('Initializing contact form...');
+            
+            // Wait a bit for the DOM to settle after loading content
+            setTimeout(() => {
+                const contactForm = document.getElementById('contactForm');
+                
+                if (contactForm) {
+                    console.log('Contact form found, adding event listener');
+                    
+                    // Remove any existing event listeners to prevent duplicates
+                    contactForm.removeEventListener('submit', handleContactFormSubmit);
+                    
+                    // Add our event listener
+                    contactForm.addEventListener('submit', handleContactFormSubmit);
+                    
+                    console.log('Contact form event listener attached successfully');
+                } else {
+                    console.log('Contact form not found, retrying...');
+                    // If form not found, try again after a short delay
+                    setTimeout(() => {
+                        const retryForm = document.getElementById('contactForm');
+                        if (retryForm) {
+                            console.log('Contact form found on retry');
+                            retryForm.removeEventListener('submit', handleContactFormSubmit);
+                            retryForm.addEventListener('submit', handleContactFormSubmit);
+                        } else {
+                            console.log('Contact form still not found after retry');
+                        }
+                    }, 500);
+                }
+            }, 100);
+        }
+
+        function handleContactFormSubmit(event) {
+            event.preventDefault();
+            console.log('Form submission caught!');
+            
+            const form = event.target;
+            
+            // Get form data - using the correct field IDs from the contact form
+            const formData = {
+                full_name: document.getElementById('name').value,  // Note: 'name' field maps to 'full_name' for API
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value || '',
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            console.log('Sending form data:', formData);
+            
+            // Basic validation
+            if (!formData.full_name || formData.full_name.trim().length < 2) {
+                showNotification('Lỗi', 'Vui lòng nhập họ và tên (ít nhất 2 ký tự)', 'error');
+                return;
+            }
+            
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!formData.email || !emailRegex.test(formData.email)) {
+                showNotification('Lỗi', 'Vui lòng nhập địa chỉ email hợp lệ', 'error');
+                return;
+            }
+            
+            if (!formData.subject || formData.subject.trim().length < 5) {
+                showNotification('Lỗi', 'Vui lòng nhập chủ đề (ít nhất 5 ký tự)', 'error');
+                return;
+            }
+            
+            if (!formData.message || formData.message.trim().length < 10) {
+                showNotification('Lỗi', 'Vui lòng nhập nội dung tin nhắn (ít nhất 10 ký tự)', 'error');
+                return;
+            }
+            
+            // Trim all values
+            Object.keys(formData).forEach(key => {
+                if (formData[key] && typeof formData[key] === 'string') {
+                    formData[key] = formData[key].trim();
+                }
+            });
+            
+            console.log('Validated form data:', formData);
+            
+            // Send data to server - using the exact same fetch call as the working test form
+            fetch('https://viegrand.site/api/submit_contact.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                console.log('Response status:', response.status);
+                console.log('Response ok:', response.ok);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                return response.json();
+            })
+            .then(data => {
+                console.log('Response data:', data);
+                if (data.success) {
+                    showNotification('Thành công', '🎉 Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong vòng 24 giờ.', 'success');
+                    form.reset();
+                    
+                    // Reset floating labels
+                    const inputs = form.querySelectorAll('input, textarea');
+                    inputs.forEach(input => {
+                        input.classList.remove('has-value');
+                    });
+                } else {
+                    console.error('Server returned error:', data.message);
+                    showNotification('Lỗi', data.message || 'Có lỗi xảy ra. Vui lòng thử lại.', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('Lỗi', '⚠️ Không thể kết nối đến máy chủ. Vui lòng thử lại sau hoặc liên hệ trực tiếp qua email.', 'error');
+            });
         }
 
         function showNotification(title, message, type = 'info') {
