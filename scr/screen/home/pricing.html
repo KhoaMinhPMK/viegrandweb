@@ -320,16 +320,17 @@
         animation: premiumScale 1s ease-out;
     }
 
-    .pricing-card.popular::before {
+    /* .pricing-card.popular::before {
         background: linear-gradient(90deg, 
             rgba(59, 130, 246, 0.8) 0%, 
             rgba(29, 78, 216, 0.9) 50%, 
             rgba(30, 64, 175, 0.8) 100%);
         height: 2px;
         box-shadow: 0 2px 15px rgba(59, 130, 246, 0.4);
-    }
+    } */
 
-    .pricing-card.popular::after {
+
+    /* .pricing-card.popular::after {
         content: 'PHỔ BIẾN NHẤT';
         position: absolute;
         top: -2px;
@@ -362,7 +363,7 @@
             #60a5fa 50%,
             #1d4ed8 75%,
             #1e40af 100%);
-    }
+    } */
 
     /* Luxury Plan Header */
     .plan-header {
@@ -1384,10 +1385,10 @@
                 
                 <div class="plan-price">
                     <div class="price-amount">
-                        <span class="currency">₫</span>
+                        <span class="currency" style="opacity: 1;">₫</span>
                         <span data-lang="premiumPrice">599,000</span>
                     </div>
-                    <div class="period" data-lang="perMonth">/tháng</div>
+                    <div class="period" data-lang="perMonth2">/tháng</div>
                 </div>
                 
                 <ul class="plan-features">
@@ -1422,11 +1423,11 @@
                 </ul>
                 
                 <div class="plan-cta">
-                    <a href="#" class="cta-button  transition-time" onclick="openModal('premiumModal'); return false;" data-lang="choosePlan">Chọn Gói</a>
+                    <a href="#" class="cta-button  transition-time" onclick="openModal('premiumModal'); return false;" data-lang="choosePlan2">Chọn Gói</a>
                 </div>
                 
                 <div class="free-trial">
-                    <a class="trial-badge transition-time" data-lang="freeTrial">Dùng thử 14 ngày miễn phí</a>
+                    <a class="trial-badge transition-time" data-lang="freeTrial2">Dùng thử 14 ngày miễn phí</a>
                 </div>
             </div>
             
@@ -1498,239 +1499,7 @@
         </div>
     </div>
 
-    <!-- Pricing Modals -->
-    <!-- Basic Plan Modal -->
-    <div id="basicModal" class="pricing-modal">
-        <div class="modal-content">
-            <div class="modal-close" onclick="closeModal('basicModal')">
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="modal-header">
-                        <h3 class="modal-title" data-lang="modalBasicTitle">Gói Cơ Bản</h3>
-        <p class="modal-subtitle" data-lang="modalBasicSubtitle">Phù hợp cho gia đình nhỏ với nhu cầu giám sát cơ bản</p>
-            </div>
-            <div class="modal-price">
-                <div class="modal-price-amount">
-                    <span class="currency">₫</span>
-                    <span>299,000</span>
-                </div>
-                <div class="period">/tháng</div>
-            </div>
-            <ul class="modal-features">
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalBasicFeature1">Phát hiện té ngã cơ bản</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalBasicFeature2">Cảnh báo qua SMS</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalBasicFeature3">Hỗ trợ email 24/7</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalBasicFeature4">Báo cáo hàng tuần</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalBasicFeature5">Camera HD 1080p</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalBasicFeature6">Lưu trữ 7 ngày</span>
-                </li>
-            </ul>
-            <div class="modal-actions">
-                <a href="#contact" class="modal-btn primary">
-                    <i class="fas fa-phone"></i>
-                    <span data-lang="modalRegisterBtn">Đăng Ký Ngay</span>
-                </a>
-                <button class="modal-btn secondary" onclick="closeModal('basicModal')">
-                    <i class="fas fa-times"></i>
-                    <span data-lang="modalCloseBtn">Đóng</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Premium Plan Modal -->
-    <div id="premiumModal" class="pricing-modal">
-        <div class="modal-content">
-            <div class="modal-close" onclick="closeModal('premiumModal')">
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="modal-header">
-                <h3 class="modal-title" data-lang="modalPremiumTitle">Gói Cao Cấp</h3>
-                <p class="modal-subtitle" data-lang="modalPremiumSubtitle">Giải pháp toàn diện với AI tiên tiến và tính năng thông minh</p>
-            </div>
-            <div class="modal-price">
-                <div class="modal-price-amount">
-                    <span class="currency">₫</span>
-                    <span>599,000</span>
-                </div>
-                <div class="period">/tháng</div>
-            </div>
-            <ul class="modal-features">
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalPremiumFeature1">AI phát hiện đột quỵ tiên tiến</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalPremiumFeature2">Cảnh báo đa kênh (SMS, Call, Email)</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalPremiumFeature3">Giám sát sức khỏe qua camera</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalPremiumFeature4">Điều khiển bằng giọng nói</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalPremiumFeature5">Ứng dụng mobile cho gia đình</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalPremiumFeature6">Báo cáo chi tiết hàng ngày</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalPremiumFeature7">Hỗ trợ hotline ưu tiên</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalPremiumFeature8">Camera 4K Ultra HD</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalPremiumFeature9">Lưu trữ 30 ngày</span>
-                </li>
-            </ul>
-            <div class="modal-actions">
-                <a href="#contact" class="modal-btn primary">
-                    <i class="fas fa-phone"></i>
-                    <span data-lang="modalRegisterBtn">Đăng Ký Ngay</span>
-                </a>
-                <button class="modal-btn secondary" onclick="closeModal('premiumModal')">
-                    <i class="fas fa-times"></i>
-                    <span data-lang="modalCloseBtn">Đóng</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Enterprise Plan Modal -->
-    <div id="enterpriseModal" class="pricing-modal">
-        <div class="modal-content">
-            <div class="modal-close" onclick="closeModal('enterpriseModal')">
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="modal-header">
-                <h3 class="modal-title" data-lang="modalEnterpriseTitle">Gói Doanh Nghiệp</h3>
-                <p class="modal-subtitle" data-lang="modalEnterpriseSubtitle">Dành cho viện dưỡng lão và cơ sở chăm sóc chuyên nghiệp</p>
-            </div>
-            <div class="modal-price">
-                <div class="modal-price-amount">
-                    <span>Liên hệ</span>
-                </div>
-                <div class="period">Giá tùy chỉnh</div>
-            </div>
-            <ul class="modal-features">
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalEnterpriseFeature1">Tích hợp hệ thống y tế</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalEnterpriseFeature2">Dashboard quản lý tập trung</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalEnterpriseFeature3">API và tích hợp tùy chỉnh</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalEnterpriseFeature4">Đào tạo nhân viên chuyên sâu</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalEnterpriseFeature5">Hỗ trợ kỹ thuật 24/7</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalEnterpriseFeature6">Báo cáo và phân tích nâng cao</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalEnterpriseFeature7">Camera không giới hạn</span>
-                </li>
-                <li>
-                    <div class="modal-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <span data-lang="modalEnterpriseFeature8">Lưu trữ vĩnh viễn</span>
-                </li>
-            </ul>
-            <div class="modal-actions">
-                <a href="#contact" class="modal-btn primary">
-                    <i class="fas fa-phone"></i>
-                    <span data-lang="modalContactBtn">Liên Hệ Tư Vấn</span>
-                </a>
-                <button class="modal-btn secondary" onclick="closeModal('enterpriseModal')">
-                    <i class="fas fa-times"></i>
-                    <span data-lang="modalCloseBtn">Đóng</span>
-                </button>
-            </div>
-        </div>
-    </div>
+    
 </section>
 
 <script>

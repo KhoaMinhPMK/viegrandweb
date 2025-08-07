@@ -233,6 +233,13 @@
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         outline: none;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+    }
+
+    /* Ensure textarea fills available width on mobile */
+    .textarea-field {
+        width: 85% !important;
+        box-sizing: border-box;
     }
 
     .input-field:focus {
@@ -538,6 +545,96 @@
         }
     }
 
+    @media (max-width: 770px) {
+        .contact-section {
+            padding: 70px 0;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.6rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            padding: 0 15px;
+        }
+
+        .contact-content {
+            gap: 40px;
+        }
+
+        .contact-info,
+        .contact-form,
+        .map-section {
+            padding: 35px 25px;
+            border-radius: 20px;
+        }
+
+        .contact-item {
+            padding: 18px;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            width: 45px;
+            height: 45px;
+            font-size: 1.1rem;
+            margin-right: 18px;
+        }
+
+        .contact-details h4 {
+            font-size: 1.1rem;
+        }
+
+        .contact-details p {
+            font-size: 0.95rem;
+        }
+
+        .form-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            padding: 18px 20px;
+            font-size: 16px;
+            width: 100% !important;
+            box-sizing: border-box;
+        }
+
+        .textarea-field {
+            min-height: 120px;
+            padding: 18px 20px;
+            width: 100% !important;
+            box-sizing: border-box;
+        }
+
+        .form-group.full-width {
+            width: 100%;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px 25px;
+            font-size: 1.05rem;
+        }
+
+        .notification {
+            right: 15px;
+            left: 15px;
+            max-width: none;
+            margin: 0 15px;
+        }
+    }
+
     @media (max-width: 768px) {
         .contact-section {
             padding: 80px 0;
@@ -649,7 +746,7 @@
     <div class="container">
         <!-- Section Header -->
         <div class="section-header animate-fade-in-up">
-            <h2 class="section-title animate-fade-in-up" data-lang="contact">Liên hệ</h2>
+            <h2 class="section-title animate-fade-in-up" data-lang="contactTitle">Liên hệ</h2>
             <p class="section-subtitle animate-slide-in-right" data-lang="contactSubtitle" style="text-align: center;">
                 Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ về VieGrand - giải pháp chăm sóc sức khỏe thông minh
             </p>
@@ -720,6 +817,7 @@
                                 id="name" 
                                 name="name" 
                                 class="input-field" 
+                                data-lang-placeholder="nameInput"
                                 placeholder="Nhập họ và tên của bạn"
                                 required
                             >
@@ -764,6 +862,7 @@
                                 id="subject" 
                                 name="subject" 
                                 class="input-field" 
+                                data-lang-placeholder="subjectPlaceholder"
                                 placeholder="Chủ đề tin nhắn"
                                 required
                             >
@@ -777,7 +876,8 @@
                             <textarea 
                                 id="message" 
                                 name="message" 
-                                class="input-field textarea-field" 
+                                class="input-field textarea-field"
+                                data-lang-placeholder="messagePlaceholder"
                                 placeholder="Nhập nội dung tin nhắn của bạn..."
                                 required
                                 style="width: 90%;"

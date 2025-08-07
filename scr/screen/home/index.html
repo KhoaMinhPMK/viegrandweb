@@ -976,6 +976,50 @@
         }
         
         /* Responsive */
+        @media (max-width: 1170px) {
+            .nav-menu a {
+                font-size: 0;
+                padding: 12px 16px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .nav-menu a::after {
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                font-size: 1.1rem;
+                color: var(--text-primary, #2c3e50);
+                transition: color 0.4s ease;
+            }
+            
+            .nav-menu a:hover::after {
+                color: white;
+            }
+            
+            /* Icon mappings for each navigation item */
+            .nav-menu a[data-lang="home"]::after {
+                content: "\f015"; /* home icon */
+            }
+            
+            .nav-menu a[data-lang="about"]::after {
+                content: "\f05a"; /* info-circle icon */
+            }
+            
+            .nav-menu a[data-lang="features"]::after {
+                content: "\f085"; /* cogs icon */
+            }
+            
+            .nav-menu a[data-lang="pricing"]::after {
+                content: "\f02d"; /* book icon */
+            }
+            
+            .nav-menu a[data-lang="contact"]::after {
+                content: "\f095"; /* phone icon */
+            }
+        }
+        
         @media (max-width: 1024px) {
             .header-container {
                 width: 97%;
@@ -987,13 +1031,28 @@
             
             .nav-menu a {
                 padding: 10px 16px;
-                font-size: 14px;
+                /* font-size removed to not conflict with icon-only display */
             }
             
             .auth-btn {
                 padding: 12px 24px;
                 font-size: 0.9rem;
                 letter-spacing: 0.3px;
+            }
+        }
+        
+        @media (max-width: 969px) {
+            .logo {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 800px) {
+            .nav-menu {
+                display: none;
+            }
+            .auth-buttons{
+                margin: auto;
             }
         }
         
@@ -1282,9 +1341,7 @@
                 <span data-lang="heroTitle">VIEGRAND</span><br/>
                 <span style="color: #ffffff;" data-lang="heroSubtitle">CHĂM SÓC NGƯỜI THÂN THEO CÁCH HIỆN ĐẠI</span>
             </h1>
-            <p class="hero-subtitle" data-lang="heroDescription" style="text-align: center;">
-                Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br/> Nơi công nghệ kết hợp cùng y học, mang đến sự an tâm cho bạn.
-            </p>
+            
             <div class="hero-buttons">
                 <a href="#features" class="hero-button-primary transition-time" data-lang="exploreBtnText">Khám phá ngay</a>
                 <a href="#demo" class="hero-button-secondary  transition-time" data-lang="demoBtnText">Xem Demo</a>

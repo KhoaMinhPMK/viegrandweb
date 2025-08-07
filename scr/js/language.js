@@ -11,9 +11,78 @@ const languages = {
         securityTitle: "Bảo Mật & Chứng Nhận",
         securitySubtitle: "VieGrand tuân thủ nghiêm ngặt các tiêu chuẩn bảo mật y tế quốc tế",
         ctaTitle: "Bảo Vệ Người Thân Ngay Hôm Nay",
-        ctaSubtitle: "Mỗi giây trì hoãn có thể ảnh hưởng đến tính mạng. Hãy để VieGrand bảo vệ người thân yêu của bạn 24/7.",
-        ctaButtonPrimary: "Bắt Đầu Dùng Thử Miễn Phí",
-        ctaButtonSecondary: "📹 Xem Demo 2 Phút",
+        ctaSubtitle: "Mỗi giây chậm trễ có thể ảnh hưởng đến tính mạng. Hãy để VieGrand bảo vệ người thân yêu 24/7.",
+        ctaButtonPrimary: "Dùng Thử Miễn Phí",
+        startFreeTrial: "Bắt đầu dùng thử miễn phí",
+        watch2minsDemo: "📹 Xem Demo 2 Phút",
+
+        protectYourLoves: "Bảo Vệ Người Thân Ngay Hôm Nay",
+
+        // Testimonials content
+        testimonial1Name: "Bà Nguyễn Thị Lan",
+        testimonial1Role: "65 tuổi, Hà Nội",
+        testimonial1Text: "VieGrand đã giúp con cháu tôi yên tâm hơn khi không thể ở bên. Hệ thống cảnh báo rất nhanh, lần gần đây tôi bị ngã ở nhà thì chỉ sau 30 giây con trai đã gọi điện hỏi thăm.",
+        testimonial2Name: "Anh Trần Minh Đức",
+        testimonial2Role: "Con trai, kỹ sư IT",
+        testimonial2Text: "Là người làm công nghệ, tôi đánh giá cao hệ thống AI của VieGrand. Giao diện đơn giản, phù hợp với người cao tuổi, nhưng công nghệ bên trong rất tiên tiến và đáng tin cậy.",
+        testimonial3Name: "BS. Thái Thanh Hương",
+        testimonial3Role: "Bác sĩ tim mạch, BV Bạch Mai",
+        testimonial3Text: "VieGrand có tiềm năng lớn trong việc phát hiện sớm đột quỵ. Việc can thiệp trong 'golden hour' là rất quan trọng, và hệ thống này có thể cứu được nhiều sinh mạng.",
+
+        // Statistics
+        stat1Number: "500+",
+        stat1Label: "Gia đình tin tưởng",
+        stat2Number: "95%",
+        stat2Label: "Độ chính xác phát hiện",
+        stat3Number: "24/7",
+        stat3Label: "Giám sát liên tục",
+        stat4Number: "<30s",
+        stat4Label: "Thời gian cảnh báo",
+
+        // Security features
+        securityFeature1Title: "Mã Hóa End-to-End",
+        securityFeature1Desc: "Dữ liệu được mã hóa từ thiết bị đến máy chủ, đảm bảo thông tin y tế được bảo vệ tuyệt đối.",
+        securityFeature2Title: "Tuân Thủ HIPAA",
+        securityFeature2Desc: "Đáp ứng các tiêu chuẩn bảo mật y tế HIPAA, đảm bảo quyền riêng tư thông tin sức khỏe.",
+        securityFeature3Title: "ISO 27001",
+        securityFeature3Desc: "Chứng nhận ISO 27001 về quản lý bảo mật thông tin, đảm bảo hệ thống an toàn tuyệt đối.",
+        securityFeature4Title: "Xử Lý Cục Bộ",
+        securityFeature4Desc: "AI xử lý trực tiếp trên thiết bị, không upload dữ liệu cá nhân lên cloud, bảo vệ tuyệt đối quyền riêng tư.",
+        securityFeature5Title: "Kiểm Tra Bảo Mật Định Kỳ",
+        securityFeature5Desc: "Hệ thống được kiểm tra bảo mật định kỳ bởi các chuyên gia an ninh mạng hàng đầu.",
+        securityFeature6Title: "Backup Dữ Liệu An Toàn",
+        securityFeature6Desc: "Dữ liệu được sao lưu an toàn với nhiều lớp bảo vệ, đảm bảo không bao giờ mất mát thông tin quan trọng.",
+
+        // Certifications
+        securityCertifiedBy: "Được Công Nhận Bởi",
+        securityCert1: "Bộ Y Tế",
+        securityCert2: "ĐHBK Hà Nội",
+        securityCert3: "Viện Nghiên Cứu AI",
+        securityCert4: "Startup Việt 2024",
+        certifiedBy: "Được Công Nhận Bởi",
+        cert1Name: "Bộ Y Tế",
+        cert2Name: "ĐHBK Hà Nội",
+        cert3Name: "Viện Nghiên Cứu AI",
+        cert4Name: "Startup Việt 2024",
+
+        // CTA benefits
+        ctaBenefit1Title: "Dùng Thử Miễn Phí",
+        ctaBenefit1Desc: "30 ngày đầu hoàn toàn miễn phí, không cần thẻ tín dụng",
+        ctaBenefit2Title: "Cài Đặt Dễ Dàng",
+        ctaBenefit2Desc: "Chỉ 15 phút cài đặt, hỗ trợ kỹ thuật 24/7",
+        ctaBenefit3Title: "Hoàn Tiền 100%",
+        ctaBenefit3Desc: "Không hài lòng? Hoàn tiền trong 60 ngày",
+
+        // Trust indicators
+        trustIndicator1: "Không spam, không bán thông tin",
+        trustIndicator2: "Bảo mật cấp y tế",
+        trustIndicator3: "Hỗ trợ 24/7",
+
+        // Emergency contact
+        emergencyTitle: "Tình huống khẩn cấp?",
+        emergencyText: "Gọi ngay:",
+        emergencyPhone: "1900 1000",
+        emergencyContact: "Tình huống khẩn cấp?",
 
         // Header
         home: "Trang Chủ",
@@ -52,7 +121,7 @@ const languages = {
         aboutStoryText1: "VieGrand ra đời từ những trải nghiệm thực tế của chúng tôi - một nhóm học sinh THPT Nguyễn Hữu Huân. Xuất phát từ sự thấu hiểu những khó khăn mà ông bà, cha mẹ gặp phải trong quá trình chăm sóc sức khỏe, tập thể nhóm đã nhận thấy tiềm năng của công nghệ như một cầu nối hiệu quả nhằm hỗ trợ và cải thiện chất lượng cuộc sống cho người thân yêu.",
         aboutStoryText2: "Chúng tôi không chỉ muốn tạo ra một sản phẩm công nghệ, mà mong muốn xây dựng một giải pháp mang tính nhân văn, giúp các gia đình Việt Nam duy trì và phát huy truyền thống hiếu thảo trong thời đại số.",
         aboutStoryQuote: "Từ những đêm thức trắng nghiên cứu công nghệ AI, đến những lần thử nghiệm không thành công, chúng tôi luôn được thúc đẩy bởi một niềm tin: công nghệ phải phục vụ tình người.",
-
+        nameInput: "Nhập họ và tên của bạn",
         // Mission & Vision
         aboutMissionTitle: "Sứ Mệnh",
         aboutMissionText: "Ứng dụng công nghệ AI và IoT để tạo ra giải pháp chăm sóc sức khỏe toàn diện, giúp người cao tuổi sống khỏe mạnh, hạnh phúc và giúp các gia đình Việt duy trì truyền thống hiếu thảo trong thời đại số.",
@@ -120,7 +189,6 @@ const languages = {
         ctaTitle: "Sẵn Sàng Trải Nghiệm?",
         ctaDesc: "Tham gia cùng hàng nghìn gia đình Việt đã tin tưởng VieGrand để chăm sóc người thân yêu",
         ctaButton: "Đăng Ký Ngay",
-        ctaButtonPrimary: "Đăng Ký Ngay",
         ctaButtonSecondary: "Xem Bảng Giá",
 
         // Technology Section
@@ -136,7 +204,7 @@ const languages = {
         responseTime: "Thời Gian Phản Ứng",
         continuousMonitoring: "Giám Sát Liên Tục",
         encryptionSecurity: "Mã Hóa Bảo Mật",
-
+        messagePlaceholder: "Nội dung tin nhắn",            
         // Pricing Section
         pricingTitle: "Bảng Giá Dịch Vụ",
         pricingSubtitle: "Chọn gói dịch vụ phù hợp với nhu cầu của gia đình bạn. Tất cả gói đều bao gồm hỗ trợ 24/7 và cập nhật miễn phí.",
@@ -215,18 +283,26 @@ const languages = {
         modalEnterpriseFeature6: "Báo cáo và phân tích nâng cao",
         modalEnterpriseFeature7: "Camera không giới hạn",
         modalEnterpriseFeature8: "Lưu trữ vĩnh viễn",
-
+        subjectInput: "Nhập chủ đề",
         // Common
         choosePlan: "Chọn Gói",
+        choosePlan2: "Chọn Gói",
         contactUs: "Liên Hệ",
+        contactTitle: "Liên Hệ",
+
+        perMonth2: "/tháng",
         freeTrial: "Dùng thử 7 ngày miễn phí",
+
+
+        freeTrial2: "Dùng thử 14 ngày miễn phí",
+
         customDemo: "Demo tùy chỉnh miễn phí",
 
         // Contact Support
         needHelpTitle: "Cần Tư Vấn Thêm?",
         needHelpDesc: "Đội ngũ chuyên gia của chúng tôi sẵn sàng hỗ trợ bạn chọn gói dịch vụ phù hợp nhất cho nhu cầu của gia đình.",
         contactSupport: "Liên Hệ Tư Vấn",
-
+        
         // Contact section
         contactSubtitle: "Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ về VieGrand - giải pháp chăm sóc sức khỏe thông minh",
         contactFormSubtitle: "Chúng tôi sẽ phản hồi trong vòng 24 giờ",
@@ -242,6 +318,7 @@ const languages = {
         contactFormTitle: "Gửi tin nhắn cho chúng tôi",
         nameLabel: "Họ và tên",
         subjectLabel: "Chủ đề",
+        subjectPlaceholder: "Chủ đề tin nhắn",
         messageLabel: "Nội dung tin nhắn",
         messagePlaceholder: "Nhập nội dung tin nhắn của bạn...",
         sendMessage: "Gửi tin nhắn",
@@ -262,8 +339,6 @@ const languages = {
         signupSubtitle: "Để lại thông tin để nhận tư vấn miễn phí về dịch vụ chăm sóc sức khỏe người cao tuổi từ VieGrand",
         firstNameLabel: "Họ và tên đệm",
         lastNameLabel: "Tên",
-        emailLabel: "Email",
-        phoneLabel: "Số điện thoại",
         ageLabel: "Tuổi của bạn",
         selectAge: "Chọn độ tuổi",
         relationshipLabel: "Bạn là",
@@ -299,8 +374,88 @@ const languages = {
 
     en: {
         // Page Titles
-        pageTitle: "Home",
+        pageTitle: "VieGrand - Modern Healthcare for Your Loved Ones",
         signupPageTitle: "Sign Up - VieGrand",
+
+        // Professional additions
+        startFreeTrial: "Start Free Trial",
+        watch2minsDemo: "Watch 2-mins Demo",
+
+        testimonialsTitle: "User Testimonials",
+        testimonialsSubtitle: "Thousands of families trust VieGrand to protect their loved ones",
+        securityTitle: "Security & Certification",
+        securitySubtitle: "VieGrand strictly complies with international healthcare security standards",
+        ctaTitle: "Protect Your Loved Ones Today",
+        protectYourLoves: "Protect Your Loved Ones Today",
+        ctaSubtitle: "Every second of delay can affect lives. Let VieGrand protect your loved ones 24/7.",
+        ctaButtonPrimary: "Start Free Trial",
+        ctaButtonSecondary: "📹 Watch 2-Min Demo",
+
+        // Testimonials content
+        testimonial1Name: "Mrs. Nguyen Thi Lan",
+        testimonial1Role: "65 years old, Hanoi",
+        testimonial1Text: "VieGrand has helped my children feel more at ease when they can't be by my side. The alert system is very fast - recently when I fell at home, my son called within 30 seconds to check on me.",
+        testimonial2Name: "Mr. Tran Minh Duc",
+        testimonial2Role: "Son, IT Engineer",
+        testimonial2Text: "As someone working in technology, I highly appreciate VieGrand's AI system. The interface is simple, suitable for the elderly, but the technology inside is very advanced and reliable.",
+        testimonial3Name: "Dr. Thai Thanh Huong",
+        testimonial3Role: "Cardiologist, Bach Mai Hospital",
+        testimonial3Text: "VieGrand has great potential in early stroke detection. Intervention during the 'golden hour' is very important, and this system can save many lives.",
+
+        // Statistics
+        stat1Number: "500+",
+        stat1Label: "Trusting families",
+        stat2Number: "95%",
+        stat2Label: "Detection accuracy",
+        stat3Number: "24/7",
+        stat3Label: "Continuous monitoring",
+        stat4Number: "<30s",
+        stat4Label: "Alert time",
+
+        // Security features
+        securityFeature1Title: "End-to-End Encryption",
+        securityFeature1Desc: "Data is encrypted from device to server, ensuring medical information is absolutely protected.",
+        securityFeature2Title: "HIPAA Compliance",
+        securityFeature2Desc: "Meets HIPAA medical security standards, ensuring privacy of health information.",
+        securityFeature3Title: "ISO 27001",
+        securityFeature3Desc: "ISO 27001 certification for information security management, ensuring absolutely safe system.",
+        securityFeature4Title: "Local Processing",
+        securityFeature4Desc: "AI processes directly on device, no personal data uploaded to cloud, absolutely protecting privacy.",
+        securityFeature5Title: "Regular Security Audits",
+        securityFeature5Desc: "System undergoes regular security audits by leading cybersecurity experts.",
+        securityFeature6Title: "Secure Data Backup",
+        securityFeature6Desc: "Data is safely backed up with multiple layers of protection, ensuring no loss of important information.",
+
+        // Certifications
+        securityCertifiedBy: "Certified By",
+        securityCert1: "Ministry of Health",
+        securityCert2: "Hanoi University of Technology",
+        securityCert3: "AI Research Institute",
+        securityCert4: "Vietnam Startup 2024",
+        certifiedBy: "Certified By",
+        cert1Name: "Ministry of Health",
+        cert2Name: "Hanoi University of Technology",
+        cert3Name: "AI Research Institute",
+        cert4Name: "Vietnam Startup 2024",
+
+        // CTA benefits
+        ctaBenefit1Title: "Free Trial",
+        ctaBenefit1Desc: "First 30 days completely free, no credit card required",
+        ctaBenefit2Title: "Easy Setup",
+        ctaBenefit2Desc: "Only 15 minutes installation, 24/7 technical support",
+        ctaBenefit3Title: "100% Money Back",
+        ctaBenefit3Desc: "Not satisfied? Full refund within 60 days",
+
+        // Trust indicators
+        trustIndicator1: "No spam, no selling information",
+        trustIndicator2: "Medical-grade security",
+        trustIndicator3: "24/7 Support",
+
+        // Emergency contact
+        emergencyTitle: "Emergency situation?",
+        emergencyText: "Call now:",
+        emergencyPhone: "1900 1000",
+        emergencyContact: "Emergency situation?",
 
         // Header
         home: "Home",
@@ -320,7 +475,7 @@ const languages = {
         heroTitle: "VIEGRAND",
         heroSubtitle: "CARING FOR PARENTS THE MODERN WAY",
         heroDescription: "Early stroke detection app designed for the elderly <br/> Where technology combines with medicine to bring you peace of mind.",
-        exploreBtnText: "Explore Now",
+        exploreBtnText: "Start Free Trial",
         demoBtnText: "Watch Demo",
         scrollText: "Scroll down to explore",
 
@@ -380,6 +535,7 @@ const languages = {
         aboutFeature5Desc: "Uses data analysis and monitoring technology to help users detect potential health risks.",
         aboutFeature6Title: "Vision & Mission",
         aboutFeature6Desc: "VieGrand aims to become the leading smart and compassionate elderly care support platform in Vietnam.",
+        nameInput: "Fill in your full name",
 
         // Quote and Tagline
         aboutQuote: "We believe that: technology is not just a tool, but can become a silent companion, continuing filial piety and spreading love in every Vietnamese family.",
@@ -388,7 +544,7 @@ const languages = {
         // Features Section
         featuresTitle: "Outstanding Features",
         featuresSubtitle: "VieGrand integrates the most advanced technologies to provide a comprehensive and intelligent healthcare experience",
-
+        contactTitle: "Liên hệ",
         // Features List
         feature1Title: "Smart AI Detection",
         feature1Desc: "Advanced AI system with smart cameras instantly detects emergency situations like stroke, falls, unconsciousness with high accuracy.",
@@ -407,7 +563,6 @@ const languages = {
         ctaTitle: "Ready To Experience?",
         ctaDesc: "Join thousands of Vietnamese families who trust VieGrand to care for their loved ones",
         ctaButton: "Sign Up Now",
-        ctaButtonPrimary: "Sign Up Now",
         ctaButtonSecondary: "View Pricing",
 
         // Technology Section
@@ -437,7 +592,8 @@ const languages = {
         basicFeature2: "Basic fall detection",
         basicFeature3: "SMS alerts",
         basicFeature4: "24/7 email support",
-        basicFeature5: "Weekly reports",
+        basicFeature5: "Weekly reports",        
+        messagePlaceholder: "Enter your message content...",
 
         // Premium Plan
         premiumPlanName: "Premium Plan",
@@ -464,6 +620,7 @@ const languages = {
         enterpriseFeature5: "In-depth staff training",
         enterpriseFeature6: "24/7 technical support",
         enterpriseFeature7: "Advanced reporting and analytics",
+        perMonth2: "/month",
 
         // Modal Content
         modalBasicTitle: "Basic Plan",
@@ -483,7 +640,7 @@ const languages = {
         modalBasicFeature4: "Weekly reports",
         modalBasicFeature5: "HD 1080p Camera",
         modalBasicFeature6: "7-day storage",
-
+        subjectInput: "Add subject",
         modalPremiumFeature1: "Advanced AI stroke detection",
         modalPremiumFeature2: "Multi-channel alerts (SMS, Call, Email)",
         modalPremiumFeature3: "Camera health monitoring",
@@ -505,8 +662,13 @@ const languages = {
 
         // Common Elements
         choosePlan: "Choose Plan",
+        choosePlan2: "Choose Plan",
+
         contactUs: "Contact Us",
         freeTrial: "7-day free trial",
+
+        freeTrial2: "14-day free trial",
+
         customDemo: "Free custom demo",
 
         // Contact Support
@@ -529,6 +691,7 @@ const languages = {
         contactFormTitle: "Send us a message",
         nameLabel: "Full Name",
         subjectLabel: "Subject",
+        subjectPlaceholder: "Message subject",
         messageLabel: "Message Content",
         messagePlaceholder: "Enter your message content...",
         sendMessage: "Send Message",
@@ -542,6 +705,7 @@ const languages = {
         missionText: "To provide a smart, accurate, and easy-to-use early stroke detection solution, helping to minimize risks and improve the quality of life for the elderly.",
         visionTitle: "Our Vision",
         visionText: "To become the most trusted technology companion in every Vietnamese family, contributing to building a healthy and happy community of elderly people.",
+        contactTitle: "Contact",
 
         // Signup Page
         backHome: "← Back to Home",
@@ -549,8 +713,6 @@ const languages = {
         signupSubtitle: "Leave your information to receive free consultation about elderly healthcare services from VieGrand",
         firstNameLabel: "First Name",
         lastNameLabel: "Last Name",
-        emailLabel: "Email",
-        phoneLabel: "Phone Number",
         ageLabel: "Your Age",
         selectAge: "Select age range",
         relationshipLabel: "You are",
@@ -581,7 +743,7 @@ const languages = {
 
         // Language
         languageCode: "US",
-        languageDisplay: "US"
+        languageDisplay: "EN"
     }
 };
 
@@ -695,6 +857,10 @@ function updateContent() {
     safeUpdateElement('[data-lang="aboutFeature6Title"]', lang.aboutFeature6Title);
     safeUpdateElement('[data-lang="aboutFeature6Desc"]', lang.aboutFeature6Desc);
 
+
+    
+    safeUpdateElement('[data-lang="nameInput"]', lang.nameInput);
+
     // Update Quote and Tagline
     safeUpdateElement('[data-lang="aboutQuote"]', lang.aboutQuote);
     safeUpdateElement('[data-lang="aboutTagline"]', lang.aboutTagline);
@@ -718,7 +884,20 @@ function updateContent() {
     safeUpdateElement('[data-lang="feature6Desc"]', lang.feature6Desc);
 
     // Update CTA Section
+    safeUpdateElement('[data-lang="ctaSubtitle"]', lang.ctaSubtitle);
     safeUpdateElement('[data-lang="ctaTitle"]', lang.ctaTitle);
+    safeUpdateElement('[data-lang="startFreeTrial"]', lang.startFreeTrial);
+
+
+
+    safeUpdateElement('[data-lang="watch2minsDemo"]', lang.watch2minsDemo);
+
+    safeUpdateElement('[data-lang="protectYourLoves"]', lang.protectYourLoves);
+    safeUpdateElement('[data-lang="contactTitle"]', lang.contactTitle);
+
+
+
+
     safeUpdateElement('[data-lang="ctaDesc"]', lang.ctaDesc);
     safeUpdateElement('[data-lang="ctaButton"]', lang.ctaButton);
     safeUpdateElement('[data-lang="ctaButtonPrimary"]', lang.ctaButtonPrimary);
@@ -803,14 +982,21 @@ function updateContent() {
 
     // Common
     safeUpdateElement('[data-lang="choosePlan"]', lang.choosePlan);
+    safeUpdateElement('[data-lang="choosePlan2"]', lang.choosePlan2);
+
     safeUpdateElement('[data-lang="contactUs"]', lang.contactUs);
     safeUpdateElement('[data-lang="freeTrial"]', lang.freeTrial);
+    safeUpdateElement('[data-lang="freeTrial2"]', lang.freeTrial2);
+
     safeUpdateElement('[data-lang="customDemo"]', lang.customDemo);
 
     // Contact Support
     safeUpdateElement('[data-lang="needHelpTitle"]', lang.needHelpTitle);
     safeUpdateElement('[data-lang="needHelpDesc"]', lang.needHelpDesc);
     safeUpdateElement('[data-lang="contactSupport"]', lang.contactSupport);
+
+    safeUpdateElement('[data-lang="perMonth2"]', lang.perMonth2);
+
 
     // Contact section
     safeUpdateElement('[data-lang="contactSubtitle"]', lang.contactSubtitle);
@@ -878,6 +1064,20 @@ function updateContent() {
         messagePlaceholderElement.placeholder = lang.messagePlaceholder;
     }
 
+    const subjectPlaceholderElement = document.querySelector('[data-lang-placeholder="subjectPlaceholder"]');
+    const nameInput = document.querySelector('[data-lang-placeholder="nameInput"]');
+    const messagePlaceholder = document.querySelector('[data-lang-placeholder="messagePlaceholder"]');
+    if (subjectPlaceholderElement) {
+        subjectPlaceholderElement.placeholder = lang.subjectPlaceholder;
+    }
+    if (nameInput) {
+        nameInput.placeholder = lang.nameInput;
+    }
+
+    if (messagePlaceholder) {
+        messagePlaceholder.placeholder = lang.messagePlaceholder;
+    }
+
     // Handle signup page placeholder
     const needsPlaceholderElement = document.querySelector('[data-lang="needsPlaceholder"]');
     if (needsPlaceholderElement) {
@@ -895,6 +1095,15 @@ function updateContent() {
     safeUpdateElement('[data-lang="computerVision"]', lang.computerVision);
     safeUpdateElement('[data-lang="cloudComputing"]', lang.cloudComputing);
     safeUpdateElement('[data-lang="edgeSecurity"]', lang.edgeSecurity);
+    safeUpdateElement('[data-lang="testimonialsTitle"]', lang.testimonialsTitle);
+
+    safeUpdateElement('[data-lang="testimonialsSubtitle"]', lang.testimonialsSubtitle);
+
+
+
+
+
+
 
     // Update Statistics Section
     safeUpdateElement('[data-lang="aiAccuracy"]', lang.aiAccuracy);
@@ -916,6 +1125,78 @@ function updateContent() {
     safeUpdateElement('[data-lang="missionText"]', lang.missionText);
     safeUpdateElement('[data-lang="visionTitle"]', lang.visionTitle);
     safeUpdateElement('[data-lang="visionText"]', lang.visionText);
+
+    safeUpdateElement('[data-lang="securityTitle"]', lang.securityTitle);
+    safeUpdateElement('[data-lang="subjectInput"]', lang.subjectInput);
+
+
+
+
+    // Update testimonials content
+    safeUpdateElement('[data-lang="testimonial1Name"]', lang.testimonial1Name);
+    safeUpdateElement('[data-lang="testimonial1Role"]', lang.testimonial1Role);
+    safeUpdateElement('[data-lang="testimonial1Text"]', lang.testimonial1Text);
+    safeUpdateElement('[data-lang="testimonial2Name"]', lang.testimonial2Name);
+    safeUpdateElement('[data-lang="testimonial2Role"]', lang.testimonial2Role);
+    safeUpdateElement('[data-lang="testimonial2Text"]', lang.testimonial2Text);
+    safeUpdateElement('[data-lang="testimonial3Name"]', lang.testimonial3Name);
+    safeUpdateElement('[data-lang="testimonial3Role"]', lang.testimonial3Role);
+    safeUpdateElement('[data-lang="testimonial3Text"]', lang.testimonial3Text);
+
+    // Update statistics
+    safeUpdateElement('[data-lang="stat1Number"]', lang.stat1Number);
+    safeUpdateElement('[data-lang="stat1Label"]', lang.stat1Label);
+    safeUpdateElement('[data-lang="stat2Number"]', lang.stat2Number);
+    safeUpdateElement('[data-lang="stat2Label"]', lang.stat2Label);
+    safeUpdateElement('[data-lang="stat3Number"]', lang.stat3Number);
+    safeUpdateElement('[data-lang="stat3Label"]', lang.stat3Label);
+    safeUpdateElement('[data-lang="stat4Number"]', lang.stat4Number);
+    safeUpdateElement('[data-lang="stat4Label"]', lang.stat4Label);
+
+    // Update security features
+    safeUpdateElement('[data-lang="securityFeature1Title"]', lang.securityFeature1Title);
+    safeUpdateElement('[data-lang="securityFeature1Desc"]', lang.securityFeature1Desc);
+    safeUpdateElement('[data-lang="securityFeature2Title"]', lang.securityFeature2Title);
+    safeUpdateElement('[data-lang="securityFeature2Desc"]', lang.securityFeature2Desc);
+    safeUpdateElement('[data-lang="securityFeature3Title"]', lang.securityFeature3Title);
+    safeUpdateElement('[data-lang="securityFeature3Desc"]', lang.securityFeature3Desc);
+    safeUpdateElement('[data-lang="securityFeature4Title"]', lang.securityFeature4Title);
+    safeUpdateElement('[data-lang="securityFeature4Desc"]', lang.securityFeature4Desc);
+
+    // Update certifications
+    safeUpdateElement('[data-lang="securityCertifiedBy"]', lang.securityCertifiedBy);
+    safeUpdateElement('[data-lang="securityCert1"]', lang.securityCert1);
+    safeUpdateElement('[data-lang="securityCert2"]', lang.securityCert2);
+    safeUpdateElement('[data-lang="securityCert3"]', lang.securityCert3);
+    safeUpdateElement('[data-lang="securityCert4"]', lang.securityCert4);
+
+    safeUpdateElement('[data-lang="certifiedBy"]', lang.certifiedBy);
+
+
+    // Update CTA benefits
+    safeUpdateElement('[data-lang="ctaBenefit1Title"]', lang.ctaBenefit1Title);
+    safeUpdateElement('[data-lang="ctaBenefit1Desc"]', lang.ctaBenefit1Desc);
+    safeUpdateElement('[data-lang="ctaBenefit2Title"]', lang.ctaBenefit2Title);
+    safeUpdateElement('[data-lang="ctaBenefit2Desc"]', lang.ctaBenefit2Desc);
+    safeUpdateElement('[data-lang="ctaBenefit3Title"]', lang.ctaBenefit3Title);
+    safeUpdateElement('[data-lang="ctaBenefit3Desc"]', lang.ctaBenefit3Desc);
+
+    // Update trust indicators
+    safeUpdateElement('[data-lang="trustIndicator1"]', lang.trustIndicator1);
+    safeUpdateElement('[data-lang="trustIndicator2"]', lang.trustIndicator2);
+    safeUpdateElement('[data-lang="trustIndicator3"]', lang.trustIndicator3);
+
+    // Update emergency contact
+    
+    safeUpdateElement('[data-lang="contact"]', lang.contact);
+
+    safeUpdateElement('[data-lang="emergencyTitle"]', lang.emergencyTitle);
+    safeUpdateElement('[data-lang="emergencyText"]', lang.emergencyText);
+
+
+    
+    safeUpdateElement('[data-lang="emergencyContact"]', lang.emergencyContact);
+    safeUpdateElement('[data-lang="emergencyPhone"]', lang.emergencyPhone);
 }
 
 // Update language button

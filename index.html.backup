@@ -829,40 +829,6 @@
                 0 2px 8px rgba(0, 74, 173, 0.08),
                 inset 0 1px 0 rgba(255, 255, 255, 0.5);
         }
-
-        /* Navigation icons and responsive behavior */
-        .nav-icon {
-            display: none;
-            font-size: 1.1rem;
-            margin-right: 8px;
-        }
-
-        .nav-text {
-            display: inline;
-        }
-
-        /* Responsive navigation - show icons instead of text below 1170px */
-        @media (max-width: 1170px) {
-            .nav-menu a {
-                padding: 12px 16px;
-                min-width: 50px;
-                text-align: center;
-            }
-
-            .nav-icon {
-                display: inline-block;
-                margin-right: 0;
-                font-size: 1.2rem;
-            }
-
-            .nav-text {
-                display: none;
-            }
-
-            .nav-menu {
-                gap: 8px;
-            }
-        }
         
         .nav-menu a::before {
             content: '';
@@ -1290,26 +1256,11 @@
             
             <nav class="navigation">
                 <ul class="nav-menu">
-                    <li><a href="#hero" data-lang="home" class="nav-link">
-                        <i class="fas fa-home nav-icon"></i>
-                        <span class="nav-text">Trang Chủ</span>
-                    </a></li>
-                    <li><a href="#about" data-lang="about" class="nav-link">
-                        <i class="fas fa-users nav-icon"></i>
-                        <span class="nav-text">Về chúng tôi</span>
-                    </a></li>
-                    <li><a href="#features" data-lang="features" class="nav-link">
-                        <i class="fas fa-cogs nav-icon"></i>
-                        <span class="nav-text">Chức năng</span>
-                    </a></li>
-                    <li><a href="#pricing" data-lang="pricing" class="nav-link">
-                        <i class="fas fa-tags nav-icon"></i>
-                        <span class="nav-text">Giá cả</span>
-                    </a></li>
-                    <li><a href="#contact" data-lang="contact" class="nav-link">
-                        <i class="fas fa-envelope nav-icon"></i>
-                        <span class="nav-text">Liên hệ</span>
-                    </a></li>
+                    <li><a href="#hero" data-lang="home">Trang Chủ</a></li>
+                    <li><a href="#about" data-lang="about">Về chúng tôi</a></li>
+                    <li><a href="#features" data-lang="features">Chức năng</a></li>
+                    <li><a href="#pricing" data-lang="pricing">Giá cả</a></li>
+                    <li><a href="#contact" data-lang="contact">Liên hệ</a></li>
                 </ul>
             </nav>
             
