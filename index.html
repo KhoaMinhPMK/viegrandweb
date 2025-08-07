@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VieGrand - Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=https://viegrand.site/scr/screen/home/index.html">
+    <link rel="canonical" href="https://viegrand.site/scr/screen/home/index.html">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="VieGrand - Giải pháp chăm sóc sức khỏe thông minh cho người cao tuổi">
+    <meta name="keywords" content="VieGrand, healthcare, AI, elderly care, smart health">
+    <meta name="author" content="VieGrand Team">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="VieGrand - Giải pháp chăm sóc sức khỏe thông minh">
+    <meta property="og:description" content="Ứng dụng AI tiên tiến để phát hiện sớm đột quỵ và chăm sóc sức khỏe người cao tuổi">
+    <meta property="og:url" content="https://viegrand.site">
+    <meta property="og:type" content="website">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        
+        .redirect-container {
+            max-width: 500px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .fallback-link {
+            margin-top: 30px;
+        }
+        
+        .fallback-link a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .fallback-link a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-container">
+        <div class="logo">VieGrand</div>
+        <div class="message">Đang chuyển hướng đến trang chính...</div>
+        <div class="loading"></div>
+        
+        <div class="fallback-link">
+            <a href="https://viegrand.site/scr/screen/home/index.html">Nhấn vào đây nếu không được chuyển hướng tự động</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript redirect as fallback
+        setTimeout(function() {
+            window.location.href = 'https://viegrand.site/scr/screen/home/index.html';
+        }, 500);
+        
+        // Immediate redirect
+        if (window.location.hostname === 'viegrand.site' && window.location.pathname === '/') {
+            window.location.replace('https://viegrand.site/scr/screen/home/index.html');
+        }
+    </script>
+</body>
+</html>
