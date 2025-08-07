@@ -937,7 +937,8 @@
             message: data.message.trim()
         };
         
-        console.log('Sending form data:', formData);
+        console.log('Form data prepared:', formData);
+        console.log('JSON string to send:', JSON.stringify(formData));
         
         // Send data to server - using the API endpoint
         fetch('https://viegrand.site/api/submit_contact.php', {
@@ -949,6 +950,13 @@
         })
         .then(response => {
             console.log('Response status:', response.status);
+            console.log('Response headers:', response.headers);
+            console.log('Response ok:', response.ok);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
             return response.json();
         })
         .then(data => {
@@ -958,6 +966,7 @@
                 form.reset();
                 clearValidationStates();
             } else {
+                console.error('Server returned error:', data.message);
                 showNotification(data.message || 'Có lỗi xảy ra. Vui lòng thử lại.', 'error');
             }
         })

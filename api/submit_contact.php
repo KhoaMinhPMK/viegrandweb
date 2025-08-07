@@ -40,8 +40,10 @@ try {
     
     // Debug: Log the received data
     error_log("Contact form submission received: " . json_encode($input));
+    error_log("Raw input: " . file_get_contents('php://input'));
     
     if (!$input) {
+        error_log("Failed to decode JSON input");
         throw new Exception('Invalid JSON input');
     }
     
@@ -49,9 +51,12 @@ try {
     $required_fields = ['full_name', 'email', 'subject', 'message'];
     foreach ($required_fields as $field) {
         if (empty($input[$field])) {
+            error_log("Missing required field: $field. Available fields: " . implode(', ', array_keys($input)));
             throw new Exception("Missing required field: $field");
         }
     }
+    
+    error_log("All required fields validated successfully");
     
     // Validate email
     if (!filter_var($input['email'], FILTER_VALIDATE_EMAIL)) {
@@ -64,6 +69,8 @@ try {
     $phone = isset($input['phone']) ? trim($input['phone']) : null;
     $subject = trim($input['subject']);
     $message = trim($input['message']);
+    
+    error_log("Sanitized data - Name: $full_name, Email: $email, Phone: $phone, Subject: $subject");
     
     // Validate data length
     if (strlen($full_name) > 100) {
@@ -83,6 +90,8 @@ try {
     $sql = "INSERT INTO contact_messages (full_name, email, phone, subject, message, status, created_at) 
             VALUES (:full_name, :email, :phone, :subject, :message, 'unread', NOW())";
     
+    error_log("Preparing SQL statement: $sql");
+    
     $stmt = $pdo->prepare($sql);
     
     // Bind parameters
@@ -92,8 +101,12 @@ try {
     $stmt->bindParam(':subject', $subject, PDO::PARAM_STR);
     $stmt->bindParam(':message', $message, PDO::PARAM_STR);
     
+    error_log("About to execute SQL with data - Name: $full_name, Email: $email");
+    
     // Execute the statement
     $stmt->execute();
+    
+    error_log("SQL executed successfully");
     
     // Get the inserted ID
     $inserted_id = $pdo->lastInsertId();
