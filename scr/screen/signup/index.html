@@ -12,9 +12,83 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <style>
       * {
         box-sizing: border-box;
+      }
+
+      /* CSS Variables for Theme System */
+      :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8fafc;
+        --bg-tertiary: #f1f5f9;
+        --bg-glass: rgba(255, 255, 255, 0.15);
+        --bg-glass-hover: rgba(255, 255, 255, 0.25);
+        --bg-card: rgba(255, 255, 255, 0.9);
+        --bg-gradient-start: #f8fafc;
+        --bg-gradient-mid: #ffffff;
+        --bg-gradient-end: #f1f5f9;
+        --text-primary: #1a202c;
+        --text-secondary: #4a5568;
+        --text-muted: #718096;
+        --text-white: #ffffff;
+        --brand-primary: #004aad;
+        --brand-secondary: #0066ff;
+        --brand-gradient: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        --border-color: rgba(0, 74, 173, 0.15);
+        --border-light: rgba(255, 255, 255, 0.3);
+        --form-border: rgba(0, 74, 173, 0.1);
+        --form-focus-border: #004aad;
+        --form-text: #1e293b;
+        --form-placeholder: #94a3b8;
+        --form-label: #64748b;
+        --form-icon-bg: rgba(0, 74, 173, 0.08);
+        --form-icon-color: #64748b;
+        --shadow-light: 0 8px 32px rgba(0, 74, 173, 0.15);
+        --shadow-medium: 0 16px 64px rgba(0, 74, 173, 0.12);
+        --shadow-heavy: 0 24px 80px rgba(0, 74, 173, 0.18);
+      }
+
+      /* Dark Theme Variables */
+      [data-theme="dark"] {
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --bg-glass: rgba(15, 23, 42, 0.6);
+        --bg-glass-hover: rgba(15, 23, 42, 0.8);
+        --bg-card: rgba(30, 41, 59, 0.9);
+        --bg-gradient-start: #0f172a;
+        --bg-gradient-mid: #1e293b;
+        --bg-gradient-end: #334155;
+        --text-primary: #f8fafc;
+        --text-secondary: #e2e8f0;
+        --text-muted: #cbd5e1;
+        --text-white: #ffffff;
+        --brand-primary: #60a5fa;
+        --brand-secondary: #93c5fd;
+        --brand-gradient: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%);
+        --border-color: rgba(96, 165, 250, 0.3);
+        --border-light: rgba(248, 250, 252, 0.15);
+        --form-border: rgba(96, 165, 250, 0.2);
+        --form-focus-border: #60a5fa;
+        --form-text: #f8fafc;
+        --form-placeholder: #94a3b8;
+        --form-label: #cbd5e1;
+        --form-icon-bg: rgba(96, 165, 250, 0.15);
+        --form-icon-color: #94a3b8;
+        --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.4);
+        --shadow-medium: 0 16px 64px rgba(0, 0, 0, 0.5);
+        --shadow-heavy: 0 24px 80px rgba(0, 0, 0, 0.6);
+      }
+
+      /* Smooth transitions for theme changes */
+      * {
+        transition: background-color 0.3s ease,
+          color 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease !important;
       }
 
       body {
@@ -24,10 +98,9 @@
           Roboto, "Helvetica Neue", Arial, sans-serif;
         background: linear-gradient(
             135deg,
-            rgba(0, 74, 173, 0.05) 0%,
-            rgba(0, 102, 255, 0.08) 30%,
-            rgba(64, 156, 255, 0.03) 70%,
-            rgba(255, 255, 255, 0.95) 100%
+            var(--bg-gradient-start) 0%,
+            var(--bg-gradient-mid) 50%,
+            var(--bg-gradient-end) 100%
           ),
           url("../../../assets/bg2.jpg");
         background-size: cover;
@@ -39,20 +112,19 @@
         justify-content: center;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        color: var(--text-primary);
       }
 
       .signup-container {
-        background: rgba(255, 255, 255, 0.95);
+        background: var(--bg-card);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 20px 80px rgba(0, 74, 173, 0.15),
-          0 8px 32px rgba(0, 102, 255, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.6);
-        padding: 50px;
+        border: 1px solid var(--border-light);
+        box-shadow: var(--shadow-medium);
+        padding: 60px;
         width: 100%;
-        max-width: 500px;
+        max-width: 700px;
         margin: 20px;
         animation: slideUp 0.8s ease-out;
       }
@@ -70,8 +142,8 @@
 
       .logo {
         display: block;
-        margin: 0 auto 30px;
-        height: 100px;
+        margin: 0 auto 10px;
+        height: 150px;
         width: auto;
       }
 
@@ -93,7 +165,7 @@
         font-size: 1rem;
         margin: 0;
         line-height: 1.5;
-        text-align: justify;
+        text-align: center;
       }
 
       .signup-form {
@@ -107,7 +179,16 @@
       .form-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 15px;
+        gap: 25px;
+        margin-bottom: 25px;
+      }
+
+      .form-row.full-width {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row.three-columns {
+        grid-template-columns: 1fr 1fr 1fr;
       }
 
       .form-group label {
@@ -137,8 +218,13 @@
       .form-group textarea:focus {
         outline: none;
         border-color: var(--form-focus-border);
-        box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+        box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
         transform: translateY(-1px);
+      }
+
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: var(--form-placeholder);
       }
 
       .form-group textarea {
@@ -179,12 +265,16 @@
         text-decoration: underline;
       }
 
+      .checkbox-group input[type="checkbox"] {
+        accent-color: var(--brand-primary);
+      }
+
       .submit-btn {
         width: 100%;
         padding: 18px;
-        background: rgba(255, 255, 255, 0.95);
-        color: #004aad;
-        border: 2px solid #004aad;
+        background: var(--bg-primary);
+        color: var(--brand-primary);
+        border: 2px solid var(--brand-primary);
         border-radius: 12px;
         font-size: 1.1rem;
         font-weight: 600;
@@ -216,10 +306,10 @@
       }
 
       .submit-btn:hover {
-        background: rgba(255, 255, 255, 1);
-        border-color: #0066ff;
+        background: var(--bg-primary);
+        border-color: var(--brand-secondary);
         transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(0, 74, 173, 0.2);
+        box-shadow: var(--shadow-medium);
       }
 
       .submit-btn:active {
@@ -230,24 +320,24 @@
         text-align: center;
         margin-top: 30px;
         padding-top: 30px;
-        border-top: 1px solid #e0e6ed;
+        border-top: 1px solid var(--border-color);
       }
 
       .login-link p {
-        color: #666;
+        color: var(--text-secondary);
         margin: 0;
         font-size: 0.95rem;
       }
 
       .login-link a {
-        color: #004aad;
+        color: var(--brand-primary);
         text-decoration: none;
         font-weight: 600;
         transition: color 0.3s ease;
       }
 
       .login-link a:hover {
-        color: #0066ff;
+        color: var(--brand-secondary);
         text-decoration: underline;
       }
 
@@ -258,22 +348,66 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: rgba(255, 255, 255, 0.9);
+        background: var(--bg-glass);
         backdrop-filter: blur(10px);
         padding: 12px 20px;
         border-radius: 25px;
-        color: #004aad;
+        color: var(--brand-primary);
         text-decoration: none;
         font-weight: 500;
         transition: all 0.3s ease;
-        border: 1px solid rgba(0, 74, 173, 0.1);
+        border: 1px solid var(--border-color);
         font-size: 0.9rem;
       }
 
       .back-home:hover {
-        background: rgba(255, 255, 255, 1);
+        background: var(--bg-glass-hover);
         transform: translateX(-3px);
-        box-shadow: 0 5px 15px rgba(0, 74, 173, 0.15);
+        box-shadow: var(--shadow-light);
+      }
+
+      /* Theme Toggle Button Styles */
+      .theme-toggle {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        display: flex;
+        align-items: center;
+        background: var(--bg-glass);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border-light);
+        border-radius: 50px;
+        padding: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .theme-toggle:hover {
+        background: var(--bg-glass-hover);
+      }
+
+      .theme-option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        position: relative;
+        font-size: 16px;
+        color: var(--text-muted);
+      }
+
+      .theme-option.active {
+        background: var(--brand-gradient);
+        color: white;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      }
+
+      .theme-option:not(.active):hover {
+        background: var(--bg-glass);
+        color: var(--text-secondary);
       }
 
       /* Success Modal */
@@ -300,7 +434,7 @@
       }
 
       .success-content {
-        background: white;
+        background: var(--bg-primary);
         border-radius: 20px;
         padding: 50px;
         max-width: 500px;
@@ -309,7 +443,7 @@
         position: relative;
         transform: scale(0.8) translateY(30px);
         transition: transform 0.4s ease;
-        box-shadow: 0 25px 100px rgba(0, 74, 173, 0.3);
+        box-shadow: var(--shadow-heavy);
       }
 
       .success-modal.show .success-content {
@@ -346,14 +480,14 @@
       }
 
       .success-content h2 {
-        color: #004aad;
+        color: var(--brand-primary);
         font-size: 2rem;
         font-weight: 700;
         margin: 0 0 20px 0;
       }
 
       .success-content p {
-        color: #666;
+        color: var(--text-secondary);
         font-size: 1.1rem;
         line-height: 1.6;
         margin: 0 0 30px 0;
@@ -375,25 +509,25 @@
       }
 
       .success-btn.primary {
-        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+        background: var(--brand-gradient);
         color: white;
       }
 
       .success-btn.primary:hover {
         background: linear-gradient(135deg, #003380 0%, #004aad 100%);
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0, 74, 173, 0.25);
+        box-shadow: var(--shadow-medium);
       }
 
       .success-btn.secondary {
-        background: rgba(0, 74, 173, 0.1);
-        color: #004aad;
-        border: 2px solid rgba(0, 74, 173, 0.2);
+        background: var(--form-icon-bg);
+        color: var(--brand-primary);
+        border: 2px solid var(--form-border);
       }
 
       .success-btn.secondary:hover {
-        background: rgba(0, 74, 173, 0.15);
-        border-color: rgba(0, 74, 173, 0.3);
+        background: var(--form-focus-icon-bg);
+        border-color: var(--form-focus-border);
       }
 
       /* Loading state */
@@ -447,6 +581,11 @@
 
         .form-row {
           grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .form-row.three-columns {
+          grid-template-columns: 1fr;
         }
 
         .back-home {
@@ -497,7 +636,18 @@
       ← Về trang chủ
     </a>
 
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" onclick="switchTheme()">
+      <div class="theme-option active" data-theme="light">
+        <i class="fas fa-sun"></i>
+      </div>
+      <div class="theme-option" data-theme="dark">
+        <i class="fas fa-moon"></i>
+      </div>
+    </div>
+
     <div class="signup-container">
+      
       <img src="../../../assets/logo.png" alt="VieGrand Logo" class="logo" />
 
       <div class="signup-header">
@@ -527,12 +677,7 @@
           <input type="email" id="email" name="email" required />
         </div>
 
-        <div class="form-group">
-          <label for="phone" data-lang="phoneLabel">Số điện thoại</label>
-          <input type="tel" id="phone" name="phone" required />
-        </div>
-
-        <div class="form-row">
+        <div class="form-row three-columns">
           <div class="form-group">
             <label for="age" data-lang="ageLabel">Tuổi của bạn</label>
             <select id="age" name="age" required>
@@ -565,6 +710,10 @@
               </option>
               <option value="other" data-lang="other">Khác</option>
             </select>
+          </div>
+          <div class="form-group">
+            <label for="phone" data-lang="phoneLabel">Số điện thoại</label>
+            <input type="tel" id="phone" name="phone" required />
           </div>
         </div>
 
@@ -717,6 +866,60 @@
           }
         });
 
+      // Theme switching functionality
+      function switchTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        // Update data-theme attribute
+        document.documentElement.setAttribute('data-theme', newTheme);
+        
+        // Update theme toggle button
+        const themeOptions = document.querySelectorAll('.theme-option');
+        themeOptions.forEach(option => {
+          option.classList.remove('active');
+          if (option.getAttribute('data-theme') === newTheme) {
+            option.classList.add('active');
+          }
+        });
+        
+        // Update logo based on theme
+        updateLogo(newTheme);
+        
+        // Save theme preference to localStorage
+        localStorage.setItem('theme', newTheme);
+      }
+
+      // Function to update logo based on theme
+      function updateLogo(theme) {
+        const logo = document.querySelector('.logo');
+        if (logo) {
+          if (theme === 'dark') {
+            logo.src = '../../../assets/logo_header_dark.png';
+          } else {
+            logo.src = '../../../assets/logo_header.png';
+          }
+        }
+      }
+
+      // Initialize theme on page load
+      function initializeTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        // Update theme toggle button
+        const themeOptions = document.querySelectorAll('.theme-option');
+        themeOptions.forEach(option => {
+          option.classList.remove('active');
+          if (option.getAttribute('data-theme') === savedTheme) {
+            option.classList.add('active');
+          }
+        });
+        
+        // Update logo based on saved theme
+        updateLogo(savedTheme);
+      }
+
       // Language toggle function
       function switchLanguage() {
         if (typeof window.switchLanguageGlobal === "function") {
@@ -726,6 +929,10 @@
 
       // Initialize language system when page loads
       document.addEventListener("DOMContentLoaded", function () {
+        // Initialize theme
+        initializeTheme();
+        
+        // Initialize language
         if (typeof initializeLanguage === "function") {
           initializeLanguage();
         }
@@ -745,7 +952,7 @@
 
           field.addEventListener("input", function () {
             if (this.value.trim()) {
-              this.style.borderColor = "#e0e6ed";
+              this.style.borderColor = "var(--form-border)";
             }
           });
         });
