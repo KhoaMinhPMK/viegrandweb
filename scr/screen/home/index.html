@@ -24,6 +24,8 @@
     <link rel="icon" type="image/png" href="../../../assets/favicon.png">
     <!-- Theme System CSS -->
     <link rel="stylesheet" href="../../css/theme.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts - Inter: Font hiện đại hỗ trợ tiếng Việt -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -800,6 +802,11 @@
     <!-- Enhanced CTA Section - NEW -->
     <div id="enhanced-cta-container"></div>
 
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <!-- Contact Section - Loaded from external file -->
     <div id="contact-container"></div>
     
@@ -1155,6 +1162,35 @@
             if (typeof applyLanguage === 'function') {
                 applyLanguage(currentLanguage);
             }
+        });
+
+        // Back to Top Button Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            
+            // Show/hide button based on scroll position
+            function toggleBackToTopButton() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            }
+            
+            // Smooth scroll to top
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Event listeners
+            window.addEventListener('scroll', toggleBackToTopButton);
+            backToTopBtn.addEventListener('click', scrollToTop);
+            
+            // Initial check
+            toggleBackToTopButton();
         });
     </script>
 </body>
