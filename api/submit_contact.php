@@ -46,7 +46,7 @@ try {
     }
     
     // Validate required fields
-    $required_fields = ['full_name', 'email', 'subject', 'message'];
+    $required_fields = ['name', 'email', 'subject', 'message'];
     foreach ($required_fields as $field) {
         if (empty($input[$field])) {
             throw new Exception("Missing required field: $field");
@@ -59,7 +59,7 @@ try {
     }
     
     // Sanitize and prepare data
-    $full_name = trim($input['full_name']);
+    $full_name = trim($input['name']);  // Changed from 'full_name' to 'name'
     $email = trim($input['email']);
     $phone = isset($input['phone']) ? trim($input['phone']) : null;
     $subject = trim($input['subject']);
