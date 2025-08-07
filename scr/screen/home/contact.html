@@ -237,11 +237,24 @@
 
     .input-field:focus {
         border-color: #004aad;
+        background: #ffffff;
         box-shadow: 
             0 0 0 3px rgba(0, 74, 173, 0.1),
             0 4px 12px rgba(0, 74, 173, 0.15);
         transform: translateY(-1px);
     }
+
+    
+
+    /* Ensure background stays white when field has value */
+    /* [color-theme="light"].input-field:not(:placeholder-shown),
+    .input-field.has-value {
+        background: red !important;
+    } */
+    /* [color-theme="dark"] .input-field:not(:placeholder-shown),
+    [color-theme="dark"] .input-field.has-value {
+        background: #1a202c !important;
+    } */
 
     .input-field::placeholder {
         color: #94a3b8;
