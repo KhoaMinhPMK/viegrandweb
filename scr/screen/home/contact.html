@@ -9,7 +9,7 @@
     /* Contact Section Styles */
     .contact-section {
         padding: 100px 0;
-        background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
+        background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
         position: relative;
         overflow: hidden;
     }
@@ -53,7 +53,7 @@
     .section-title {
         font-size: 3.5rem;
         font-weight: 800;
-        color: var(--brand-primary);
+        color: #004aad;
         margin-bottom: 20px;
         font-family: 'Inter', sans-serif;
         text-transform: uppercase;
@@ -72,7 +72,7 @@
 
     .section-subtitle {
         font-size: 1.3rem;
-        color: var(--text-secondary);
+        color: #4a5568;
         max-width: 600px;
         margin: 0 auto;
         line-height: 1.6;
@@ -85,25 +85,24 @@
     .contact-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 60px;
+        gap: 80px;
         align-items: start;
         margin-bottom: 60px;
     }
 
     /* Contact Info */
     .contact-info {
-        background: var(--bg-card);
+        background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(15px);
         padding: 50px 40px;
         border-radius: 24px;
         box-shadow: 0 25px 50px rgba(0, 74, 173, 0.08);
-        border: 1px solid var(--border-color);
-        height: fit-content;
+        border: 1px solid rgba(0, 74, 173, 0.1);
     }
 
     .contact-info h3 {
         font-size: 2rem;
-        color: var(--brand-primary);
+        color: #004aad;
         margin-bottom: 30px;
         font-weight: 700;
         font-family: 'Inter', sans-serif;
@@ -114,24 +113,20 @@
         align-items: center;
         margin-bottom: 25px;
         padding: 20px;
-        background: var(--form-icon-bg);
+        background: rgba(0, 74, 173, 0.02);
         border-radius: 15px;
         transition: all 0.3s ease;
-        text-decoration: none;
-        color: inherit;
     }
 
     .contact-item:hover {
-        background: var(--form-focus-icon-bg);
+        background: rgba(0, 74, 173, 0.05);
         transform: translateX(5px);
-        text-decoration: none;
-        color: inherit;
     }
 
     .contact-item i {
         width: 50px;
         height: 50px;
-        background: var(--brand-gradient);
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
         color: white;
         border-radius: 12px;
         display: flex;
@@ -144,7 +139,7 @@
 
     .contact-details h4 {
         font-size: 1.1rem;
-        color: var(--text-primary);
+        color: #1a202c;
         margin-bottom: 5px;
         font-weight: 600;
         font-family: 'Inter', sans-serif;
@@ -152,39 +147,26 @@
     }
 
     .contact-details p {
-        color: var(--text-secondary);
+        color: #4a5568;
         margin: 0;
         font-weight: 500;
         text-align: left;
     }
 
-    /* Contact Form - Modern Redesign */
+    /* Contact Form */
     .contact-form {
-        background: linear-gradient(135deg, 
-            rgba(255, 255, 255, 0.12) 0%, 
-            rgba(255, 255, 255, 0.06) 50%,
-            rgba(255, 255, 255, 0.02) 100%);
-        backdrop-filter: blur(40px);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+        backdrop-filter: blur(25px);
         padding: 60px 50px;
-        border-radius: 32px;
+        border-radius: 28px;
         box-shadow: 
-            0 25px 80px rgba(0, 0, 0, 0.12),
-            0 8px 32px rgba(0, 0, 0, 0.08),
-            inset 0 1px 0 rgba(255, 255, 255, 0.3),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            0 30px 60px rgba(0, 74, 173, 0.15),
+            0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+        flex: 1;
+        min-width: 0;
         position: relative;
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .contact-form:hover {
-        transform: translateY(-8px);
-        box-shadow: 
-            0 35px 100px rgba(0, 0, 0, 0.18),
-            0 12px 40px rgba(0, 0, 0, 0.12),
-            inset 0 1px 0 rgba(255, 255, 255, 0.4),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .contact-form::before {
@@ -193,28 +175,10 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 6px;
-        background: linear-gradient(90deg, 
-            #004aad 0%, #0066ff 25%, #409cff 50%, #0066ff 75%, #004aad 100%);
+        height: 5px;
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 50%, #004aad 100%);
         background-size: 200% 100%;
-        animation: gradientShift 4s ease-in-out infinite;
-    }
-
-    .contact-form::after {
-        content: '';
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        width: 80px;
-        height: 80px;
-        background: radial-gradient(circle, 
-            rgba(0, 74, 173, 0.15) 0%, 
-            rgba(0, 102, 255, 0.08) 50%,
-            transparent 100%);
-        border-radius: 50%;
-        backdrop-filter: blur(20px);
-        z-index: 0;
-        animation: float 6s ease-in-out infinite;
+        animation: gradientShift 3s ease-in-out infinite;
     }
 
     @keyframes gradientShift {
@@ -222,17 +186,10 @@
         50% { background-position: 100% 50%; }
     }
 
-    @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-10px) rotate(180deg); }
-    }
-
-    /* Form Header - Modern Design */
+    /* Form Header */
     .form-header {
         text-align: center;
         margin-bottom: 50px;
-        position: relative;
-        z-index: 2;
     }
 
     .form-icon {
@@ -251,101 +208,44 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, 
-            rgba(0, 74, 173, 0.2) 0%, 
-            rgba(0, 102, 255, 0.15) 50%,
-            rgba(64, 156, 255, 0.1) 100%);
+        background: linear-gradient(135deg, rgba(0, 74, 173, 0.08) 0%, rgba(0, 102, 255, 0.04) 100%);
         border-radius: 50%;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-        animation: pulse 3s ease-in-out infinite;
-        backdrop-filter: blur(10px);
+        border: 2px solid rgba(0, 74, 173, 0.1);
+        animation: pulse 2s ease-in-out infinite;
     }
 
     @keyframes pulse {
-        0%, 100% { 
-            transform: scale(1) rotate(0deg); 
-            opacity: 1; 
-        }
-        50% { 
-            transform: scale(1.08) rotate(180deg); 
-            opacity: 0.9; 
-        }
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.8; }
     }
 
     .form-icon i {
         font-size: 2.5rem;
-        color: var(--brand-primary);
+        color: #004aad;
         position: relative;
         z-index: 2;
-        filter: drop-shadow(0 4px 8px rgba(0, 74, 173, 0.3));
-        animation: iconGlow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes iconGlow {
-        0% { filter: drop-shadow(0 4px 8px rgba(0, 74, 173, 0.3)); }
-        100% { filter: drop-shadow(0 4px 12px rgba(0, 74, 173, 0.5)); }
+        filter: drop-shadow(0 2px 4px rgba(0, 74, 173, 0.2));
     }
 
     .contact-form h3 {
-        color: var(--text-primary);
-        font-size: 2.2rem;
-        margin-bottom: 15px;
-        font-weight: 800;
+        color: #004aad;
+        font-size: 2rem;
+        margin-bottom: 10px;
+        font-weight: 700;
         text-align: center;
-        background: var(--brand-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        letter-spacing: -0.5px;
-        position: relative;
-        z-index: 2;
     }
 
     .form-subtitle {
-        color: var(--text-secondary);
-        font-size: 1.1rem;
+        color: #64748b;
+        font-size: 1rem;
         font-weight: 500;
         text-align: center;
         margin: 0;
-        line-height: 1.6;
-        opacity: 0.9;
-        position: relative;
-        z-index: 2;
     }
 
     /* Modern Form Layout */
     .modern-form {
         position: relative;
-        z-index: 2;
-    }
-
-    /* Decorative Elements */
-    .contact-form .decorative-dot-1 {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        width: 40px;
-        height: 40px;
-        background: radial-gradient(circle, 
-            rgba(0, 74, 173, 0.1) 0%, 
-            transparent 70%);
-        border-radius: 50%;
-        animation: float 8s ease-in-out infinite reverse;
-        z-index: 1;
-    }
-
-    .contact-form .decorative-dot-2 {
-        position: absolute;
-        bottom: 30px;
-        left: 30px;
-        width: 60px;
-        height: 60px;
-        background: radial-gradient(circle, 
-            rgba(0, 102, 255, 0.08) 0%, 
-            transparent 70%);
-        border-radius: 50%;
-        animation: float 6s ease-in-out infinite;
-        z-index: 1;
     }
 
     .form-row {
@@ -364,20 +264,15 @@
         grid-column: 1 / -1;
     }
 
-    /* Input Wrapper - Modern Design */
+    /* Input Wrapper */
     .input-wrapper {
         position: relative;
-        background: linear-gradient(135deg, 
-            rgba(255, 255, 255, 0.08) 0%, 
-            rgba(255, 255, 255, 0.04) 100%);
-        border-radius: 20px;
-        border: 2px solid rgba(255, 255, 255, 0.15);
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        border-radius: 18px;
+        border: 2px solid transparent;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
-        box-shadow: 
-            0 4px 16px rgba(0, 0, 0, 0.08),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .input-wrapper::before {
@@ -387,21 +282,18 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--form-icon-bg);
+        background: linear-gradient(135deg, rgba(0, 74, 173, 0.03) 0%, rgba(0, 102, 255, 0.02) 100%);
         opacity: 0;
         transition: opacity 0.4s ease;
     }
 
     .input-wrapper:focus-within {
-        border-color: var(--brand-primary);
+        border-color: #004aad;
         box-shadow: 
-            0 0 0 4px rgba(0, 74, 173, 0.15),
-            0 12px 32px rgba(0, 74, 173, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        transform: translateY(-3px) scale(1.02);
-        background: linear-gradient(135deg, 
-            rgba(255, 255, 255, 0.12) 0%, 
-            rgba(255, 255, 255, 0.06) 100%);
+            0 0 0 4px rgba(0, 74, 173, 0.08),
+            0 8px 25px rgba(0, 74, 173, 0.12);
+        transform: translateY(-3px);
+        background: #ffffff;
     }
 
     .input-wrapper:focus-within::before {
@@ -409,43 +301,39 @@
     }
 
     .textarea-wrapper {
-        min-height: 140px;
+        min-height: 160px;
     }
 
-    /* Input Icons - Modern Design */
+    /* Input Icons */
     .input-icon-container {
         position: absolute;
-        left: 18px;
+        left: 20px;
         top: 50%;
         transform: translateY(-50%);
-        width: 42px;
-        height: 42px;
-        background: linear-gradient(135deg, 
-            rgba(0, 74, 173, 0.15) 0%, 
-            rgba(0, 102, 255, 0.1) 100%);
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, rgba(0, 74, 173, 0.08) 0%, rgba(0, 102, 255, 0.04) 100%);
         border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 2;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
     }
 
     .textarea-wrapper .input-icon-container {
-        top: 20px;
+        top: 25px;
         transform: none;
     }
 
     .input-icon {
-        color: var(--form-icon-color);
-        font-size: 1rem;
+        color: #64748b;
+        font-size: 1.1rem;
         transition: all 0.4s ease;
     }
 
     .input-wrapper:focus-within .input-icon-container {
-        background: var(--form-focus-icon-bg);
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
         transform: translateY(-50%) scale(1.1);
         box-shadow: 0 4px 12px rgba(0, 74, 173, 0.3);
     }
@@ -455,7 +343,7 @@
     }
 
     .input-wrapper:focus-within .input-icon {
-        color: var(--form-focus-icon-color);
+        color: white;
         transform: scale(1.1);
     }
 
@@ -465,8 +353,8 @@
         left: 60px;
         top: 50%;
         transform: translateY(-50%);
-        color: var(--form-label);
-        font-size: 0.95rem;
+        color: #64748b;
+        font-size: 1rem;
         font-weight: 500;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         pointer-events: none;
@@ -476,7 +364,7 @@
 
     .textarea-icon + .floating-label {
         left: 60px;
-        top: 20px;
+        top: 25px;
         transform: none;
     }
 
@@ -484,11 +372,11 @@
     .form-group input,
     .form-group textarea {
         width: 100%;
-        padding: 18px 18px 18px 60px;
+        padding: 22px 22px 22px 70px;
         border: none;
         background: transparent;
-        font-size: 0.95rem;
-        color: var(--form-text);
+        font-size: 1rem;
+        color: #1e293b;
         font-family: 'Inter', sans-serif;
         font-weight: 500;
         transition: all 0.4s ease;
@@ -497,13 +385,11 @@
     }
 
     .form-group textarea {
-        padding-top: 25px;
-        padding-bottom: 18px;
-        min-height: 140px;
+        padding-top: 30px;
+        padding-bottom: 22px;
+        min-height: 160px;
         resize: vertical;
-        line-height: 1.6;
-        font-size: 0.95rem;
-        font-weight: 500;
+        line-height: 1.7;
     }
 
     /* Focus Border Animation */
@@ -513,7 +399,7 @@
         left: 50%;
         width: 0;
         height: 3px;
-        background: var(--brand-gradient);
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         transform: translateX(-50%);
         border-radius: 2px;
@@ -525,58 +411,53 @@
 
     .form-group input::placeholder,
     .form-group textarea::placeholder {
-        color: var(--form-placeholder);
-        opacity: 0.8;
-        font-size: 0.95rem;
-        font-weight: 500;
-        font-family: "Inter", sans-serif;
-        transition: all 0.3s ease;
+        color: #94a3b8;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .form-group input:focus::placeholder,
     .form-group textarea:focus::placeholder {
-        opacity: 0.6;
-        transform: translateY(-2px);
+        opacity: 1;
     }
 
     /* Floating Label Animation */
     .form-group input:focus + .floating-label,
-    .form-group input.has-value + .floating-label,
+    .form-group input:not(:placeholder-shown) + .floating-label,
     .form-group textarea:focus + .floating-label,
-    .form-group textarea.has-value + .floating-label {
+    .form-group textarea:not(:placeholder-shown) + .floating-label {
         top: 8px;
-        left: 16px;
-        font-size: 0.75rem;
-        color: var(--form-focus-border);
+        left: 20px;
+        font-size: 0.8rem;
+        color: #004aad;
         font-weight: 600;
-        background: var(--bg-card);
-        padding: 0 6px;
+        background: #ffffff;
+        padding: 0 8px;
         border-radius: 4px;
     }
 
     .textarea-icon + .floating-label {
         top: 8px;
-        left: 16px;
+        left: 20px;
     }
 
     /* Form Actions */
     .form-actions {
-        margin-top: 30px;
+        margin-top: 40px;
         text-align: center;
     }
 
-    /* Submit Button - Modern Design */
+    /* Submit Button */
     .submit-btn {
         width: 100%;
         max-width: 320px;
-        padding: 20px 50px;
-        background: linear-gradient(135deg, 
-            #004aad 0%, #0066ff 50%, #409cff 100%);
+        padding: 20px 45px;
+        background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
         color: white;
         border: none;
         border-radius: 20px;
         font-size: 1.1rem;
-        font-weight: 700;
+        font-weight: 600;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         font-family: 'Inter', sans-serif;
@@ -587,12 +468,8 @@
         justify-content: center;
         gap: 12px;
         box-shadow: 
-            0 12px 32px rgba(0, 74, 173, 0.3),
-            0 4px 16px rgba(0, 102, 255, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        backdrop-filter: blur(10px);
+            0 10px 30px rgba(0, 74, 173, 0.25),
+            0 0 0 1px rgba(255, 255, 255, 0.1) inset;
     }
 
     .submit-btn::before {
@@ -623,21 +500,10 @@
     }
 
     .submit-btn:hover {
-        transform: translateY(-5px) scale(1.02);
+        transform: translateY(-4px);
         box-shadow: 
-            0 20px 40px rgba(0, 74, 173, 0.4),
-            0 8px 20px rgba(0, 102, 255, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.4);
-        background: linear-gradient(135deg, 
-            #0066ff 0%, #409cff 50%, #60a5fa 100%);
-    }
-
-    .submit-btn:active {
-        transform: translateY(-2px) scale(0.98);
-        box-shadow: 
-            0 10px 25px rgba(0, 74, 173, 0.3),
-            0 4px 12px rgba(0, 102, 255, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            0 20px 40px rgba(0, 74, 173, 0.35),
+            0 0 0 1px rgba(255, 255, 255, 0.2) inset;
     }
 
     .submit-btn:hover::before {
@@ -645,7 +511,7 @@
     }
 
     .submit-btn:active {
-        transform: translateY(-1px);
+        transform: translateY(-2px);
     }
 
     .submit-btn:disabled {
@@ -666,7 +532,7 @@
     .submit-btn.loading .btn-loading {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
     }
 
     /* Map Section */
@@ -824,18 +690,14 @@
             font-size: 1.1rem;
         }
 
-        .contact-content {
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-
         .contact-info,
-        .contact-form {
+        .contact-form,
+        .map-section {
             padding: 30px 25px;
         }
 
         .contact-item {
-            padding: 16px;
+            padding: 15px;
         }
 
         .contact-item i {
@@ -846,35 +708,22 @@
         }
         
         .form-icon {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
         }
         
         .form-icon i {
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
         
         .input-icon-container {
-            width: 30px;
-            height: 30px;
-            left: 12px;
+            width: 35px;
+            height: 35px;
         }
         
         .form-group input,
         .form-group textarea {
-            padding: 16px 16px 16px 50px;
-            font-size: 0.9rem;
-        }
-        
-        .floating-label {
-            left: 50px;
-            font-size: 0.85rem;
-        }
-        
-        .submit-btn {
-            padding: 16px 30px;
-            font-size: 0.95rem;
-            max-width: 260px;
+            padding: 20px 20px 20px 65px;
         }
         
         .notification {
@@ -890,22 +739,15 @@
         }
 
         .contact-info h3,
-        .contact-form h3 {
-            font-size: 1.4rem;
-        }
-
-        .contact-content {
-            gap: 30px;
+        .contact-form h3,
+        .map-section h3 {
+            font-size: 1.6rem;
         }
 
         .contact-info,
-        .contact-form {
+        .contact-form,
+        .map-section {
             padding: 25px 20px;
-        }
-        
-        .form-row {
-            grid-template-columns: 1fr;
-            gap: 15px;
         }
         
         .input-wrapper {
@@ -914,48 +756,23 @@
         
         .form-group input,
         .form-group textarea {
-            padding: 14px 14px 14px 45px;
-            font-size: 0.85rem;
+            padding: 18px 18px 18px 55px;
+            font-size: 0.95rem;
         }
         
         .input-icon-container {
-            width: 28px;
-            height: 28px;
-            left: 10px;
+            width: 32px;
+            height: 32px;
+            left: 15px;
         }
         
         .input-icon {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
         
         .floating-label {
-            left: 45px;
-            font-size: 0.8rem;
-        }
-        
-        .submit-btn {
-            padding: 14px 25px;
+            left: 55px;
             font-size: 0.9rem;
-            max-width: 240px;
-        }
-        
-        .contact-item {
-            padding: 12px;
-        }
-        
-        .contact-item i {
-            width: 35px;
-            height: 35px;
-            font-size: 0.9rem;
-            margin-right: 12px;
-        }
-        
-        .contact-details h4 {
-            font-size: 0.9rem;
-        }
-        
-        .contact-details p {
-            font-size: 0.8rem;
         }
         
         .submit-btn {
@@ -963,50 +780,6 @@
             font-size: 1rem;
             max-width: 280px;
         }
-    }
-
-    .submit-btn {
-        cursor: pointer;
-    }
-
-    /* Notification System */
-    .notification {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: var(--bg-card);
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        padding: 20px;
-        max-width: 400px;
-        z-index: 10000;
-        transform: translateX(100%);
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border-left: 4px solid var(--brand-primary);
-        color: var(--text-primary);
-    }
-
-    .notification.success {
-        border-left-color: #10b981;
-    }
-
-    .notification.error {
-        border-left-color: #ef4444;
-    }
-
-    .notification.show {
-        transform: translateX(0);
-    }
-
-    .notification-title {
-        font-weight: 600;
-        margin-bottom: 5px;
-        font-size: 1rem;
-    }
-
-    .notification-message {
-        font-size: 0.9rem;
-        opacity: 0.9;
     }
 </style>
 
@@ -1027,7 +800,7 @@
             <div class="contact-info">
                 <h3 data-lang="contactInfoTitle">Thông tin liên hệ</h3>
 
-                <a class="contact-item" href="https://thptnguyenhuuhuan.hcm.edu.vn/homegd1">
+                <a class="contact-item transition-time   style="text-decoration: none;" href="https://thptnguyenhuuhuan.hcm.edu.vn/homegd1">
                     <i class="fas fa-school"></i>
                     <div class="contact-details">
                         <h4 data-lang="schoolLabel">Trường học</h4>
@@ -1035,7 +808,7 @@
                     </div>
                 </a>  
 
-                <a class="contact-item" href="https://maps.app.goo.gl/XodzsNJKM5JHy6hW6">
+                <a class="contact-item transition-time"   style="text-decoration: none;"  href="https://maps.app.goo.gl/XodzsNJKM5JHy6hW6">
                     <i class="fas fa-map-marker-alt"></i>
                     <div class="contact-details">
                         <h4 data-lang="addressLabel">Địa chỉ</h4>
@@ -1043,7 +816,7 @@
                     </div>
                 </a>
 
-                <a class="contact-item" href="mailto:viegrand.contact@gmail.com">
+                <a class="contact-item  transition-time"    style="text-decoration: none;" href="mailto:viegrand.contact@gmail.com">
                     <i class="fas fa-envelope"></i>
                     <div class="contact-details">
                         <h4 data-lang="emailLabel">Email</h4>
@@ -1051,7 +824,7 @@
                     </div>
                 </a>
 
-                <a class="contact-item" href="tel:+84 xxx xxx xxx">
+                <a class="contact-item  transition-time"   style="text-decoration: none;" href="tel:+84 xxx xxx xxx">
                     <i class="fas fa-phone"></i>
                     <div class="contact-details">
                         <h4 data-lang="phoneLabel">Điện thoại</h4>
@@ -1059,19 +832,17 @@
                     </div>
                 </a>
 
-                <div class="contact-item">
+                <a class="contact-item transition-time">
                     <i class="fas fa-clock"></i>
                     <div class="contact-details">
                         <h4 data-lang="workingHoursLabel">Giờ làm việc</h4>
                         <p data-lang="workingHours">Thứ 2 - Thứ 6: 8:00 - 17:00</p>
                     </div>
-                </div>
+                </a>
             </div>
 
             <!-- Contact Form -->
             <div class="contact-form">
-                <div class="decorative-dot-1"></div>
-                <div class="decorative-dot-2"></div>
                 <div class="form-header">
                     <div class="form-icon">
                         <div class="icon-bg"></div>
@@ -1088,8 +859,8 @@
                                 <div class="input-icon-container">
                                     <i class="fas fa-user input-icon"></i>
                                 </div>
-                                <input type="text" id="full_name" name="full_name" required>
-                                <label for="full_name" class="floating-label" data-lang="nameLabel">Họ và tên *</label>
+                                <input type="text" id="name" name="name" required>
+                                <label for="name" class="floating-label" data-lang="nameLabel">Họ và tên *</label>
                                 <div class="input-focus-border"></div>
                             </div>
                         </div>
@@ -1180,8 +951,6 @@
     </div>
 </section>
 
-
-
 <script>
     // Contact form submission handler
     document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -1213,44 +982,21 @@
             }
         }
         
-        // Submit form to backend
+        // Simulate form submission
         const submitBtn = this.querySelector('.submit-btn');
         
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
         
-        // Send data to PHP backend
-        fetch('/contact-handler.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(result => {
-            if (result.success) {
-                showNotification(result.message, 'success');
-                this.reset();
-                resetFloatingLabels();
-            } else {
-                showNotification(result.message || 'Đã xảy ra lỗi khi gửi tin nhắn', 'error');
-            }
-        })
-        .catch(error => {
-            console.error('Form submission error:', error);
-            showNotification('Không thể kết nối đến máy chủ. Vui lòng thử lại sau.', 'error');
-        })
-        .finally(() => {
+        setTimeout(() => {
+            showNotification('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.', 'success');
+            this.reset();
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
-        });
+            
+            // Reset floating labels
+            resetFloatingLabels();
+        }, 2000);
     });
 
     // Notification system

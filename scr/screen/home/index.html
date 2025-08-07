@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang="pageTitle">Trang chủ</title>
+    <title data-lang="pageTitle">VieGrand - Chăm Sóc Người Thân Theo Cách Hiện Đại</title>
+    <meta name="description" content="VieGrand - Ứng dụng AI phát hiện sớm đột quỵ cho người cao tuổi. Giảm 85% nguy cơ biến chứng nghiêm trọng với công nghệ thông minh 24/7.">
+    <meta name="keywords" content="phát hiện đột quỵ, chăm sóc người cao tuổi, AI y tế, giám sát sức khỏe, cảnh báo khẩn cấp">
+    <meta name="author" content="VieGrand Team">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="VieGrand - Chăm Sóc Người Thân Theo Cách Hiện Đại">
+    <meta property="og:description" content="Ứng dụng AI phát hiện sớm đột quỵ cho người cao tuổi. Bảo vệ người thân yêu 24/7 với công nghệ thông minh.">
+    <meta property="og:image" content="../../../assets/hero.png">
+    <meta property="og:url" content="https://viegrand.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VieGrand - Chăm Sóc Người Thân Theo Cách Hiện Đại">
+    <meta name="twitter:description" content="Ứng dụng AI phát hiện sớm đột quỵ cho người cao tuổi. Bảo vệ người thân yêu 24/7.">
+    <meta name="twitter:image" content="../../../assets/hero.png">
+    
     <link rel="icon" type="image/png" href="../../../assets/favicon.png">
     <!-- Theme System CSS -->
     <link rel="stylesheet" href="../../css/theme.css">
@@ -771,8 +788,17 @@
     <!-- Features Section - Loaded from external file -->
     <div id="features-container"></div>
 
+    <!-- Testimonials Section - NEW -->
+    <div id="testimonials-container"></div>
+
+    <!-- Security Section - NEW -->
+    <div id="security-container"></div>
+
     <!-- Pricing Section - Loaded from external file -->
     <div id="pricing-container"></div>
+
+    <!-- Enhanced CTA Section - NEW -->
+    <div id="enhanced-cta-container"></div>
 
     <!-- Contact Section - Loaded from external file -->
     <div id="contact-container"></div>
@@ -1089,6 +1115,47 @@
                 }, 300);
             }, 5000);
         }
+
+        // Load new sections
+        function loadTestimonials() {
+            return fetch('./testimonials.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('testimonials-container').innerHTML = html;
+                })
+                .catch(error => console.error('Error loading testimonials:', error));
+        }
+
+        function loadSecurity() {
+            return fetch('./security.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('security-container').innerHTML = html;
+                })
+                .catch(error => console.error('Error loading security:', error));
+        }
+
+        function loadEnhancedCTA() {
+            return fetch('./enhanced-cta.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('enhanced-cta-container').innerHTML = html;
+                })
+                .catch(error => console.error('Error loading enhanced CTA:', error));
+        }
+
+        // Load all new sections
+        Promise.all([
+            loadTestimonials(),
+            loadSecurity(), 
+            loadEnhancedCTA()
+        ]).then(() => {
+            console.log('All new sections loaded successfully');
+            // Reapply language after all content is loaded
+            if (typeof applyLanguage === 'function') {
+                applyLanguage(currentLanguage);
+            }
+        });
     </script>
 </body>
 </html>

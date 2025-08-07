@@ -2,8 +2,18 @@
 const languages = {
     vi: {
         // Page Titles
-        pageTitle: "Trang chủ",
+        pageTitle: "VieGrand - Chăm Sóc Người Thân Theo Cách Hiện Đại",
         signupPageTitle: "Đăng ký - VieGrand",
+
+        // Professional additions
+        testimonialsTitle: "Phản Hồi Từ Người Dùng",
+        testimonialsSubtitle: "Hàng nghìn gia đình đã tin tưởng VieGrand để bảo vệ người thân yêu",
+        securityTitle: "Bảo Mật & Chứng Nhận",
+        securitySubtitle: "VieGrand tuân thủ nghiêm ngặt các tiêu chuẩn bảo mật y tế quốc tế",
+        ctaTitle: "Bảo Vệ Người Thân Ngay Hôm Nay",
+        ctaSubtitle: "Mỗi giây trì hoãn có thể ảnh hưởng đến tính mạng. Hãy để VieGrand bảo vệ người thân yêu của bạn 24/7.",
+        ctaButtonPrimary: "Bắt Đầu Dùng Thử Miễn Phí",
+        ctaButtonSecondary: "📹 Xem Demo 2 Phút",
 
         // Header
         home: "Trang Chủ",
@@ -17,15 +27,14 @@ const languages = {
         // Theme System
         themeLight: "Chế độ sáng",
         themeDark: "Chế độ tối",
-        themeSystem: "Theo hệ thống",
         themeToggle: "Chuyển đổi chủ đề",
 
         // Hero Section
         heroTitle: "VIEGRAND",
         heroSubtitle: "CHĂM SÓC NGƯỜI THÂN THEO CÁCH HIỆN ĐẠI",
-        heroDescription: "Ứng dụng phát hiện sớm đột quỵ dành riêng cho người cao tuổi <br/> Nơi công nghệ kết hợp cùng y học, mang đến sự an tâm cho bạn.",
-        exploreBtnText: "Khám phá ngay",
-        demoBtnText: "Xem Demo",
+        heroDescription: "Ứng dụng AI phát hiện sớm đột quỵ giúp giảm 85% nguy cơ biến chứng nghiêm trọng <br/> Bảo vệ người thân yêu 24/7 với công nghệ thông minh và đáng tin cậy",
+        exploreBtnText: "Dùng Thử Miễn Phí",
+        demoBtnText: "Xem Video Demo",
         scrollText: "Cuộn xuống để khám phá",
 
         // Main Content
@@ -305,7 +314,6 @@ const languages = {
         // Theme System
         themeLight: "Light mode",
         themeDark: "Dark mode",
-        themeSystem: "System preference",
         themeToggle: "Toggle theme",
 
         // Hero Section

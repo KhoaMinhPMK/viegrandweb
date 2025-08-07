@@ -3,52 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Web</title>
+    <title>VieGrand - Chăm Sóc Người Thân Theo Cách Hiện Đại</title>
+    <meta name="description" content="VieGrand - Ứng dụng AI phát hiện sớm đột quỵ cho người cao tuổi. Công nghệ thông minh bảo vệ sức khỏe gia đình bạn 24/7.">
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
 
     <!-- Add tailwindcss -->
-    <script src="https://cdn.tailwindcss.com"></script> 
-
-    <script>
-        // Tự động chuyển hướng đến trang home
-        window.location.href = './scr/screen/home/index.html';
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .header {
+        .landing-container {
             text-align: center;
-            padding: 40px 0;
+            max-width: 600px;
+            padding: 40px 20px;
         }
         
-        .content {
-            min-height: 400px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 30px;
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 4px 20px rgba(0, 74, 173, 0.15));
+        }
+        
+        .title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #64748b;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 30px rgba(0, 74, 173, 0.25);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 74, 173, 0.35);
+        }
+        
+        .features-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+        
+        .feature-item {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 74, 173, 0.08);
+            border: 1px solid rgba(0, 74, 173, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: #004aad;
+            margin-bottom: 10px;
+        }
+        
+        .feature-text {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Chào mừng đến với trang web của tôi</h1>
-        </div>
+    <div class="landing-container">
+        <img src="./assets/logo.png" alt="VieGrand Logo" class="logo">
+        <h1 class="title">VieGrand</h1>
+        <p class="subtitle">Chăm Sóc Người Thân Theo Cách Hiện Đại</p>
+        <a href="./scr/screen/home/index.html" class="cta-button">Khám Phá Ngay</a>
         
-        <div class="content">
-            <h2>Nội dung trang</h2>
-            <p>Đây là một trang web trống, bạn có thể bắt đầu thêm nội dung của mình tại đây.</p>
+        <div class="features-preview">
+            <div class="feature-item">
+                <div class="feature-icon">🤖</div>
+                <div class="feature-text">AI Thông Minh</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-text">Cảnh Báo Tức Thì</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">❤️</div>
+                <div class="feature-text">Chăm Sóc 24/7</div>
+            </div>
         </div>
     </div>
 </body>

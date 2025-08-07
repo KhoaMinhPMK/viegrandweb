@@ -1,23 +1,23 @@
 // Theme Controller for VieGrand Landing Page
 class ThemeController {
     constructor() {
-        this.themes = ['light', 'dark', 'system'];
-        this.currentTheme = this.getStoredTheme() || 'system';
+        this.themes = ['light', 'dark'];
+        this.currentTheme = this.getStoredTheme() || 'light';
         this.init();
     }
 
     init() {
         this.applyTheme(this.currentTheme);
         this.createThemeToggle();
-        this.setupSystemThemeListener();
         console.log('Theme controller initialized with theme:', this.currentTheme);
     }
 
     getStoredTheme() {
         try {
-            return localStorage.getItem('viegrand-theme');
+            const stored = localStorage.getItem('viegrand-theme');
+            return this.themes.includes(stored) ? stored : null;
         } catch (e) {
-            console.warn('localStorage not available, using system theme');
+            console.warn('localStorage not available, using light theme');
             return null;
         }
     }
@@ -30,10 +30,6 @@ class ThemeController {
         }
     }
 
-    getSystemTheme() {
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-
     applyTheme(theme) {
         const root = document.documentElement;
         
@@ -41,15 +37,8 @@ class ThemeController {
         root.removeAttribute('data-theme');
         root.style.removeProperty('--actual-theme');
         
-        if (theme === 'system') {
-            // For system mode, don't set data-theme attribute
-            // This allows the CSS media queries to work naturally
-            const systemTheme = this.getSystemTheme();
-            console.log('System theme detected:', systemTheme);
-        } else {
-            // For light/dark modes, set the data-theme attribute
-            root.setAttribute('data-theme', theme);
-        }
+        // Set the data-theme attribute for light/dark modes
+        root.setAttribute('data-theme', theme);
 
         // Add transition class for smooth theme changes
         document.body.classList.add('theme-transition');
@@ -62,15 +51,14 @@ class ThemeController {
         this.updateThemeToggle();
         
         // Dispatch custom event for other components to listen
-        const actualTheme = theme === 'system' ? this.getSystemTheme() : theme;
         window.dispatchEvent(new CustomEvent('themeChanged', { 
             detail: { 
-                theme, 
-                actualTheme 
+                theme,
+                actualTheme: theme
             } 
         }));
         
-        console.log('Theme applied:', theme, 'Actual theme:', actualTheme);
+        console.log('Theme applied:', theme);
     }
 
     createThemeToggle() {
@@ -89,8 +77,7 @@ class ThemeController {
         // Create theme options
         const themeOptions = [
             { theme: 'light', icon: '☀️', title: 'Light mode' },
-            { theme: 'dark', icon: '🌙', title: 'Dark mode' },
-            { theme: 'system', icon: '💻', title: 'System preference' }
+            { theme: 'dark', icon: '🌙', title: 'Dark mode' }
         ];
 
         themeOptions.forEach(option => {
@@ -168,14 +155,12 @@ class ThemeController {
 
         const themeNames = {
             light: 'Light mode',
-            dark: 'Dark mode', 
-            system: 'System preference'
+            dark: 'Dark mode'
         };
 
         const themeIcons = {
             light: '☀️',
-            dark: '🌙',
-            system: '💻'
+            dark: '🌙'
         };
 
         notification.innerHTML = `${themeIcons[theme]} ${themeNames[theme]} activated`;
@@ -199,36 +184,14 @@ class ThemeController {
         }, 2000);
     }
 
-    setupSystemThemeListener() {
-        // Listen for system theme changes
-        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        mediaQuery.addEventListener('change', (e) => {
-            if (this.currentTheme === 'system') {
-                console.log('System theme changed to:', e.matches ? 'dark' : 'light');
-                this.applyTheme('system'); // Re-apply system theme
-            }
-        });
-        
-        // Also ensure system theme is properly applied on initial load
-        if (this.currentTheme === 'system') {
-            // Force a re-application of system theme
-            setTimeout(() => {
-                this.applyTheme('system');
-            }, 100);
-        }
-    }
-
-    // Method to get current effective theme (resolves 'system' to actual theme)
+    // Method to get current effective theme
     getEffectiveTheme() {
-        if (this.currentTheme === 'system') {
-            return this.getSystemTheme();
-        }
         return this.currentTheme;
     }
 
     // Method for other scripts to check if dark mode is active
     isDarkMode() {
-        return this.getEffectiveTheme() === 'dark';
+        return this.currentTheme === 'dark';
     }
 
     // Method to programmatically cycle through themes
@@ -238,14 +201,12 @@ class ThemeController {
         this.setTheme(this.themes[nextIndex]);
     }
 
-    // Debug method to compare system and dark themes
+    // Debug method to compare themes
     debugThemeComparison() {
         const root = document.documentElement;
-        const systemTheme = this.getSystemTheme();
         
         console.log('=== Theme Debug Information ===');
         console.log('Current theme setting:', this.currentTheme);
-        console.log('System preference:', systemTheme);
         console.log('Has data-theme attribute:', root.hasAttribute('data-theme'));
         console.log('data-theme value:', root.getAttribute('data-theme'));
         console.log('CSS variables check:');
