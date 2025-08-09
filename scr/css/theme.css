@@ -564,7 +564,7 @@ body {
 
 /* Enhanced CTA Section Dark Mode Improvements */
 [data-theme="dark"] .enhanced-cta-section {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%) !important;
+    background: linear-gradient(135deg, #0b1220 0%, #0f172a 50%, #1e293b 100%) !important;
 }
 
 [data-theme="dark"] .enhanced-cta-section::before {
@@ -588,28 +588,28 @@ body {
 
 /* Dark mode for CTA benefit cards */
 [data-theme="dark"] .enhanced-cta-section div[style*="background: rgba(255,255,255,0.15)"] {
-    background: rgba(15, 23, 42, 0.6) !important;
-    border: 1px solid rgba(96, 165, 250, 0.2) !important;
-    backdrop-filter: blur(15px) !important;
+    background: rgba(11, 18, 32, 0.6) !important;
+    border: 1px solid rgba(59, 130, 246, 0.25) !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 /* Dark mode for emergency contact box */
 [data-theme="dark"] .enhanced-cta-section div[style*="background: rgba(255, 255, 255, 0.1)"] {
-    background: rgba(15, 23, 42, 0.7) !important;
-    border: 1px solid rgba(96, 165, 250, 0.3) !important;
+    background: rgba(11, 18, 32, 0.72) !important;
+    border: 1px solid rgba(59, 130, 246, 0.35) !important;
 }
 
 /* Dark mode for primary CTA button */
 [data-theme="dark"] .enhanced-cta-section a[style*="background: white"] {
-    background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%) !important;
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 60%, #93c5fd 100%) !important;
     color: white !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55) !important;
 }
 
 /* Dark mode for secondary CTA button */
 [data-theme="dark"] .enhanced-cta-section a[style*="background: rgba(255,255,255,0.1)"] {
-    background: rgba(15, 23, 42, 0.4) !important;
-    border: 2px solid rgba(96, 165, 250, 0.4) !important;
+    background: rgba(11, 18, 32, 0.5) !important;
+    border: 2px solid rgba(59, 130, 246, 0.45) !important;
     backdrop-filter: blur(15px) !important;
 }
 
@@ -695,4 +695,39 @@ body {
         height: 45px;
         font-size: 16px;
     }
+}
+
+/* Dark mode prominence for navigation and signup button */
+[data-theme="dark"] .nav-menu a {
+  background: rgba(96, 165, 250, 0.14) !important; /* lighter glass */
+  color: #f0f6ff !important; /* brighter text */
+  border: 1px solid rgba(147, 197, 253, 0.45) !important;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+[data-theme="dark"] .nav-menu a:hover {
+  background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 50%, #dbeafe 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid transparent !important; /* no visible border on hover */
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 6px 18px rgba(147, 197, 253, 0.45) !important;
+}
+
+[data-theme="dark"] .auth-btn.signup-btn {
+  background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 50%, #dbeafe 100%) !important;
+  color: #0b1220 !important;
+  border: 1px solid rgba(219, 234, 254, 0.9) !important;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.5), 0 8px 22px rgba(96, 165, 250, 0.35) !important;
+}
+
+[data-theme="dark"] .auth-btn.signup-btn:hover {
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 10px 26px rgba(147, 197, 253, 0.5) !important;
+}
+
+/* Accessible focus outlines in dark mode */
+[data-theme="dark"] .nav-menu a:focus-visible,
+[data-theme="dark"] .auth-btn.signup-btn:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.55), 0 0 0 6px rgba(96, 165, 250, 0.25) !important;
 }

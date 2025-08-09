@@ -76,6 +76,8 @@
             pointer-events: none;
         }
         
+        /* Decorative floating orbs and hero stats removed per request */
+        
         /* Enhanced Scroll Animation Classes */
         .animate-on-scroll {
             opacity: 0;
@@ -566,13 +568,32 @@
             margin-bottom: 1.5rem;
             line-height: 1.1;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(135deg, #ffffff 0%, #e8f4ff 100%);
+            background: linear-gradient(135deg, #004aad 0%, #0066ff 40%, #60a5fa 80%, #93c5fd 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 12px 30px rgba(0,0,0,0.35), 0 3px 14px rgba(0,102,255,0.35);
             animation: fadeInUp 1.6s ease-out;
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.5px;
+        }
+        
+        /* Light mode: light/white gradient for title */
+        :root:not([data-theme="dark"]) .hero-title {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 45%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 10px 26px rgba(0,0,0,0.25), 0 2px 8px rgba(226,232,240,0.35);
+        }
+        
+        /* Dark mode: keep elegant light gradient for readability */
+        [data-theme="dark"] .hero-title {
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 10px 26px rgba(0,0,0,0.45), 0 2px 10px rgba(147,197,253,0.28);
         }
         
         .hero-subtitle {
@@ -860,7 +881,10 @@
                 0 4px 12px rgba(0, 102, 255, 0.15);
             border-color: rgba(0, 74, 173, 0.2);
         }
-        
+        /* [color-theme="dark"] .nav-menu a:hover {
+            color: white;
+        } */
+
         .auth-buttons {
             display: flex;
             gap: 10px;
@@ -1335,13 +1359,19 @@
                 <span data-lang="heroTitle">VIEGRAND</span><br/>
                 <span style="color: #ffffff;" data-lang="heroSubtitle">CHĂM SÓC NGƯỜI THÂN THEO CÁCH HIỆN ĐẠI</span>
             </h1>
-            
-            <div class="hero-buttons">
-                <a href="#features" class="hero-button-primary transition-time" data-lang="exploreBtnText">Khám phá ngay</a>
-                <a href="#demo" class="hero-button-secondary  transition-time" data-lang="demoBtnText">Xem Demo</a>
+             
+             <div class="hero-buttons">
+                <a href="#features" class="hero-button-primary transition-time">
+                    <span data-lang="exploreBtnText">Khám phá ngay</span>
+                    &nbsp;<i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#demo" class="hero-button-secondary  transition-time">
+                    <i class="fa-solid fa-circle-play"></i>&nbsp;
+                    <span data-lang="demoBtnText">Xem Demo</span>
+                </a>
             </div>
-        </div>
 
+        </div>
     </section>
 
     <!-- About Us Section - Loaded from external file -->
@@ -1987,6 +2017,8 @@
             // Initial check
             toggleBackToTopButton();
         });
+
+        
     </script>
 </body>
 </html>
