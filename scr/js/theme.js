@@ -76,8 +76,8 @@ class ThemeController {
 
         // Create theme options
         const themeOptions = [
-            { theme: 'light', icon: '☀️', title: 'Light mode' },
-            { theme: 'dark', icon: '🌙', title: 'Dark mode' }
+            { theme: 'light', icon: '<i class="fas fa-sun"></i>', title: 'Light mode' },
+            { theme: 'dark', icon: '<i class="fas fa-moon"></i>', title: 'Dark mode' }
         ];
 
         themeOptions.forEach(option => {
@@ -159,8 +159,8 @@ class ThemeController {
         };
 
         const themeIcons = {
-            light: '☀️',
-            dark: '🌙'
+            light: '<i class="fas fa-sun"></i>',
+            dark: '<i class="fas fa-moon"></i>'
         };
 
         notification.innerHTML = `${themeIcons[theme]} ${themeNames[theme]} activated`;

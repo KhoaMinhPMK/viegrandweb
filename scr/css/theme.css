@@ -139,15 +139,33 @@
     color: var(--text-muted);
 }
 
+.theme-option i {
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
 .theme-option.active {
     background: var(--brand-gradient);
     color: white;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
+.theme-option.active i {
+    color: white;
+    transform: scale(1.1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
 .theme-option:not(.active):hover {
     background: var(--bg-glass);
     color: var(--text-secondary);
+}
+
+.theme-option:not(.active):hover i {
+    color: var(--text-secondary);
+    transform: scale(1.05);
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
 }
 
 /* Smooth transitions for theme changes */
@@ -723,6 +741,19 @@ body {
   filter: brightness(1.05);
   transform: translateY(-2px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 10px 26px rgba(147, 197, 253, 0.5) !important;
+}
+
+/* Theme toggle dark mode improvements */
+[data-theme="dark"] .theme-option i {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+[data-theme="dark"] .theme-option.active i {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+[data-theme="dark"] .theme-option:not(.active):hover i {
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
 }
 
 /* Accessible focus outlines in dark mode */
