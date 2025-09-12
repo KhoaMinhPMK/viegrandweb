@@ -49,7 +49,7 @@ const languages = {
         securityFeature4Title: "Xử Lý Cục Bộ",
         securityFeature4Desc: "AI xử lý trực tiếp trên thiết bị, không upload dữ liệu cá nhân lên cloud, bảo vệ tuyệt đối quyền riêng tư.",
         securityFeature5Title: "Kiểm Tra Bảo Mật Định Kỳ",
-        securityFeature5Desc: "Hệ thống được kiểm tra bảo mật định kỳ bởi các chuyên gia an ninh mạng hàng đầu.",
+        securityFeature5Desc: "Hệ thống được kiểm tra bảo mật định kỳ bởi các an ninh mạng hàng đầu.",
         securityFeature6Title: "Backup Dữ Liệu An Toàn",
         securityFeature6Desc: "Dữ liệu được sao lưu an toàn với nhiều lớp bảo vệ, đảm bảo không bao giờ mất mát thông tin quan trọng.",
 
@@ -113,14 +113,14 @@ const languages = {
 
         // About Us Section
         aboutTitle: "VIEGRAND",
-        aboutSubtitle: "Câu chuyện về những học sinh trẻ với ước mơ tạo nên sự khác biệt",
-        aboutIntro: "VieGrand là một giải pháp công nghệ y tế được phát triển bởi nhóm học sinh trường THPT Nguyễn Hữu Huân, với mong muốn góp phần xây dựng một xã hội nhân văn và bền vững, nơi người cao tuổi được chăm sóc toàn diện cả về thể chất lẫn tinh thần.",
+        aboutSubtitle: "Câu chuyện về đội ngũ với ước mơ tạo nên sự khác biệt",
+        aboutIntro: "VieGrand là một giải pháp công nghệ y tế tiên tiến được phát triển bởi đội ngũ công nghệ và y tế tại Việt Nam, với mong muốn góp phần xây dựng một xã hội nhân văn và bền vững, nơi người cao tuổi được chăm sóc toàn diện cả về thể chất lẫn tinh thần.",
 
         // About Us Story Section
         aboutStoryTitle: "Khởi Đầu Từ Trái Tim",
-        aboutStoryText1: "VieGrand ra đời từ những trải nghiệm thực tế của chúng tôi - một nhóm học sinh THPT Nguyễn Hữu Huân. Xuất phát từ sự thấu hiểu những khó khăn mà ông bà, cha mẹ gặp phải trong quá trình chăm sóc sức khỏe, tập thể nhóm đã nhận thấy tiềm năng của công nghệ như một cầu nối hiệu quả nhằm hỗ trợ và cải thiện chất lượng cuộc sống cho người thân yêu.",
+        aboutStoryText1: "VieGrand ra đời từ những trải nghiệm thực tế và sự thấu hiểu sâu sắc về những thách thức mà gia đình Việt gặp phải trong việc chăm sóc sức khỏe người cao tuổi. Đội ngũ của chúng tôi đã nhận thấy tiềm năng to lớn của công nghệ AI như một cầu nối hiệu quả để hỗ trợ và cải thiện chất lượng cuộc sống cho người thân yêu.",
         aboutStoryText2: "Chúng tôi không chỉ muốn tạo ra một sản phẩm công nghệ, mà mong muốn xây dựng một giải pháp mang tính nhân văn, giúp các gia đình Việt Nam duy trì và phát huy truyền thống hiếu thảo trong thời đại số.",
-        aboutStoryQuote: "Từ những đêm thức trắng nghiên cứu công nghệ AI, đến những lần thử nghiệm không thành công, chúng tôi luôn được thúc đẩy bởi một niềm tin: công nghệ phải phục vụ tình người.",
+        aboutStoryQuote: "Từ những nghiên cứu sâu rộng về công nghệ AI, đến việc hoàn thiện từng chi tiết sản phẩm, chúng tôi luôn được thúc đẩy bởi một niềm tin: công nghệ phải phục vụ tình người.",
         nameInput: "Nhập họ và tên của bạn",
         // Mission & Vision
         aboutMissionTitle: "Sứ Mệnh",
@@ -192,12 +192,8 @@ const languages = {
         ctaButtonSecondary: "Xem Bảng Giá",
 
         // Technology Section
-        techTitle: "Công Nghệ Tiên Tiến",
-        techSubtitle: "Được xây dựng trên nền tảng công nghệ hàng đầu thế giới",
-        deepLearning: "Deep Learning",
-        computerVision: "Computer Vision",
-        cloudComputing: "Cloud Computing",
-        edgeSecurity: "Edge Security",
+        showcaseTitle: "VieGrand Technology",
+        showcaseDescription: "Giải pháp chăm sóc sức khỏe thông minh cho người cao tuổi",
 
         // Statistics Section
         aiAccuracy: "Độ Chính Xác AI",
@@ -300,17 +296,15 @@ const languages = {
 
         // Contact Support
         needHelpTitle: "Cần Tư Vấn Thêm?",
-        needHelpDesc: "Đội ngũ chuyên gia của chúng tôi sẵn sàng hỗ trợ bạn chọn gói dịch vụ phù hợp nhất cho nhu cầu của gia đình.",
+        needHelpDesc: "Đội ngũ của chúng tôi sẵn sàng hỗ trợ bạn chọn gói dịch vụ phù hợp nhất cho nhu cầu của gia đình.",
         contactSupport: "Liên Hệ Tư Vấn",
         
         // Contact section
         contactSubtitle: "Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ về VieGrand - giải pháp chăm sóc sức khỏe thông minh",
         contactFormSubtitle: "Chúng tôi sẽ phản hồi trong vòng 24 giờ",
         contactInfoTitle: "Thông tin liên hệ",
-        schoolLabel: "Trường học",
-        schoolName: "THPT Nguyễn Hữu Huân",
         addressLabel: "Địa chỉ",
-        schoolAddress: "THPT Nguyễn Hữu Huân, 11 Đoàn Kết, Bình Thọ, Thủ Đức, TP.HCM",
+        companyAddress: "VieGrand Technology, TP. Hồ Chí Minh",
         phoneLabel: "Điện thoại",
         emailLabel: "Email",
         workingHoursLabel: "Giờ làm việc",
@@ -322,10 +316,10 @@ const languages = {
         messageLabel: "Nội dung tin nhắn",
         messagePlaceholder: "Nhập nội dung tin nhắn của bạn...",
         sendMessage: "Gửi tin nhắn",
-        aboutSchoolTitle: "Về trường THPT Nguyễn Hữu Huân",
-        aboutSchoolDesc: "VieGrand được phát triển bởi đội ngũ học sinh tài năng tại trường THPT Nguyễn Hữu Huân",
-        projectTeamTitle: "Đội ngũ phát triển dự án",
-        teamDescription: "Chúng tôi là nhóm học sinh đam mê công nghệ và y học, mong muốn đóng góp vào việc chăm sóc sức khỏe người cao tuổi thông qua các giải pháp thông minh.",
+        aboutCompanyTitle: "Về VieGrand",
+        aboutCompanyDesc: "VieGrand được phát triển bởi đội ngũ công nghệ và y tế tại Việt Nam",
+        projectTeamTitle: "Đội ngũ phát triển",
+        teamDescription: "Chúng tôi là nhóm đam mê công nghệ và y học, mong muốn đóng góp vào việc chăm sóc sức khỏe người cao tuổi thông qua các giải pháp thông minh.",
         projectGoal: "Mục tiêu dự án: Ứng dụng công nghệ AI để phát hiện sớm đột quỵ và các tình huống khẩn cấp, góp phần bảo vệ sức khỏe người cao tuổi.",
 
         missionTitle: "Sứ mệnh của chúng tôi",
@@ -486,14 +480,14 @@ const languages = {
 
         // About Us Section
         aboutTitle: "VIEGRAND",
-        aboutSubtitle: "The story of young students with dreams to make a difference",
-        aboutIntro: "VieGrand is a healthcare technology solution developed by students from Nguyen Huu Huan High School, aiming to contribute to building a humane and sustainable society where the elderly are comprehensively cared for both physically and mentally.",
+        aboutSubtitle: "The story of expert professionals with dreams to make a difference",
+        aboutIntro: "VieGrand is an advanced healthcare technology solution developed by a team of technology and healthcare experts in Vietnam, aiming to contribute to building a humane and sustainable society where the elderly are comprehensively cared for both physically and mentally.",
 
         // About Us Story Section
         aboutStoryTitle: "Starting from the Heart",
-        aboutStoryText1: "VieGrand was born from our real experiences - a group of students from Nguyen Huu Huan High School. Stemming from understanding the difficulties that grandparents and parents face in healthcare, our team recognized the potential of technology as an effective bridge to support and improve the quality of life for loved ones.",
+        aboutStoryText1: "VieGrand was born from real-world experiences and deep understanding of the challenges Vietnamese families face in caring for elderly loved ones. Our team of experts recognized the tremendous potential of AI technology as an effective bridge to support and improve the quality of life for loved ones.",
         aboutStoryText2: "We don't just want to create a technology product, but aspire to build a humane solution, helping Vietnamese families maintain and promote traditional filial piety in the digital age.",
-        aboutStoryQuote: "From sleepless nights researching AI technology, to unsuccessful trials, we are always driven by one belief: technology must serve human compassion.",
+        aboutStoryQuote: "From extensive research on AI technology, to perfecting every product detail, we are always driven by one belief: technology must serve human compassion.",
 
         // Mission & Vision
         aboutMissionTitle: "Our Mission",
@@ -566,12 +560,8 @@ const languages = {
         ctaButtonSecondary: "View Pricing",
 
         // Technology Section
-        techTitle: "Advanced Technology",
-        techSubtitle: "Built on world-leading technology platforms",
-        deepLearning: "Deep Learning",
-        computerVision: "Computer Vision",
-        cloudComputing: "Cloud Computing",
-        edgeSecurity: "Edge Security",
+        showcaseTitle: "VieGrand Technology",
+        showcaseDescription: "Smart healthcare solution for the elderly",
 
         // Statistics Section
         aiAccuracy: "AI Accuracy",
@@ -680,10 +670,8 @@ const languages = {
         contactSubtitle: "Contact us for consultation and support about VieGrand - intelligent healthcare solution",
         contactFormSubtitle: "We will respond within 24 hours",
         contactInfoTitle: "Contact Information",
-        schoolLabel: "School",
-        schoolName: "Nguyen Huu Huan High School",
         addressLabel: "Address",
-        schoolAddress: "Nguyen Huu Huan High School, 11 Doan Ket, Binh Tho, Thu Duc, Ho Chi Minh City",
+        companyAddress: "VieGrand Technology, Ho Chi Minh City",
         phoneLabel: "Phone",
         emailLabel: "Email",
         workingHoursLabel: "Working Hours",
@@ -695,10 +683,10 @@ const languages = {
         messageLabel: "Message Content",
         messagePlaceholder: "Enter your message content...",
         sendMessage: "Send Message",
-        aboutSchoolTitle: "About Nguyen Huu Huan High School",
-        aboutSchoolDesc: "VieGrand is developed by talented students at Nguyen Huu Huan High School",
-        projectTeamTitle: "Project Development Team",
-        teamDescription: "We are a group of students passionate about technology and medicine, wishing to contribute to elderly healthcare through smart solutions.",
+        aboutCompanyTitle: "About VieGrand",
+        aboutCompanyDesc: "VieGrand is developed by technology and healthcare experts in Vietnam",
+        projectTeamTitle: "Development Team",
+        teamDescription: "We are a group of experts passionate about technology and medicine, wishing to contribute to elderly healthcare through smart solutions.",
         projectGoal: "Project Goal: Apply AI technology for early stroke detection and emergency situations, contributing to protecting elderly health.",
 
         missionTitle: "Our Mission",
@@ -1002,10 +990,8 @@ function updateContent() {
     safeUpdateElement('[data-lang="contactSubtitle"]', lang.contactSubtitle);
     safeUpdateElement('[data-lang="contactFormSubtitle"]', lang.contactFormSubtitle);
     safeUpdateElement('[data-lang="contactInfoTitle"]', lang.contactInfoTitle);
-    safeUpdateElement('[data-lang="schoolLabel"]', lang.schoolLabel);
-    safeUpdateElement('[data-lang="schoolName"]', lang.schoolName);
     safeUpdateElement('[data-lang="addressLabel"]', lang.addressLabel);
-    safeUpdateElement('[data-lang="schoolAddress"]', lang.schoolAddress);
+    safeUpdateElement('[data-lang="companyAddress"]', lang.companyAddress);
     safeUpdateElement('[data-lang="phoneLabel"]', lang.phoneLabel);
     safeUpdateElement('[data-lang="emailLabel"]', lang.emailLabel);
     safeUpdateElement('[data-lang="workingHoursLabel"]', lang.workingHoursLabel);

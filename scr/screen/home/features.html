@@ -237,80 +237,79 @@
     border: 1px solid var(--form-border);
   }
 
-  /* Technology Section */
-  .technology-section {
+  /* Image Showcase Section */
+  .image-showcase-section {
     margin-bottom: 80px;
+    padding: 40px 0;
   }
 
-  .tech-header {
+  .showcase-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .showcase-image-wrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 74, 173, 0.15);
+    transition: all 0.4s ease;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+  }
+
+  .showcase-image-wrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(0, 74, 173, 0.25);
+  }
+
+  .showcase-image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+    transition: all 0.4s ease;
+  }
+
+  .showcase-image-wrapper:hover .showcase-image {
+    transform: scale(1.05);
+  }
+
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      transparent 0%, 
+      rgba(0, 74, 173, 0.8) 60%, 
+      rgba(0, 74, 173, 0.95) 100%
+    );
+    padding: 60px 40px 40px;
+    color: white;
+    transition: all 0.4s ease;
+  }
+
+  .overlay-content {
     text-align: center;
-    margin-bottom: 50px;
   }
 
-  .tech-title {
-    font-size: 2.5rem;
-    color: var(--brand-primary);
+  .overlay-title {
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 15px;
     font-family: "Inter", sans-serif;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
 
-  .tech-subtitle {
+  .overlay-description {
     font-size: 1.1rem;
-    color: var(--text-secondary);
     font-weight: 500;
-  }
-
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-  }
-
-  .tech-card {
-    background: var(--bg-card);
-    backdrop-filter: blur(10px);
-    padding: 30px 20px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 15px 30px rgba(0, 74, 173, 0.08);
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-    transition: all 0.4s ease !important;
-  }
-
-  .tech-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 50px rgba(0, 74, 173, 0.15);
-    transition: all 0.4s ease !important;
-  }
-
-  .tech-icon {
-    width: 60px;
-    height: 60px;
-    background: var(--brand-gradient);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-    transition: transform 0.3s ease;
-  }
-
-  .tech-card:hover .tech-icon {
-    transform: scale(1.1);
-  }
-
-  .tech-icon i {
-    font-size: 1.5rem;
-    color: white;
-  }
-
-  .tech-name {
-    font-size: 1rem;
-    color: var(--text-primary);
-    font-weight: 600;
+    line-height: 1.6;
+    opacity: 0.95;
     font-family: "Inter", sans-serif;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   }
 
   /* Statistics Section */
@@ -500,9 +499,16 @@
       transition: all 0.4s ease !important;
     }
 
-    .tech-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+    .showcase-image {
+      height: 480px;
+    }
+    
+    .image-overlay {
+      padding: 40px 30px 30px;
+    }
+    
+    .overlay-title {
+      font-size: 1.8rem;
     }
 
     .stats-grid {
@@ -534,9 +540,16 @@
       padding: 25px 20px;
     }
 
-    .tech-grid {
-      grid-template-columns: 1fr;
-      gap: 15px;
+    .showcase-image {
+      height: 380px;
+    }
+    
+    .overlay-title {
+      font-size: 1.5rem;
+    }
+    
+    .overlay-description {
+      font-size: 1rem;
     }
 
     .cta-section {
@@ -692,46 +705,19 @@
       </div>
     </div>
 
-    <!-- Technology Stack -->
-    <div class="technology-section animate-fade-in-up">
-      <div class="tech-header animate-fade-in-up">
-        <h3 class="tech-title animate-slide-in-left" data-lang="techTitle">Công Nghệ Tiên Tiến</h3>
-        <p class="tech-subtitle animate-slide-in-right" data-lang="techSubtitle">
-          Được xây dựng trên nền tảng công nghệ hàng đầu thế giới
-        </p>
-      </div>
-
-      <div class="tech-grid animate-fade-in-up">
-        <div class="tech-card animate-bounce-in">
-          <div class="tech-icon">
-            <i class="fas fa-brain"></i>
+    <!-- Image Showcase Section -->
+    <div class="image-showcase-section animate-fade-in-up">
+      <div class="showcase-container">
+        <div class="showcase-image-wrapper animate-scale-up">
+          <img src="../../../assets/non.jpg" alt="VieGrand Showcase" class="showcase-image">
+          <div class="image-overlay">
+            <div class="overlay-content">
+              <h3 class="overlay-title" data-lang="showcaseTitle">VieGrand Technology</h3>
+              <p class="overlay-description" data-lang="showcaseDescription">
+                Giải pháp chăm sóc sức khỏe thông minh cho người cao tuổi
+              </p>
+            </div>
           </div>
-          <div class="tech-name" data-lang="deepLearning">Deep Learning</div>
-        </div>
-
-        <div class="tech-card animate-scale-up">
-          <div class="tech-icon">
-            <i class="fas fa-video"></i>
-          </div>
-          <div class="tech-name" data-lang="computerVision">
-            Computer Vision
-          </div>
-        </div>
-
-        <div class="tech-card animate-wobble-in">
-          <div class="tech-icon">
-            <i class="fas fa-cloud"></i>
-          </div>
-          <div class="tech-name" data-lang="cloudComputing">
-            Cloud Computing
-          </div>
-        </div>
-
-        <div class="tech-card animate-rotate-in">
-          <div class="tech-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <div class="tech-name" data-lang="edgeSecurity">Edge Security</div>
         </div>
       </div>
     </div>

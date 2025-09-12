@@ -2,7 +2,7 @@
 
 ## 1. Tổng quan
 
-**VieGrand** là trang landing page hiện đại, song ngữ (Việt/Anh) cho nền tảng AI phát hiện sớm đột quỵ, giúp các gia đình chăm sóc người thân cao tuổi. Dự án được phát triển bởi học sinh trường THPT Nguyễn Hữu Huân, kết hợp công nghệ tiên tiến, chuyên môn y tế và trải nghiệm người dùng đẹp, dễ tiếp cận.
+**VieGrand** là trang landing page hiện đại, song ngữ (Việt/Anh) cho nền tảng AI phát hiện sớm đột quỵ, giúp các gia đình chăm sóc người thân cao tuổi. Dự án được phát triển bởi đội ngũ công nghệ và y tế tại Việt Nam, kết hợp công nghệ tiên tiến, chuyên môn y tế và trải nghiệm người dùng đẹp, dễ tiếp cận.
 
 ---
 
@@ -69,7 +69,7 @@
 ## 8. Đối tượng sử dụng
 
 - Gia đình có người cao tuổi
-- Người chăm sóc, chuyên gia y tế
+- Người chăm sóc, y tế
 - Người Việt & quốc tế quan tâm giải pháp AI chăm sóc sức khỏe
 
 ---

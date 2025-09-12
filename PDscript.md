@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-**VieGrand** is a modern, bilingual (Vietnamese/English) landing page for an AI-powered early stroke detection platform, designed to help families care for elderly loved ones. Developed by students from THPT Nguyễn Hữu Huân, the site combines advanced technology, medical expertise, and a beautiful, accessible user experience.
+**VieGrand** is a modern, bilingual (Vietnamese/English) landing page for an AI-powered early stroke detection platform, designed to help families care for elderly loved ones. Developed by a team of technology and healthcare experts in Vietnam, the site combines advanced technology, medical expertise, and a beautiful, accessible user experience.
 
 ---
 
