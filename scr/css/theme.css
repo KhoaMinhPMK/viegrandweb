@@ -675,7 +675,7 @@ body {
     visibility: hidden;
     transform: translateY(100px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1000;
+    z-index: 9999;
     backdrop-filter: blur(10px);
 }
 
@@ -688,6 +688,11 @@ body {
 .back-to-top:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: var(--shadow-heavy);
+}
+
+.back-to-top:focus {
+    outline: none;
+    box-shadow: var(--shadow-heavy), 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
 
 .back-to-top:active {
@@ -712,6 +717,17 @@ body {
         width: 45px;
         height: 45px;
         font-size: 16px;
+    }
+}
+
+/* Ensure button is always visible and properly positioned */
+@media (max-width: 480px) {
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 42px;
+        height: 42px;
+        font-size: 14px;
     }
 }
 
